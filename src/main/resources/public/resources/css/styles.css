@@ -1,0 +1,27 @@
+body {
+
+  padding-bottom: 40px;
+  background-color: #eee;
+  	align-items: center;
+  	padding-top:140px;
+}
+
+span {
+    display: inline-block;
+}
+
+.card {
+	width : 65%;
+        
+}
+
+
+
+.btn {
+	display: inline-block;
+	width: 100%;
+}
+
+.form-control {
+	width: : 110%;
+}
