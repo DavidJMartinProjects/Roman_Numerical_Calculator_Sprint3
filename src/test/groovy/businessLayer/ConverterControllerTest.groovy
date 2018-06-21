@@ -14,6 +14,7 @@ package businessLayer
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
+import domainLayer.CalculationResult
 import domainLayer.RomanNumerical
 import org.junit.Before
 import org.junit.Test
@@ -36,6 +37,7 @@ class ConverterControllerTest extends Specification {
 	Converter theConverter;
 	ConverterController theConverterController;
 	RomanNumerical theRomanNumerical;
+	CalculationResult theCalculationResult;
 
 	@Test
 	@Unroll
@@ -43,14 +45,15 @@ class ConverterControllerTest extends Specification {
 
 		given:
 		theRomanNumerical = new RomanNumerical();
-		theConverter=new Converter(numericals:theRomanNumerical);
+		theCalculationResult = new CalculationResult();
+		theConverter=new Converter(numericals:theRomanNumerical, calculationResult:theCalculationResult);
 		theConverterController = new ConverterController(converter:theConverter);
 
 		when: 'when two roman numericals are passed as Strings'
 		def result = theConverterController.performConversion(numericOne, numericTwo);
 
 		then: ' sum of both numericals is returned in roman numerical form as a String'
-		assertEquals(expected, result)
+		assertEquals(expected, result.theResult)
 
 		where:
 		numericOne	| numericTwo || expected

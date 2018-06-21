@@ -14,7 +14,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import groovy.json.*;
 import spock.lang.Specification;
 
-@WebMvcTest(controllers = CalculatorWS.class)
+@WebMvcTest(controllers = businessLayer.CalculatorWS.class)
 class CalculatorWSTest extends Specification {
 	
 	@Autowired
