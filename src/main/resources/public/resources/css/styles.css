@@ -1,27 +1,31 @@
-body {
 
-  padding-bottom: 40px;
-  background-color: #eee;
-  	align-items: center;
-  	padding-top:140px;
+.form-actions {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+    padding-top: 10px;
 }
 
-span {
-    display: inline-block;
+.resultPlaceholder {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+    padding-top : 20px;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.container {
 }
 
 .card {
-	width : 65%;
-        
+	border-style: 1px solid ;
 }
 
-
-
-.btn {
-	display: inline-block;
-	width: 100%;
+#numTwoLbl {
+	padding-top : 10px;
 }
 
-.form-control {
-	width: : 110%;
+#numTwoTf {
 }
+  

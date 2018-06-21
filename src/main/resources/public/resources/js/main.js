@@ -9,8 +9,8 @@ var rootUrl = 'http://localhost:8080/calc/addition'
 		});
 
 	function calculate(){  
-		var num1 = $("#num1").val();
-		var num2 = $("#num2").val();
+		var num1 = $("#numOneTf").val();
+		var num2 = $("#numTwoTf").val();
 		
 		$.ajax({
 	          type: 'GET',
