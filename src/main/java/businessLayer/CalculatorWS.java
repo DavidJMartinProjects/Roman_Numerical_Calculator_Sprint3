@@ -15,7 +15,6 @@ import domainLayer.CalculationResult;
 @EnableAutoConfiguration
 @RequestMapping(value = "/calc")
 public class CalculatorWS {
-	// comment for commit
 	
 	@Autowired
 	ConverterController converterController;

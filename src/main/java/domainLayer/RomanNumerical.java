@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class RomanNumerical {
-	// comment for commit
+
 	private final int[] theValues = { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
 	private final String[] theSymbols = { "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
 
