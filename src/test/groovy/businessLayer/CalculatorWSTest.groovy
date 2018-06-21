@@ -11,8 +11,11 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import org.junit.Test
+
 import groovy.json.*;
 import spock.lang.Specification;
+import spock.lang.Unroll
 
 @WebMvcTest(controllers = businessLayer.CalculatorWS.class)
 class CalculatorWSTest extends Specification {
@@ -36,5 +39,38 @@ class CalculatorWSTest extends Specification {
 		response
 				.andExpect(content().string("status : webService online"));
 	}	
+	
+	@Test
+	@Unroll
+	def'when #numericOne and #numericTwo are passed as Strings #expected is returned as a String'() {
+
+		given:
+		// insert mocks here
+
+		when: 'when two roman numericals are passed as Strings'
+			def response = mockMvc.perform(get("/calc/addition").contentType(MediaType.APPLICATION_JSON)
+				.param("num1", numericOne)
+				.param("num2", numericTwo))
+
+		then: ' sum of both numericals is returned in roman numerical form as a String'
+			response
+				.andExpect(content().json(expected))
+
+		where:
+		numericOne	| numericTwo || expected
+		"D"			| "D"		 || "{'theResult':'M'}"
+		"CD"		| "D"		 || "{'theResult':'CM'}"
+		"CCL"		| "CCL"		 || "{'theResult':'D'}"
+		"CC"		| "CC"		 || "{'theResult':'CD'}"
+		"L"			| "L"		 || "{'theResult':'C'}"
+		"L"			| "XL"		 || "{'theResult':'XC'}"
+		"XXV"		| "XXV"		 || "{'theResult':'L'}"
+		"XX"		| "XX"		 || "{'theResult':'XL'}"
+		"V"			| "V"		 || "{'theResult':'X'}"
+		"V"			| "IV"		 || "{'theResult':'IX'}"
+		"IV"		| "I"		 || "{'theResult':'V'}"
+		"II"		| "II"		 || "{'theResult':'IV'}"
+		"I"			| "I"		 || "{'theResult':'II'}"
+	}
 	
 }
