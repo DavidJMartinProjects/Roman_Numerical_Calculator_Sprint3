@@ -17,15 +17,22 @@ import org.springframework.stereotype.Component;
 import domainLayer.CalculationResult;
 
 /**
- * @author eaamrvd
- *
+ * The Class ConverterController.
  */
 @Component
 public class ConverterController {
     
+	/** The converter. */
 	@Autowired
 	public Converter converter;
 
+	/**
+	 * Perform conversion.
+	 *
+	 * @param input1 : Roman numerical one
+	 * @param input2 : Roman numerical two
+	 * @return the sum of both inputs in roman numeral form
+	 */
 	public CalculationResult performConversion(String input1, String input2) {
 		int num1, num2;
 		num1 = converter.toBaseTen(input1);

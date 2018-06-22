@@ -14,14 +14,10 @@ package businessLayer
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
+import org.junit.Test
+
 import domainLayer.CalculationResult
 import domainLayer.RomanNumerics
-import org.junit.Before
-import org.junit.Test
-import org.mockito.InjectMocks
-import org.mockito.Mock
-import org.springframework.beans.factory.annotation.Autowired
-
 import groovy.json.*;
 import spock.lang.Specification
 import spock.lang.Unroll

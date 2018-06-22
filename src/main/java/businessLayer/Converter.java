@@ -19,21 +19,30 @@ import org.springframework.stereotype.Service;
 import domainLayer.CalculationResult;
 import domainLayer.RomanNumerics;
 
+
+
 /**
- * @author eaamrvd
- *
+ * The Class Converter.
  */
 @Service
 public class Converter {
 
+    /** The Roman numerics. */
     @Autowired
     RomanNumerics romanNumerics;
 	
+	/** The calculation result. */
 	@Autowired
 	CalculationResult calculationResult;
 	
-	public int toBaseTen(String input) { // Change to Stringbuilder
-
+	/**
+	 * Converts a Roman numeral String to its Base10 equivalent
+	 *
+	 * @param input : the Roman numeral String to be converted
+	 * @return the Base10 representation of the Roman numeral
+	 */
+	public int toBaseTen(String input) { 
+		
 		for (Map.Entry<Integer, String> entry : romanNumerics.getRomanNumerics().entrySet()) {
 			if(input.startsWith(entry.getValue())) {
 				return entry.getKey()
@@ -43,6 +52,12 @@ public class Converter {
 		return 0;
 	}
 
+	/**
+	 * Converts a Base10 integer to its Roman numerical equivalent.
+	 *
+	 * @param input the Base10 integer value
+	 * @return the Roman numerical representation of the Base10 value
+	 */
 	public CalculationResult toRomanNumeral(int input) {		
 		String roman = "";
 		for (Map.Entry<Integer, String> entry : romanNumerics.getRomanNumerics().entrySet()) {

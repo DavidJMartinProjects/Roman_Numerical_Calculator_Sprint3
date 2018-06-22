@@ -15,15 +15,19 @@ import java.util.LinkedHashMap;
 
 import org.springframework.stereotype.Component;
 
+
 /**
- * @author eaamrvd
- *
+ * The Class RomanNumerics.
  */
 @Component
 public class RomanNumerics {
 	
+	/** LinkedHashMap containing Roman numerics. */
 	private LinkedHashMap<Integer,String> romanNumerics=new LinkedHashMap<Integer,String>();  
 	
+	/**
+	 * Instantiates a new RomanNumerics object.
+	 */
 	public RomanNumerics() {
 		romanNumerics.put(1000, "M");
 		romanNumerics.put(900, "CM");
@@ -40,10 +44,20 @@ public class RomanNumerics {
 		romanNumerics.put(1, "I");
 	}
 
+	/**
+	 * Gets the romanNumerics collection.
+	 *
+	 * @return the romanNumerics collection
+	 */
 	public LinkedHashMap<Integer, String> getRomanNumerics() {
 		return romanNumerics;
 	}
 
+	/**
+	 * Sets the romanNumerics collection.
+	 *
+	 * @param romanNumerics romanNumerics collection
+	 */
 	public void setRomanNumerics(LinkedHashMap<Integer, String> romanNumerics) {
 		this.romanNumerics = romanNumerics;
 	}	

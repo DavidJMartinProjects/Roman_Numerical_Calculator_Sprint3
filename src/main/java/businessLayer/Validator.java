@@ -14,11 +14,17 @@ package businessLayer;
 import org.springframework.stereotype.Component;
 
 /**
- * @author eaamrvd
- *
+ * The Class Validator.
  */
 @Component
 public class Validator {
+	
+	/**
+	 * Validate.
+	 *
+	 * @param input the input
+	 * @return true, if successful
+	 */
 	public boolean validate(String input) {
 		return false;
 	}  
