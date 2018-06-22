@@ -22,29 +22,20 @@ import groovy.json.*;
 import spock.lang.Specification
 import spock.lang.Unroll
 
-
-/**
- * @author eaamrvd
- *
- */
-
 class ConverterControllerTest extends Specification {
-
-	Converter theConverter;
-	ConverterController theConverterController;
-	RomanNumerics theRomanNumerical;
-	CalculationResult theCalculationResult;
-
+	
+	def theRomanNumerics= Mock(RomanNumerics);
+	def theCalculationResult = Mock(CalculationResult);
+	def theConverter = Mock(Converter)	
+	def theConverterController = new ConverterController(converter:theConverter);
+	
 	@Test
 	@Unroll
 	def'when #numericOne and #numericTwo are passed as Strings #expected is returned as a String'() {
-
+				
 		given:
-		theRomanNumerical = new RomanNumerics();
-		theCalculationResult = new CalculationResult();
-		theConverter=new Converter(romanNumerics:theRomanNumerical, calculationResult:theCalculationResult);
-		theConverterController = new ConverterController(converter:theConverter);
-
+		theConverter.toRomanNumeral(_) >> new CalculationResult(theResult:expected)
+		
 		when: 'when two roman numericals are passed as Strings'
 		def result = theConverterController.performConversion(numericOne, numericTwo);
 
@@ -66,5 +57,7 @@ class ConverterControllerTest extends Specification {
 		"IV"		| "I"		 || "V"
 		"II"		| "II"		 || "IV"
 		"I"			| "I"		 || "II"
+		"XX"		| "II"		 || "XXII"		
 	}
+	
 }

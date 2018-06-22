@@ -20,12 +20,12 @@ import org.springframework.stereotype.Component;
 public class Validator {
 	
 	/**
-	 * Validate.
+	 * Validate Input.
 	 *
 	 * @param input the input
 	 * @return true, if successful
 	 */
-	public boolean validate(String input) {
+	public boolean validateInput(String input) {
 		return false;
 	}  
 }
