@@ -42,9 +42,6 @@ class CalculatorWSTest extends Specification {
 	@Unroll
 	def'when #numericOne and #numericTwo are passed as Strings #expected is returned as a String along the appropriate http response code'() {
 
-		given:
-		// insert mocks here
-
 		when: 'when two roman numericals are passed as Strings'
 			def response = mockMvc.perform(get("/calc/addition").contentType(MediaType.APPLICATION_JSON)
 				.param("num1", numericOne)
