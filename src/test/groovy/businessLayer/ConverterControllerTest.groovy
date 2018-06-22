@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 import domainLayer.CalculationResult
-import domainLayer.RomanNumerical
+import domainLayer.RomanNumerics
 import org.junit.Before
 import org.junit.Test
 import org.mockito.InjectMocks
@@ -36,7 +36,7 @@ class ConverterControllerTest extends Specification {
 
 	Converter theConverter;
 	ConverterController theConverterController;
-	RomanNumerical theRomanNumerical;
+	RomanNumerics theRomanNumerical;
 	CalculationResult theCalculationResult;
 
 	@Test
@@ -44,9 +44,9 @@ class ConverterControllerTest extends Specification {
 	def'when #numericOne and #numericTwo are passed as Strings #expected is returned as a String'() {
 
 		given:
-		theRomanNumerical = new RomanNumerical();
+		theRomanNumerical = new RomanNumerics();
 		theCalculationResult = new CalculationResult();
-		theConverter=new Converter(numericals:theRomanNumerical, calculationResult:theCalculationResult);
+		theConverter=new Converter(romanNumerics:theRomanNumerical, calculationResult:theCalculationResult);
 		theConverterController = new ConverterController(converter:theConverter);
 
 		when: 'when two roman numericals are passed as Strings'

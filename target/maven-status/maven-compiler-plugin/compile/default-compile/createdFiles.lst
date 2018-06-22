@@ -1,7 +1,5 @@
-businessLayer\CalculatorWS.class
 domainLayer\CalculationResult.class
 businessLayer\ConverterController.class
 businessLayer\Application.class
 businessLayer\Converter.class
-domainLayer\RomanNumerical.class
 businessLayer\Validator.class

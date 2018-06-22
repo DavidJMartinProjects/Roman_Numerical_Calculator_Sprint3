@@ -28,9 +28,9 @@ public class ConverterController {
 
 	public CalculationResult performConversion(String input1, String input2) {
 		int num1, num2;
-		num1 = converter.toNumerical(input1);
-		num2 = converter.toNumerical(input2);
-		return converter.toRoman(num1 + num2);
+		num1 = converter.toBaseTen(input1);
+		num2 = converter.toBaseTen(input2);
+		return converter.toRomanNumeral(num1 + num2);
 	}
 
 }

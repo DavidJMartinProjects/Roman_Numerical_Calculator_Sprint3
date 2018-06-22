@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="13" failures="0" name="businessLayer.ConverterControllerTest" time="0.047" errors="0" skipped="0">
+<testsuite tests="14" failures="0" name="webLayer.CalculatorWSTest" time="6.361" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_171\jre\bin"/>
@@ -64,17 +64,18 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="businessLayer.ConverterControllerTest" name="when D and D are passed as Strings M is returned as a String" time="0.031"/>
-  <testcase classname="businessLayer.ConverterControllerTest" name="when CD and D are passed as Strings CM is returned as a String" time="0"/>
-  <testcase classname="businessLayer.ConverterControllerTest" name="when CCL and CCL are passed as Strings D is returned as a String" time="0"/>
-  <testcase classname="businessLayer.ConverterControllerTest" name="when CC and CC are passed as Strings CD is returned as a String" time="0"/>
-  <testcase classname="businessLayer.ConverterControllerTest" name="when L and L are passed as Strings C is returned as a String" time="0"/>
-  <testcase classname="businessLayer.ConverterControllerTest" name="when L and XL are passed as Strings XC is returned as a String" time="0"/>
-  <testcase classname="businessLayer.ConverterControllerTest" name="when XXV and XXV are passed as Strings L is returned as a String" time="0"/>
-  <testcase classname="businessLayer.ConverterControllerTest" name="when XX and XX are passed as Strings XL is returned as a String" time="0"/>
-  <testcase classname="businessLayer.ConverterControllerTest" name="when V and V are passed as Strings X is returned as a String" time="0"/>
-  <testcase classname="businessLayer.ConverterControllerTest" name="when V and IV are passed as Strings IX is returned as a String" time="0"/>
-  <testcase classname="businessLayer.ConverterControllerTest" name="when IV and I are passed as Strings V is returned as a String" time="0"/>
-  <testcase classname="businessLayer.ConverterControllerTest" name="when II and II are passed as Strings IV is returned as a String" time="0"/>
-  <testcase classname="businessLayer.ConverterControllerTest" name="when I and I are passed as Strings II is returned as a String" time="0"/>
+  <testcase classname="webLayer.CalculatorWSTest" name="when a GET request is made to the /calc/status url the expected status message and 200 OK status should be returned" time="4.842"/>
+  <testcase classname="webLayer.CalculatorWSTest" name="when D and D are passed as Strings {&apos;theResult&apos;:&apos;M&apos;} is returned as a String along the appropriate http response code" time="0.163"/>
+  <testcase classname="webLayer.CalculatorWSTest" name="when CD and D are passed as Strings {&apos;theResult&apos;:&apos;CM&apos;} is returned as a String along the appropriate http response code" time="0.015"/>
+  <testcase classname="webLayer.CalculatorWSTest" name="when CCL and CCL are passed as Strings {&apos;theResult&apos;:&apos;D&apos;} is returned as a String along the appropriate http response code" time="0.016"/>
+  <testcase classname="webLayer.CalculatorWSTest" name="when CC and CC are passed as Strings {&apos;theResult&apos;:&apos;CD&apos;} is returned as a String along the appropriate http response code" time="0"/>
+  <testcase classname="webLayer.CalculatorWSTest" name="when L and L are passed as Strings {&apos;theResult&apos;:&apos;C&apos;} is returned as a String along the appropriate http response code" time="0.015"/>
+  <testcase classname="webLayer.CalculatorWSTest" name="when L and XL are passed as Strings {&apos;theResult&apos;:&apos;XC&apos;} is returned as a String along the appropriate http response code" time="0.016"/>
+  <testcase classname="webLayer.CalculatorWSTest" name="when XXV and XXV are passed as Strings {&apos;theResult&apos;:&apos;L&apos;} is returned as a String along the appropriate http response code" time="0"/>
+  <testcase classname="webLayer.CalculatorWSTest" name="when XX and XX are passed as Strings {&apos;theResult&apos;:&apos;XL&apos;} is returned as a String along the appropriate http response code" time="0.016"/>
+  <testcase classname="webLayer.CalculatorWSTest" name="when V and V are passed as Strings {&apos;theResult&apos;:&apos;X&apos;} is returned as a String along the appropriate http response code" time="0"/>
+  <testcase classname="webLayer.CalculatorWSTest" name="when V and IV are passed as Strings {&apos;theResult&apos;:&apos;IX&apos;} is returned as a String along the appropriate http response code" time="0.015"/>
+  <testcase classname="webLayer.CalculatorWSTest" name="when IV and I are passed as Strings {&apos;theResult&apos;:&apos;V&apos;} is returned as a String along the appropriate http response code" time="0.016"/>
+  <testcase classname="webLayer.CalculatorWSTest" name="when II and II are passed as Strings {&apos;theResult&apos;:&apos;IV&apos;} is returned as a String along the appropriate http response code" time="0"/>
+  <testcase classname="webLayer.CalculatorWSTest" name="when I and I are passed as Strings {&apos;theResult&apos;:&apos;II&apos;} is returned as a String along the appropriate http response code" time="0.015"/>
 </testsuite>

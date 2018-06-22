@@ -11,11 +11,13 @@
  *----------------------------------------------------------------------------*/
 package businessLayer;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import domainLayer.CalculationResult;
-import domainLayer.RomanNumerical;
+import domainLayer.RomanNumerics;
 
 /**
  * @author eaamrvd
@@ -24,27 +26,29 @@ import domainLayer.RomanNumerical;
 @Service
 public class Converter {
 
-	@Autowired
-	RomanNumerical numericals;     
+    @Autowired
+    RomanNumerics romanNumerics;
 	
 	@Autowired
 	CalculationResult calculationResult;
+	
+	public int toBaseTen(String input) { // Change to Stringbuilder
 
-	public int toNumerical(String roman) {
-		for (int i = 0; i < numericals.getTheSymbols().length; i++) {
-			if (roman.startsWith(numericals.getTheSymbols()[i]))
-				return numericals.getTheValues()[i]
-						+ toNumerical(roman.replaceFirst(numericals.getTheSymbols()[i], ""));
+		for (Map.Entry<Integer, String> entry : romanNumerics.getRomanNumerics().entrySet()) {
+			if(input.startsWith(entry.getValue())) {
+				return entry.getKey()
+					+ toBaseTen(input.replaceFirst(entry.getValue(), ""));
+			}
 		}
 		return 0;
 	}
 
-	public CalculationResult toRoman(int num) {
+	public CalculationResult toRomanNumeral(int input) {		
 		String roman = "";
-		for (int i = 0; i < numericals.getTheValues().length; i++) {
-			while (num >= numericals.getTheValues()[i]) {
-				roman += numericals.getTheSymbols()[i];
-				num -= numericals.getTheValues()[i];
+		for (Map.Entry<Integer, String> entry : romanNumerics.getRomanNumerics().entrySet()) {
+			while (input >= entry.getKey()) {
+				roman += entry.getValue();
+				input -= entry.getKey();
 			}
 		}
 		calculationResult.setTheResult(roman);
