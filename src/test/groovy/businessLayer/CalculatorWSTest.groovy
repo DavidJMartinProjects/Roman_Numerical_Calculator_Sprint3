@@ -55,22 +55,23 @@ class CalculatorWSTest extends Specification {
 		then: ' sum of both numericals is returned in roman numerical form as a String'
 			response
 				.andExpect(content().json(expected))
+				.andExpect(expectedStatus)			
 
 		where:
-		numericOne	| numericTwo || expected
-		"D"			| "D"		 || "{'theResult':'M'}"
-		"CD"		| "D"		 || "{'theResult':'CM'}"
-		"CCL"		| "CCL"		 || "{'theResult':'D'}"
-		"CC"		| "CC"		 || "{'theResult':'CD'}"
-		"L"			| "L"		 || "{'theResult':'C'}"
-		"L"			| "XL"		 || "{'theResult':'XC'}"
-		"XXV"		| "XXV"		 || "{'theResult':'L'}"
-		"XX"		| "XX"		 || "{'theResult':'XL'}"
-		"V"			| "V"		 || "{'theResult':'X'}"
-		"V"			| "IV"		 || "{'theResult':'IX'}"
-		"IV"		| "I"		 || "{'theResult':'V'}"
-		"II"		| "II"		 || "{'theResult':'IV'}"
-		"I"			| "I"		 || "{'theResult':'II'}"
+		numericOne	| numericTwo || expected				|| expectedStatus
+		"D"			| "D"		 || "{'theResult':'M'}"		|| status().isOk()
+		"CD"		| "D"		 || "{'theResult':'CM'}"	|| status().isOk()
+		"CCL"		| "CCL"		 || "{'theResult':'D'}"		|| status().isOk()
+		"CC"		| "CC"		 || "{'theResult':'CD'}"	|| status().isOk()
+		"L"			| "L"		 || "{'theResult':'C'}"		|| status().isOk()
+		"L"			| "XL"		 || "{'theResult':'XC'}"	|| status().isOk()
+		"XXV"		| "XXV"		 || "{'theResult':'L'}"		|| status().isOk()
+		"XX"		| "XX"		 || "{'theResult':'XL'}"	|| status().isOk()
+		"V"			| "V"		 || "{'theResult':'X'}"		|| status().isOk()
+		"V"			| "IV"		 || "{'theResult':'IX'}"	|| status().isOk()
+		"IV"		| "I"		 || "{'theResult':'V'}"		|| status().isOk()
+		"II"		| "II"		 || "{'theResult':'IV'}"	|| status().isOk()
+		"I"			| "I"		 || "{'theResult':'II'}"	|| status().isOk()
 	}
 	
 }
