@@ -24,6 +24,7 @@ import spock.lang.Unroll
 
 class ConverterControllerTest extends Specification {
 	
+	def expected, numericOne, numericTwo
 	def theRomanNumerics= Mock(RomanNumerics);
 	def theCalculationResult = Mock(CalculationResult);
 	def theConverter = Mock(Converter)	
@@ -40,7 +41,7 @@ class ConverterControllerTest extends Specification {
 		def result = theConverterController.performConversion(numericOne, numericTwo);
 
 		then: ' sum of both numericals is returned in roman numerical form as a String'
-		assertEquals(expected, result.theResult)
+		expected == result.theResult
 
 		where:
 		numericOne	| numericTwo || expected
