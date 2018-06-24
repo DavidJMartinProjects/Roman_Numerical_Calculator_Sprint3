@@ -9,12 +9,15 @@ var rootUrl = 'http://localhost:8080/calc/addition'
 		});
 
 	function calculate(){  
+		$("#result").text("");
+		$("#validationMessage").text("");
+		
 		var num1 = $("#numOneTf").val();
 		var num2 = $("#numTwoTf").val();
 		
 		$.ajax({
 	          type: 'GET',
-	          url: rootUrl + "?num1=" +num1+ "&num2=" +num2,
+	          url: rootUrl,
 	          contentType: "application/json",
 	          dataType: "json",
 	          data: {
@@ -25,11 +28,9 @@ var rootUrl = 'http://localhost:8080/calc/addition'
 	        	  $("#result").text("Result : "+num1+" + "+num2+" = "  + response.theResult + "");
 	        	  $("#num1").val("");
 	        	  $("#num2").val("");
-	        	  // $("#validationMessage").empty();
 	          },
 	          error: function(){
-	        	  // $("#result").empty();
-	        	  // $("#validationMessage").text("Incorrect Numeral Entered!");
+	          	  $("#validationMessage").text("Invalid Roman Numerical Format - Please try again.")
 	          }       
 		});
 	}

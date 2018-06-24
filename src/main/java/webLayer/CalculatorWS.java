@@ -47,8 +47,10 @@ public class CalculatorWS {
 	@RequestMapping(value = "/addition", method = RequestMethod.GET, produces = { "application/json" })
 	public ResponseEntity<Object> calculate(@RequestParam("num1") final String num1,
 			@RequestParam("num2") final String num2) {
+
 		final CalculationResult result = converterController.performConversion(num1, num2);
 		return new ResponseEntity<>(result, HttpStatus.OK);
+
 	}
 
 }
