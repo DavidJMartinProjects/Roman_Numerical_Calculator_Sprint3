@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="14" failures="0" name="webLayer.CalculatorWSTest" time="5.065" errors="0" skipped="0">
+<testsuite tests="14" failures="0" name="webLayer.CalculatorWSTest" time="5.273" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_171\jre\bin"/>
@@ -15,13 +15,13 @@
     <property name="sun.os.patch.level" value="Service Pack 1"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="C:\repo_internship_project_master\com.calculator"/>
-    <property name="PID" value="5056"/>
+    <property name="PID" value="11284"/>
     <property name="java.runtime.version" value="1.8.0_171-b11"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="basedir" value="C:\repo_internship_project_master\com.calculator"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_171\jre\lib\endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="surefire.real.class.path" value="C:\Users\EAAMRVD\AppData\Local\Temp\surefirebooter5519056957178777726.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\EAAMRVD\AppData\Local\Temp\surefirebooter755641299602149143.jar"/>
     <property name="java.io.tmpdir" value="C:\Users\EAAMRVD\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
@@ -46,7 +46,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_171\jre"/>
-    <property name="sun.java.command" value="C:\Users\EAAMRVD\AppData\Local\Temp\surefirebooter5519056957178777726.jar C:\Users\EAAMRVD\AppData\Local\Temp\surefire3691540772809538837tmp C:\Users\EAAMRVD\AppData\Local\Temp\surefire7339105300049116849tmp"/>
+    <property name="sun.java.command" value="C:\Users\EAAMRVD\AppData\Local\Temp\surefirebooter755641299602149143.jar C:\Users\EAAMRVD\AppData\Local\Temp\surefire7853857047717212260tmp C:\Users\EAAMRVD\AppData\Local\Temp\surefire4572092167355847651tmp"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -64,17 +64,17 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="webLayer.CalculatorWSTest" name="when a GET request is made to the /calc/status url the expected status message and 200 OK status should be returned" time="4.361"/>
-  <testcase classname="webLayer.CalculatorWSTest" name="when D and D are passed as Strings {&apos;theResult&apos;:&apos;M&apos;} is returned as a String along the appropriate http response code" time="0.125"/>
+  <testcase classname="webLayer.CalculatorWSTest" name="when a GET request is made to the /calc/status url the expected status message and 200 OK status should be returned" time="4.475"/>
+  <testcase classname="webLayer.CalculatorWSTest" name="when D and D are passed as Strings {&apos;theResult&apos;:&apos;M&apos;} is returned as a String along the appropriate http response code" time="0.156"/>
   <testcase classname="webLayer.CalculatorWSTest" name="when CD and D are passed as Strings {&apos;theResult&apos;:&apos;CM&apos;} is returned as a String along the appropriate http response code" time="0"/>
   <testcase classname="webLayer.CalculatorWSTest" name="when CCL and CCL are passed as Strings {&apos;theResult&apos;:&apos;D&apos;} is returned as a String along the appropriate http response code" time="0.016"/>
-  <testcase classname="webLayer.CalculatorWSTest" name="when CC and CC are passed as Strings {&apos;theResult&apos;:&apos;CD&apos;} is returned as a String along the appropriate http response code" time="0.016"/>
-  <testcase classname="webLayer.CalculatorWSTest" name="when L and L are passed as Strings {&apos;theResult&apos;:&apos;C&apos;} is returned as a String along the appropriate http response code" time="0"/>
-  <testcase classname="webLayer.CalculatorWSTest" name="when L and XL are passed as Strings {&apos;theResult&apos;:&apos;XC&apos;} is returned as a String along the appropriate http response code" time="0.016"/>
+  <testcase classname="webLayer.CalculatorWSTest" name="when CC and CC are passed as Strings {&apos;theResult&apos;:&apos;CD&apos;} is returned as a String along the appropriate http response code" time="0"/>
+  <testcase classname="webLayer.CalculatorWSTest" name="when L and L are passed as Strings {&apos;theResult&apos;:&apos;C&apos;} is returned as a String along the appropriate http response code" time="0.015"/>
+  <testcase classname="webLayer.CalculatorWSTest" name="when L and XL are passed as Strings {&apos;theResult&apos;:&apos;XC&apos;} is returned as a String along the appropriate http response code" time="0"/>
   <testcase classname="webLayer.CalculatorWSTest" name="when XXV and XXV are passed as Strings {&apos;theResult&apos;:&apos;L&apos;} is returned as a String along the appropriate http response code" time="0"/>
-  <testcase classname="webLayer.CalculatorWSTest" name="when XX and XX are passed as Strings {&apos;theResult&apos;:&apos;XL&apos;} is returned as a String along the appropriate http response code" time="0.015"/>
+  <testcase classname="webLayer.CalculatorWSTest" name="when XX and XX are passed as Strings {&apos;theResult&apos;:&apos;XL&apos;} is returned as a String along the appropriate http response code" time="0.016"/>
   <testcase classname="webLayer.CalculatorWSTest" name="when V and V are passed as Strings {&apos;theResult&apos;:&apos;X&apos;} is returned as a String along the appropriate http response code" time="0"/>
-  <testcase classname="webLayer.CalculatorWSTest" name="when V and IV are passed as Strings {&apos;theResult&apos;:&apos;IX&apos;} is returned as a String along the appropriate http response code" time="0.016"/>
+  <testcase classname="webLayer.CalculatorWSTest" name="when V and IV are passed as Strings {&apos;theResult&apos;:&apos;IX&apos;} is returned as a String along the appropriate http response code" time="0.015"/>
   <testcase classname="webLayer.CalculatorWSTest" name="when IV and I are passed as Strings {&apos;theResult&apos;:&apos;V&apos;} is returned as a String along the appropriate http response code" time="0"/>
   <testcase classname="webLayer.CalculatorWSTest" name="when II and II are passed as Strings {&apos;theResult&apos;:&apos;IV&apos;} is returned as a String along the appropriate http response code" time="0.016"/>
   <testcase classname="webLayer.CalculatorWSTest" name="when I and I are passed as Strings {&apos;theResult&apos;:&apos;II&apos;} is returned as a String along the appropriate http response code" time="0"/>

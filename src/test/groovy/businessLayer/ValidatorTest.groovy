@@ -27,15 +27,15 @@ class ValidatorTest extends Specification  {
 
 	@Test
 	@Unroll
-	def 'verify that the expected validation result is returned when the validateInput method is called'() {
-		when: 'the validateInput method is called '
+	def 'verify that the expected validation result of #expected is returned when the valid Roman numeral #input is passed to the validateInput method'() {
+
+		when: 'the validateInput method is called with a valid argument'
 		def result = theValidator.validateInput(input);
 
 		then: 'verify that the expected validation result is returned'
 		result == expected
 
 		where:
-
 		input	 || expected
 		"M"		 || true
 		"CM"	 || true
@@ -50,5 +50,32 @@ class ValidatorTest extends Specification  {
 		"V"		 || true
 		"IV"	 || true
 		"I"		 || true
+	}
+
+	@Test
+	@Unroll
+	def 'verify that the expected validation result of #expected is returned when the invalid Roman numeral #input is passed to the validateInput method'() {
+
+		when: 'the validateInput method is called with a valid argument'
+		def result = theValidator.validateInput(input);
+
+		then: 'verify that the expected validation result is returned'
+		result == expected
+
+		where:
+		input	 || expected
+		"IIII"	 || false
+		"XXXX"	 || false
+		"CCCC"	 || false
+		"VV"	 || false
+		"VVV"	 || false
+		"VVVV"	 || false
+		"LL"	 || false
+		"LLL"	 || false
+		"LLLL"	 || false
+		"DD"	 || false
+		"DDD"	 || false
+		"DDDD"	 || false
+		"MMMMM"	 || false
 	}
 }
