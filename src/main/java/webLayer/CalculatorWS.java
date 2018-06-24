@@ -19,34 +19,36 @@ import domainLayer.CalculationResult;
 @EnableAutoConfiguration
 @RequestMapping(value = "/calc")
 public class CalculatorWS {
-	
+
 	/** The converter controller. */
 	@Autowired
 	ConverterController converterController;
-	
+
 	/**
 	 * Greeting.
 	 *
 	 * @return the web service status
 	 */
-	@RequestMapping( value="/status", method=RequestMethod.GET, produces={"application/json"})
+	@RequestMapping(value = "/status", method = RequestMethod.GET, produces = { "application/json" })
 	public String greeting() {
-		return "status : webService online";         		
+		return "status : webService online";
 	}
 
 	/**
 	 * Calculate.
 	 *
-	 * @param num1 : Roman Numerical value as String
-	 * @param num2 : Roman Numerical value as String
-	 * @return the response entity containing the sum of both inputs in Roman numerical form
+	 * @param num1
+	 *            : Roman Numerical value as String
+	 * @param num2
+	 *            : Roman Numerical value as String
+	 * @return the response entity containing the sum of both inputs in Roman
+	 *         numerical form
 	 */
-	@RequestMapping(value="/addition", method=RequestMethod.GET, produces={"application/json"})
-	public ResponseEntity<Object> calculate(@RequestParam("num1") String num1, @RequestParam("num2") String num2) {
-		CalculationResult result = converterController.performConversion(num1, num2);
+	@RequestMapping(value = "/addition", method = RequestMethod.GET, produces = { "application/json" })
+	public ResponseEntity<Object> calculate(@RequestParam("num1") final String num1,
+			@RequestParam("num2") final String num2) {
+		final CalculationResult result = converterController.performConversion(num1, num2);
 		return new ResponseEntity<>(result, HttpStatus.OK);
 	}
-                      
-}  
 
-
+}

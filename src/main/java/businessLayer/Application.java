@@ -25,13 +25,14 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(basePackages = { "domainLayer", "businessLayer", "webLayer" })
 @EnableAutoConfiguration
 public class Application {
-	
+
 	/**
 	 * The main method.
 	 *
-	 * @param args the arguments
+	 * @param args
+	 *            the arguments
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
 }

@@ -21,7 +21,7 @@ class CalculationResultTest extends Specification {
 			
 		then : 'the expected value should be returned when the theResult getter is called'
 			assertEquals(testValue, calculationResult.getTheResult())	
-			assert testValue instanceof String	
+			assert calculationResult.getTheResult() instanceof String	
 			
 	}
 	

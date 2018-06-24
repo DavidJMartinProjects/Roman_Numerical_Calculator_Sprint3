@@ -21,23 +21,36 @@ import domainLayer.CalculationResult;
  */
 @Component
 public class ConverterController {
-    
+
+	@Autowired
+	Validator validator;
+
 	/** The converter. */
 	@Autowired
-	public Converter converter;
+	Converter converter;
 
 	/**
 	 * Perform conversion.
 	 *
-	 * @param input1 : Roman numerical one
-	 * @param input2 : Roman numerical two
+	 * @param input1
+	 *            : Roman numerical one
+	 * @param input2
+	 *            : Roman numerical two
 	 * @return the sum of both inputs in roman numeral form
 	 */
-	public CalculationResult performConversion(String input1, String input2) {
-		int num1, num2;
-		num1 = converter.toBaseTen(input1);
-		num2 = converter.toBaseTen(input2);
-		return converter.toRomanNumeral(num1 + num2);
+	public CalculationResult performConversion(final String input1, final String input2) {
+		if (validate(input1, input2)) {
+			final int num1 = converter.toBaseTen(input1);
+			final int num2 = converter.toBaseTen(input2);
+			return converter.toRomanNumeral(num1 + num2);
+		} else {
+			throw new IllegalArgumentException("Invalid Roman Numeral Entered.");
+		}
+
+	}
+
+	public boolean validate(final String input1, final String input2) {
+		return (validator.validateInput(input1) && validator.validateInput(input2));
 	}
 
 }

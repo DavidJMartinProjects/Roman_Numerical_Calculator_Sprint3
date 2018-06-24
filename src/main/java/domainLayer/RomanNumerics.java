@@ -12,19 +12,19 @@
 package domainLayer;
 
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 import org.springframework.stereotype.Component;
-
 
 /**
  * The Class RomanNumerics.
  */
 @Component
 public class RomanNumerics {
-	
+
 	/** LinkedHashMap containing Roman numerics. */
-	private LinkedHashMap<Integer,String> romanNumerics=new LinkedHashMap<Integer,String>();  
-	
+	private Map<Integer, String> romanNumerics = new LinkedHashMap<Integer, String>();
+
 	/**
 	 * Instantiates a new RomanNumerics object.
 	 */
@@ -49,17 +49,18 @@ public class RomanNumerics {
 	 *
 	 * @return the romanNumerics collection
 	 */
-	public LinkedHashMap<Integer, String> getRomanNumerics() {
+	public Map<Integer, String> getRomanNumerics() {
 		return romanNumerics;
 	}
 
 	/**
 	 * Sets the romanNumerics collection.
 	 *
-	 * @param romanNumerics romanNumerics collection
+	 * @param romanNumerics
+	 *            romanNumerics collection
 	 */
-	public void setRomanNumerics(LinkedHashMap<Integer, String> romanNumerics) {
+	public void setRomanNumerics(final Map<Integer, String> romanNumerics) {
 		this.romanNumerics = romanNumerics;
-	}	
-	
+	}
+
 }
