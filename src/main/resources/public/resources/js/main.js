@@ -30,7 +30,7 @@ var rootUrl = 'http://localhost:8080/calc/addition'
 	        	  $("#num2").val("");
 	          },
 	          error: function(){
-	          	  $("#validationMessage").text("Invalid Roman Numerical Format - Please try again.")
+	          	  $("#validationMessage").text("Invalid Roman Numerical Format.")
 	          }       
 		});
 	}
