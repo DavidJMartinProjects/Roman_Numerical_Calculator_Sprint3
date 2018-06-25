@@ -28,10 +28,13 @@ public class CalculatorWS {
 	@RequestMapping(value = "/addition", method = RequestMethod.GET, produces = { "application/json" })
 	public ResponseEntity<Object> calculate(@RequestParam("num1") final String num1,
 			@RequestParam("num2") final String num2) {
-
-		final CalculationResult result = converterController.performConversion(num1.toUpperCase(), num2.toUpperCase());
-		return new ResponseEntity<>(result, HttpStatus.OK);
-
+		try {
+			final CalculationResult result = converterController.performConversion(num1.toUpperCase(),
+					num2.toUpperCase());
+			return new ResponseEntity<>(result, HttpStatus.OK);
+		} catch (IllegalArgumentException ex) {
+			return new ResponseEntity<>(ex, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	}
 
 }

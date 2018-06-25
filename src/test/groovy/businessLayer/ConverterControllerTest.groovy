@@ -184,18 +184,17 @@ class ConverterControllerTest extends Specification {
 		"III"		| "III"		 || "VI"
 	}
 
-	//	@Test
-	//	@Unroll
-	//	def 'test that performConversion throws an illegalArgumentException for all calculations greater than 3999'() {
-	//		given :
-	//
-	//		theValidator.validateInput(_) >> new IllegalArgumentException()
-	//		theConverter.toRomanNumeral(numericOne) >> new CalculationResult(theResult:expected)
-	//
-	//		when: 'when the performConversion method is called'
-	//		def result = theConverterController.performConversion("MMM", "MMM");
-	//
-	//		then: 'an IllegalArgumentException is thrown'
-	//		final IllegalArgumentException exception = thrown()
-	//	}
+	@Test
+	@Unroll
+	def 'test that performConversion throws an illegalArgumentException for calculations greater than 3999'() {
+		given :
+		theConverterController.validator.validateInput("MMMM") >> { throw new IllegalArgumentException("Invalid Roman Numeral Entered.") }
+
+		when: 'when the performConversion method is called'
+		def result = theConverterController.performConversion("MMMM", "MMMM");
+
+		then: 'an IllegalArgumentException is thrown'
+		def ex = thrown(IllegalArgumentException)
+		ex.message == "Invalid Roman Numeral Entered."
+	}
 }
