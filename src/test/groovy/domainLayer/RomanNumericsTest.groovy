@@ -25,7 +25,7 @@ class RomanNumericsTest extends Specification {
 		expectedMap.put(1, "I");
 	}
 
-	def 'when a new RomanNumerics object is created the getter should return the expected object and be of type LinkedHashMap'() {
+	def 'when a new RomanNumerics object is created the getter method should return the expected object and be of type LinkedHashMap'() {
 
 		when : 'a new CalculationResult object is created'
 		RomanNumerics romanNumerics = new RomanNumerics();
