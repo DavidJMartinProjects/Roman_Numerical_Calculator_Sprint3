@@ -5,10 +5,10 @@ import org.junit.Before
 import spock.lang.Specification
 
 class RomanNumericsTest extends Specification {
-	
+
 	private LinkedHashMap<Integer,String> expectedMap;
-	
-	def setup() {		
+
+	def setup() {
 		expectedMap = new LinkedHashMap<Integer,String>();
 		expectedMap.put(1000, "M");
 		expectedMap.put(900, "CM");
@@ -22,18 +22,17 @@ class RomanNumericsTest extends Specification {
 		expectedMap.put(9, "IX");
 		expectedMap.put(5, "V");
 		expectedMap.put(4, "IV");
-		expectedMap.put(1, "I");		
+		expectedMap.put(1, "I");
 	}
 
-	def 'when a new RomanNumerics object is created the getters should return the expected data and be of type LinkedHashMap'() {
-		
+	def 'when a new RomanNumerics object is created the getters should return the expected object and be of type LinkedHashMap'() {
+
 		when : 'a new CalculationResult object is created'
-			RomanNumerics romanNumerics = new RomanNumerics();
-		
+		RomanNumerics romanNumerics = new RomanNumerics();
+
 		then : 'the object should return a LinkedHashMap with the expected values'
-			romanNumerics.getRomanNumerics() == expectedMap	
-			romanNumerics.getRomanNumerics().size() == expectedMap.size()
-			romanNumerics.getRomanNumerics() instanceof LinkedHashMap					 
+		romanNumerics.getRomanNumerics() == expectedMap
+		romanNumerics.getRomanNumerics().size() == expectedMap.size()
+		romanNumerics.getRomanNumerics() instanceof LinkedHashMap
 	}
-	
 }

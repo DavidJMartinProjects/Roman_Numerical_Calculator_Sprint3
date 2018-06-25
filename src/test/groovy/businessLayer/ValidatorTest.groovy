@@ -56,7 +56,7 @@ class ValidatorTest extends Specification  {
 	@Unroll
 	def 'verify that the expected validation result of #expected is returned when the invalid Roman numeral #input is passed to the validateInput method'() {
 
-		when: 'the validateInput method is called with a valid argument'
+		when: 'the validateInput method is called with an invalid argument'
 		def result = theValidator.validateInput(input);
 
 		then: 'verify that the expected validation result is returned'
@@ -76,6 +76,6 @@ class ValidatorTest extends Specification  {
 		"DD"	 || false
 		"DDD"	 || false
 		"DDDD"	 || false
-		"MMMMM"	 || false
+		"MMMM"	 || false
 	}
 }

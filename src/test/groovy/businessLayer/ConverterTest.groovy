@@ -41,10 +41,11 @@ class ConverterTest extends Specification {
 		then: 'the expected base10 value of the Roman numeral is returned'
 		expected == result
 
-		/* Test parameters include the lowest ten numbers, 
+		/* Test parameters include :
+		 * the lowest number, 
 		 * the highest number, 
 		 * every number that translates to a single-character Roman numeral, 
-		 * and a random sampling of other valid numbers.*/
+		 * and a random sampling of other valid focusing on typically troublesome conversions (9's, 4's etc).*/
 		where:
 		input	 			|| expected
 		"I"		 			|| 1
@@ -116,10 +117,11 @@ class ConverterTest extends Specification {
 		then: 'the expected roman numeral representation of the integer value is returned'
 		expected == result.theResult
 
-		/* Test parameters include the lowest ten numbers,
-		 * the highest number,
-		 * every number that translates to a single-character Roman numeral,
-		 * and a random sampling of other valid numbers.*/
+		/* Test parameters include :
+		 * the lowest number, 
+		 * the highest number, 
+		 * every number that translates to a single-character Roman numeral, 
+		 * and a random sampling of other valid focusing on typically troublesome conversions (9's, 4's etc).*/
 		where:
 		expected			|| input
 		"I"		 			|| 1

@@ -20,7 +20,6 @@ import groovy.json.*;
 import spock.lang.Specification;
 import spock.lang.Unroll
 
-//@RunWith(SpringRunner.class)
 @ContextConfiguration(classes= businessLayer.Application.class)
 @WebMvcTest(controllers = webLayer.CalculatorWS.class)
 class CalculatorWSTest extends Specification {
@@ -30,7 +29,7 @@ class CalculatorWSTest extends Specification {
 
 	def numericOne, numericTwo, expectedStatus, exceptionMessage
 
-	def 'when a GET request is made to the /calc/status url the expected status message and 200 OK status should be returned'() {
+	def 'when a GET request is made to the /calc/status url the expected response message and a 200 OK status should be returned'() {
 
 		when: 'a GET request is made to /calc/status'
 		def response = mockMvc.perform(get("/calc/status").contentType(MediaType.APPLICATION_JSON))
@@ -88,5 +87,4 @@ class CalculatorWSTest extends Specification {
 		numericOne	| numericTwo || expectedStatus						|| exceptionMessage
 		"MMMMM"		| "MMMMM"	 || status().isInternalServerError()	|| "Invalid Roman Numeral Entered."
 	}
-
 }
