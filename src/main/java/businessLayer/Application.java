@@ -16,22 +16,11 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-/**
- * The Class Application.
- *
- * @author eaamrvd
- */
 @SpringBootApplication
 @ComponentScan(basePackages = { "domainLayer", "businessLayer", "webLayer" })
 @EnableAutoConfiguration
 public class Application {
 
-	/**
-	 * The main method.
-	 *
-	 * @param args
-	 *            the arguments
-	 */
 	public static void main(final String[] args) {
 		SpringApplication.run(Application.class, args);
 	}

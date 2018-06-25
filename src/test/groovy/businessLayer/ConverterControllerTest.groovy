@@ -35,7 +35,7 @@ class ConverterControllerTest extends Specification {
 
 	@Test
 	@Unroll
-	def'when #numericOne and #numericTwo are passed as Strings #expected is returned as a String'() {
+	def'when valid inputs #numericOne and #numericTwo are passed as Strings #expected is returned as a String'() {
 
 		given:
 		theValidator.validateInput(_) >> true
@@ -63,9 +63,92 @@ class ConverterControllerTest extends Specification {
 		"II"		| "II"		 || "IV"
 		"I"			| "I"		 || "II"
 		"XX"		| "II"		 || "XXII"
+		"I"			| "II"		 || "III"
+		"I"			| "III"		 || "IV"
+		"II"		| "III"		 || "V"
+		"III"		| "III"		 || "VI"
 	}
 
 	@Test
+	@Unroll
+	def 'verify that if the numeral is I X or C you can have more that three'() {
+		given:
+		theValidator.validateInput(_) >> true
+		theConverter.toRomanNumeral(_) >> new CalculationResult(theResult:expected)
+
+		when: 'when two roman numericals are passed as Strings'
+		def result = theConverterController.performConversion(numericOne, numericTwo);
+
+		then: 'if the numeral is I, X or C, you can have more that three'
+		expected == result.theResult
+
+		where:
+		numericOne	| numericTwo || expected
+		"I"			| "III"		 || "IV"
+		"II"		| "II"		 || "IV"
+		"X	"		| "XXX"		 || "XL"
+		"XX"		| "XX"		 || "XL"
+		"C"			| "CCC"		 || "CD"
+		"CC"		| "CC"		 || "CD"
+	}
+
+	@Test
+	@Unroll
+	def 'verify that if the numeral is V L or D you can have more that one'() {
+		given:
+		theValidator.validateInput(_) >> true
+		theConverter.toRomanNumeral(_) >> new CalculationResult(theResult:expected)
+
+		when: 'when two roman numericals are passed as Strings'
+		def result = theConverterController.performConversion(numericOne, numericTwo);
+
+		then: 'if the numeral is I, X or C, you can have more that 3'
+		expected == result.theResult
+
+		where:
+		numericOne	| numericTwo || expected
+		"V"			| "V"		 || "X"
+		"L"			| "L"		 || "C"
+		"D"			| "D"		 || "M"
+	}
+
+	@Test
+	@Unroll
+	def 'verify that roman numeral boundaries are behaving as expected'() {
+		given:
+		theValidator.validateInput(_) >> true
+		theConverter.toRomanNumeral(_) >> new CalculationResult(theResult:expected)
+
+		when: 'when two roman numericals are passed as Strings'
+		def result = theConverterController.performConversion(numericOne, numericTwo);
+
+		then: 'roman numeral boundaries are behaving as expected'
+		expected == result.theResult
+
+		where:
+		numericOne	| numericTwo || expected
+		"II"		| "II"		 || "IV"
+		"II"		| "III"		 || "V"
+		"V"			| "I"		 || "VI"
+		"V"			| "IV"		 || "IX"
+		"V"			| "V"		 || "X"
+		"X"			| "I"		 || "XI"
+		"XX"		| "XXIX"	 || "IL"
+		"XXV"		| "XXV"		 || "L"
+		"L"			| "I"		 || "LI"
+		"L"			| "IL"		 || "IC"
+		"L"			| "L"		 || "C"
+		"L"			| "LI"		 || "CI"
+		"CCL"		| "ICCL"	 || "ID"
+		"CCL"		| "CCL"		 || "D"
+		"CCL"		| "CCLI"	 || "DI"
+		"D"			| "ID"		 || "IM"
+		"D"			| "D"		 || "M"
+		"D"			| "DI"	 	 || "MI"
+	}
+
+	@Test
+	@Unroll
 	def 'verifying expected method invocations when performConversion method is called'() {
 
 		given :
@@ -95,5 +178,24 @@ class ConverterControllerTest extends Specification {
 		"II"		| "II"		 || "IV"
 		"I"			| "I"		 || "II"
 		"XX"		| "II"		 || "XXII"
+		"I"			| "II"		 || "III"
+		"I"			| "III"		 || "IV"
+		"II"		| "III"		 || "V"
+		"III"		| "III"		 || "VI"
 	}
+
+	//	@Test
+	//	@Unroll
+	//	def 'test that performConversion throws an illegalArgumentException for all calculations greater than 3999'() {
+	//		given :
+	//
+	//		theValidator.validateInput(_) >> new IllegalArgumentException()
+	//		theConverter.toRomanNumeral(numericOne) >> new CalculationResult(theResult:expected)
+	//
+	//		when: 'when the performConversion method is called'
+	//		def result = theConverterController.performConversion("MMM", "MMM");
+	//
+	//		then: 'an IllegalArgumentException is thrown'
+	//		final IllegalArgumentException exception = thrown()
+	//	}
 }
