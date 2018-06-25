@@ -35,7 +35,7 @@ class ConverterControllerTest extends Specification {
 
 	@Test
 	@Unroll
-	def 'verify that if the numeral is I X or C you can have more than three in succession'() {
+	def 'verify that if the numeral is I X or C you cant have more than three in succession'() {
 		given:
 		theValidator.validateInput(_) >> true
 		theConverter.toRomanNumeral(_) >> new CalculationResult(theResult:expected)
@@ -43,7 +43,7 @@ class ConverterControllerTest extends Specification {
 		when: 'when two roman numericals are passed as Strings'
 		def result = theConverterController.performConversion(numericOne, numericTwo);
 
-		then: 'if the numeral is I, X or C, you can have more than three in succession'
+		then: 'if the numeral is I, X or C, you cant have more than three in succession'
 		expected == result.theResult
 
 		where:
@@ -58,7 +58,7 @@ class ConverterControllerTest extends Specification {
 
 	@Test
 	@Unroll
-	def 'verify that if the numeral is V L or D you can have more that one in succession'() {
+	def 'verify that if the numeral is V L or D you cant have more that one in succession'() {
 		given:
 		theValidator.validateInput(_) >> true
 		theConverter.toRomanNumeral(_) >> new CalculationResult(theResult:expected)
@@ -66,7 +66,7 @@ class ConverterControllerTest extends Specification {
 		when: 'when two roman numericals are passed as Strings'
 		def result = theConverterController.performConversion(numericOne, numericTwo);
 
-		then: 'if the numeral is I, X or C, you can have more that one in succession'
+		then: 'if the numeral is I, X or C, you cant have more that one in succession'
 		expected == result.theResult
 
 		where:
@@ -173,7 +173,7 @@ class ConverterControllerTest extends Specification {
 		when: 'when two roman numericals are passed as Strings'
 		def result = theConverterController.performConversion(numericOne, numericTwo);
 
-		then: ' sum of both numericals is returned in roman numerical form as a String'
+		then: 'the sum of both numericals is returned in roman numerical form as a String'
 		expected == result.theResult
 
 		where:
