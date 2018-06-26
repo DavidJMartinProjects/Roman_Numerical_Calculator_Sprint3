@@ -37,6 +37,11 @@
 		<!-- https://mvnrepository.com/artifact/org.spockframework/spock-core -->
 		<!-- TEST DEPENDENCIES -->
 		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.13.0</version>
+		</dependency>  
+		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-all</artifactId>
 			<version>1.9.5</version>

@@ -40,4 +40,5 @@ public class ConverterController {
 		return (validator.validateInput(input1) && validator.validateInput(input2));
 	}
 
-}
+} 
+ 

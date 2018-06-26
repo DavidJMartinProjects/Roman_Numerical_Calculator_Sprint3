@@ -14,4 +14,11 @@ public class CalculationResult {
 	public void setTheResult(final String theResult) {
 		this.theResult = theResult;
 	}
+
+	@Override
+	public String toString() {
+		return theResult ;
+	}
+	
 }
+  
