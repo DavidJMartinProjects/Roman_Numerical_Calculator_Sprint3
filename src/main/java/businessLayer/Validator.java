@@ -19,12 +19,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class Validator {
 
-	final static String THE_REGEX = "^(M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3}))$";
-	// https://stackoverflow.com/questions/267399/how-do-you-match-only-valid-roman-numerals-with-a-regular-expression
+	final static String THE_REGEX = "^(M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3}))$";	
 
 	public boolean validateInput(final String input) {
 		final Pattern pattern = Pattern.compile(THE_REGEX);
 		final Matcher matcher = pattern.matcher(input);
 		return matcher.matches();
 	}
-}
+} 

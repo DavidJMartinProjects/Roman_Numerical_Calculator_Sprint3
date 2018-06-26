@@ -45,7 +45,7 @@ class ConverterTest extends Specification {
 		 * the lowest number, 
 		 * the highest number, 
 		 * every number that translates to a single-character Roman numeral, 
-		 * and a random sampling of other valid focusing on typically troublesome conversions (9's, 4's etc).*/
+		 * and a sampling of other valid numbers focusing on typically troublesome conversions (9's, 4's, longest roman numeral String etc).*/
 		where:
 		input	 			|| expected
 		"I"		 			|| 1
@@ -121,7 +121,7 @@ class ConverterTest extends Specification {
 		 * the lowest number, 
 		 * the highest number, 
 		 * every number that translates to a single-character Roman numeral, 
-		 * and a random sampling of other valid focusing on typically troublesome conversions (9's, 4's etc).*/
+		 * and a sampling of other valid numbers focusing on typically troublesome conversions (9's, 4's, longest roman numeral String etc).*/
 		where:
 		expected			|| input
 		"I"		 			|| 1
