@@ -11,23 +11,26 @@
  *----------------------------------------------------------------------------*/
 package businessLayer;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.stereotype.Component;
 
+/**
+ * @author eaamrvd
+ *
+ */
 @Component
-public class Validator {
-	
-	String the_regex = new String("^(M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3}))$");
-	
-	public boolean validateInput(final String input) {
-		the_regex = "^(M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3}))$";
-		final Pattern pattern = Pattern.compile(the_regex);
-		final Matcher matcher = pattern.matcher(input);
-		return matcher.matches();
+public class OperationFactory {
+
+	public IOperation getOperation(String operationType) {
+		if(operationType.equals("add")) {
+			return new OperationAdd();
+		} else if(operationType.equals("subtract")) {
+			return new OperationSubtract();		
+		} else if(operationType.equals("divide")) {
+			return new OperationDivide();
+		} else if(operationType.equals("multiply")) {
+			return new OperationMultiply();
+		} 
+		return null;
 	}
-} 
-   
+	
+}

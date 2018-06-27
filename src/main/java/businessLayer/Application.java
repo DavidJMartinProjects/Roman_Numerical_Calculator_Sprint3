@@ -18,7 +18,6 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan(basePackages = { "domainLayer", "businessLayer", "webLayer" })
-@EnableAutoConfiguration
 public class Application {
 
 	public static void main(final String[] args) {
