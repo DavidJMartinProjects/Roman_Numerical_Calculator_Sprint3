@@ -35,4 +35,4 @@ class RomanNumericsTest extends Specification {
 		romanNumerics.getRomanNumerics().size() == expectedMap.size()
 		romanNumerics.getRomanNumerics() instanceof LinkedHashMap
 	}
-}
+} 

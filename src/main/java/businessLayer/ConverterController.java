@@ -33,12 +33,11 @@ public class ConverterController {
 		} else {
 			throw new IllegalArgumentException("Invalid Roman Numeral Entered.");
 		}
-
 	}
 
 	public boolean validate(final String input1, final String input2) {
 		return (validator.validateInput(input1) && validator.validateInput(input2));
 	}
 
-} 
+}  
  

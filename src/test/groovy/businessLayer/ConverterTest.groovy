@@ -28,7 +28,7 @@ class ConverterTest extends Specification {
 	def calculationResult = new CalculationResult()
 	def romanNumerics = Mock(RomanNumerics.class)
 	def theConverter= new Converter(romanNumerics:romanNumerics, calculationResult:calculationResult);
-
+ 
 	@Test
 	@Unroll
 	def 'test that when #input is passed to the toBaseTen method the expected result of #expected is returned'() {

@@ -22,7 +22,7 @@ import spock.lang.Unroll
  *
  */
 class ValidatorTest extends Specification  {
-
+ 
 	def theValidator = new Validator();
 
 	@Test

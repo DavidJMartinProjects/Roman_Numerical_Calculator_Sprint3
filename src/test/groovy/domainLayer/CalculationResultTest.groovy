@@ -23,4 +23,4 @@ class CalculationResultTest extends Specification {
 		assertEquals(testValue, calculationResult.getTheResult())
 		assert calculationResult.getTheResult() instanceof String
 	}
-}
+} 

@@ -32,7 +32,7 @@ class ConverterControllerTest extends Specification {
 	def theConverter = Mock(Converter)
 	def theValidator = Mock(Validator)
 	def theConverterController = new ConverterController(converter:theConverter, validator:theValidator);
-
+ 
 	@Test
 	@Unroll
 	def 'verify that if the numeral is I X or C you cannot have more than three in succession'() {

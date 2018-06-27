@@ -86,5 +86,5 @@ class CalculatorWSTest extends Specification {
 		where:
 		numericOne	| numericTwo || expectedStatus						|| exceptionMessage
 		"MMMMM"		| "MMMMM"	 || status().isInternalServerError()	|| "Invalid Roman Numeral Entered."
-	}
+	} 
 }
