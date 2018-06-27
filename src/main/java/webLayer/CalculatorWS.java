@@ -24,6 +24,7 @@ public class CalculatorWS {
 	
 	@Autowired
 	CalculationResult result;
+	
 	@Autowired
 	OperationFactory operationFactory;
 	

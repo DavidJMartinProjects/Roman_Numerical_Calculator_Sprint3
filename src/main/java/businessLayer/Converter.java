@@ -11,6 +11,7 @@
  *----------------------------------------------------------------------------*/
 package businessLayer;
 
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,17 +19,33 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import domainLayer.CalculationResult;
-import domainLayer.RomanNumerics;
 
 @Component
 public class Converter {
 
-	RomanNumerics romanNumerics = new RomanNumerics();
 	CalculationResult calculationResult = new CalculationResult();
+	
+	private final Map<Integer, String> romanNumerics = new LinkedHashMap<Integer, String>();
+	
+	public Converter() {
+		romanNumerics.put(1000, "M");
+		romanNumerics.put(900, "CM");
+		romanNumerics.put(500, "D");
+		romanNumerics.put(400, "CD");
+		romanNumerics.put(100, "C");
+		romanNumerics.put(90, "XC");
+		romanNumerics.put(50, "L");
+		romanNumerics.put(40, "XL");
+		romanNumerics.put(10, "X");
+		romanNumerics.put(9, "IX");
+		romanNumerics.put(5, "V");
+		romanNumerics.put(4, "IV");
+		romanNumerics.put(1, "I");
+	}
 
 	public int toBaseTen(final String input) {
 
-		for (final Map.Entry<Integer, String> entry : romanNumerics.getRomanNumerics().entrySet()) {
+		for (final Map.Entry<Integer, String> entry : romanNumerics.entrySet()) {
 			if (input.startsWith(entry.getValue())) {
 				return entry.getKey() + toBaseTen(input.replaceFirst(entry.getValue(), ""));
 			}
@@ -38,7 +55,7 @@ public class Converter {
 
 	public CalculationResult toRomanNumeral(int input) {
 		String result = "";
-		for (final Map.Entry<Integer, String> entry : romanNumerics.getRomanNumerics().entrySet()) {
+		for (final Map.Entry<Integer, String> entry : romanNumerics.entrySet()) {
 			while (input >= entry.getKey()) {
 				result += entry.getValue();
 				input -= entry.getKey();

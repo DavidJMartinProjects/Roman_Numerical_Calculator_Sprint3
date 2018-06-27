@@ -21,8 +21,11 @@
 	border-style: 1px solid ;
 }
 
-#numTwoLbl {
-	padding-top : 10px;
+.navbar-header {
+    float: left;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
 }
-
+.navbar-brand {float:none;}
   

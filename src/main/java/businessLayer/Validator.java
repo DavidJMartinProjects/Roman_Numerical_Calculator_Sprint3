@@ -23,8 +23,7 @@ public class Validator {
 	
 	String the_regex = new String("^(M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3}))$");
 	
-	public boolean validateInput(final String input) {
-		the_regex = "^(M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3}))$";
+	public boolean validateInput(final String input) {		
 		final Pattern pattern = Pattern.compile(the_regex);
 		final Matcher matcher = pattern.matcher(input);
 		return matcher.matches();
