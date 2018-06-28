@@ -10,11 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import businessLayer.OperationContext;
 import businessLayer.OperationFactory;
+import businessLayer.operations.AvailableOperations;
 import domainLayer.CalculationResult;
 
 @RestController
 @RequestMapping(value = "/calc")
 public class CalculatorWS {
+	
+	@Autowired
+	AvailableOperations availableOperations;
 	
 	@Autowired
 	CalculationResult result;
@@ -41,5 +45,10 @@ public class CalculatorWS {
 			return new ResponseEntity<>(ex, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+	
+	@RequestMapping(value = "/operations", method = RequestMethod.GET, produces = {"application/json"})
+	public ResponseEntity<Object> getOperations() {
+		return new ResponseEntity<>(availableOperations.getAvailableOperations(), HttpStatus.OK);
+	}	
 
 }
