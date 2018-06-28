@@ -23,17 +23,17 @@ import domainLayer.CalculationResult;
 @Component
 public class OperationContext {
 
-	IOperation operation;
+	OperationStrategy operation;
 	
-	public OperationContext(IOperation anOperation){
+	public OperationContext(OperationStrategy anOperation){
 	    this.operation = anOperation;
 	}
 	
-	public IOperation getOperation() {
+	public OperationStrategy getOperation() {
 		return operation;
 	}	
 
-	public void setOperation(IOperation operation) {
+	public void setOperation(OperationStrategy operation) {
 		this.operation = operation;
 	}
 

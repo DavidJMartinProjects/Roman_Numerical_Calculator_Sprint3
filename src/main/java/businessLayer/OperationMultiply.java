@@ -21,7 +21,7 @@ import domainLayer.CalculationResult;
  *
  */
 
-public class OperationMultiply implements IOperation {
+public class OperationMultiply implements OperationStrategy {
 
 	Converter converter = new Converter();
 	Validator validator = new Validator();

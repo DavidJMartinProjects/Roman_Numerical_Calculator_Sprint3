@@ -25,27 +25,26 @@ public class Converter {
 
 	CalculationResult calculationResult = new CalculationResult();
 	
-	private final Map<Integer, String> romanNumerics = new LinkedHashMap<Integer, String>();
+	private final static Map<Integer, String> ROMAN_NUMERICS = new LinkedHashMap<Integer, String>();
 	
 	public Converter() {
-		romanNumerics.put(1000, "M");
-		romanNumerics.put(900, "CM");
-		romanNumerics.put(500, "D");
-		romanNumerics.put(400, "CD");
-		romanNumerics.put(100, "C");
-		romanNumerics.put(90, "XC");
-		romanNumerics.put(50, "L");
-		romanNumerics.put(40, "XL");
-		romanNumerics.put(10, "X");
-		romanNumerics.put(9, "IX");
-		romanNumerics.put(5, "V");
-		romanNumerics.put(4, "IV");
-		romanNumerics.put(1, "I");
+		ROMAN_NUMERICS.put(1000, "M");
+		ROMAN_NUMERICS.put(900, "CM");
+		ROMAN_NUMERICS.put(500, "D");
+		ROMAN_NUMERICS.put(400, "CD");
+		ROMAN_NUMERICS.put(100, "C");
+		ROMAN_NUMERICS.put(90, "XC");
+		ROMAN_NUMERICS.put(50, "L");
+		ROMAN_NUMERICS.put(40, "XL");
+		ROMAN_NUMERICS.put(10, "X");
+		ROMAN_NUMERICS.put(9, "IX");
+		ROMAN_NUMERICS.put(5, "V");
+		ROMAN_NUMERICS.put(4, "IV");
+		ROMAN_NUMERICS.put(1, "I");
 	}
 
 	public int toBaseTen(final String input) {
-
-		for (final Map.Entry<Integer, String> entry : romanNumerics.entrySet()) {
+		for (final Map.Entry<Integer, String> entry : ROMAN_NUMERICS.entrySet()) {
 			if (input.startsWith(entry.getValue())) {
 				return entry.getKey() + toBaseTen(input.replaceFirst(entry.getValue(), ""));
 			}
@@ -55,7 +54,7 @@ public class Converter {
 
 	public CalculationResult toRomanNumeral(int input) {
 		String result = "";
-		for (final Map.Entry<Integer, String> entry : romanNumerics.entrySet()) {
+		for (final Map.Entry<Integer, String> entry : ROMAN_NUMERICS.entrySet()) {
 			while (input >= entry.getKey()) {
 				result += entry.getValue();
 				input -= entry.getKey();

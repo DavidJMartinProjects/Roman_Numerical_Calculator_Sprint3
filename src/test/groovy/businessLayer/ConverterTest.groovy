@@ -27,13 +27,11 @@ class ConverterTest extends Specification {
 	def input, expected
 	def calculationResult = new CalculationResult()
 	def romanNumerics = Mock(RomanNumerics.class)
-	def theConverter= new Converter(romanNumerics:romanNumerics, calculationResult:calculationResult);
+	def theConverter= new Converter(calculationResult:calculationResult);
  
 	@Test
 	@Unroll
 	def 'test that when #input is passed to the toBaseTen method the expected result of #expected is returned'() {
-		given:
-		romanNumerics.getRomanNumerics() >> new RomanNumerics().getRomanNumerics();
 
 		when: 'when the toBaseTen method is called'
 		def result = theConverter.toBaseTen(input);

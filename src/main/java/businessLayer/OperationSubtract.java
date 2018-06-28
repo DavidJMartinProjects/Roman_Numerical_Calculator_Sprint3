@@ -21,7 +21,7 @@ import domainLayer.CalculationResult;
  * @author eaamrvd
  *
  */
-public class OperationSubtract implements IOperation {
+public class OperationSubtract implements OperationStrategy {
 
 
 	Converter converter = new Converter();

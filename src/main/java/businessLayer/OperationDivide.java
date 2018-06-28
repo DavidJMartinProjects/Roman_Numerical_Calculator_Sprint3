@@ -21,7 +21,7 @@ import domainLayer.CalculationResult;
  *
  */
 
-public class OperationDivide implements IOperation {
+public class OperationDivide implements OperationStrategy {
 
 	Converter converter = new Converter();
 	Validator validator = new Validator();

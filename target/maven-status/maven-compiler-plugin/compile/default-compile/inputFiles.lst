@@ -1,14 +1,13 @@
 C:\repo_internship_project_master\com.calculator\src\main\java\businessLayer\Converter.java
+C:\repo_internship_project_master\com.calculator\src\main\java\businessLayer\OperationStrategy.java
 C:\repo_internship_project_master\com.calculator\src\main\java\businessLayer\OperationDivide.java
 C:\repo_internship_project_master\com.calculator\src\main\java\businessLayer\OperationFactory.java
 C:\repo_internship_project_master\com.calculator\src\main\java\domainLayer\RomanNumerics.java
 C:\repo_internship_project_master\com.calculator\src\main\java\businessLayer\OperationMultiply.java
-C:\repo_internship_project_master\com.calculator\src\main\java\businessLayer\IOperation.java
 C:\repo_internship_project_master\com.calculator\src\main\java\businessLayer\OperationContext.java
 C:\repo_internship_project_master\com.calculator\src\main\java\businessLayer\OperationSubtract.java
 C:\repo_internship_project_master\com.calculator\src\main\java\webLayer\CalculatorWS.java
 C:\repo_internship_project_master\com.calculator\src\main\java\businessLayer\Application.java
 C:\repo_internship_project_master\com.calculator\src\main\java\domainLayer\CalculationResult.java
 C:\repo_internship_project_master\com.calculator\src\main\java\businessLayer\OperationAdd.java
-C:\repo_internship_project_master\com.calculator\src\main\java\businessLayer\ConverterController.java
 C:\repo_internship_project_master\com.calculator\src\main\java\businessLayer\Validator.java

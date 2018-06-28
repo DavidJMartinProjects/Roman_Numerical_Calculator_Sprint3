@@ -23,7 +23,7 @@ import domainLayer.CalculationResult;
  */
 
 @Component
-public class OperationAdd implements IOperation {
+public class OperationAdd implements OperationStrategy {
 
 	Converter converter = new Converter();
 	Validator validator = new Validator();

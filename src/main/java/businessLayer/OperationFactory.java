@@ -20,7 +20,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class OperationFactory {
 
-	public IOperation getOperation(String operationType) {
+	public OperationStrategy getOperation(String operationType) {
 		if(operationType.equals("add")) {
 			return new OperationAdd();
 		} else if(operationType.equals("subtract")) {

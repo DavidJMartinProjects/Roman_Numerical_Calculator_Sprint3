@@ -20,6 +20,6 @@ import domainLayer.CalculationResult;
  *
  */
 
-public interface IOperation {	
+public interface OperationStrategy {	
 	CalculationResult calculate(String numeral1, String numeral2);
 }
