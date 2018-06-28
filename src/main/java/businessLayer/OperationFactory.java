@@ -13,12 +13,18 @@ package businessLayer;
 
 import org.springframework.stereotype.Component;
 
+import businessLayer.api.OperationStrategy;
+import businessLayer.operations.OperationAdd;
+import businessLayer.operations.OperationDivide;
+import businessLayer.operations.OperationMultiply;
+import businessLayer.operations.OperationSubtract;
+
 /**
  * @author eaamrvd
  *
  */
 @Component
-public class OperationFactory {
+public class OperationFactory { 
 
 	public OperationStrategy getOperation(String operationType) {
 		if(operationType.equals("add")) {

@@ -16,6 +16,7 @@ import org.hibernate.validator.internal.metadata.aggregated.ValidatableParameter
 import org.junit.Test
 import spock.lang.Specification
 import spock.lang.Unroll
+import utils.Validator
 
 /**
  * @author eaamrvd
@@ -30,7 +31,7 @@ class ValidatorTest extends Specification  {
 	def 'verify that the expected validation result of #expected is returned when the valid Roman numeral #input is passed to the validateInput method'() {
 
 		when: 'the validateInput method is called with a valid argument'
-		def result = theValidator.validateInput(input);
+		def result = theValidator.validateRomanNumeral(input);
 
 		then: 'verify that the expected validation result is returned'
 		result == expected
@@ -57,7 +58,7 @@ class ValidatorTest extends Specification  {
 	def 'verify that the expected validation result of #expected is returned when the invalid Roman numeral #input is passed to the validateInput method'() {
 
 		when: 'the validateInput method is called with an invalid argument'
-		def result = theValidator.validateInput(input);
+		def result = theValidator.validateRomanNumeral(input);
 
 		then: 'verify that the expected validation result is returned'
 		result == expected

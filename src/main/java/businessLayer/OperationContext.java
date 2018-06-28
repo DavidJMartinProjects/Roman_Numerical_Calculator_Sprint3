@@ -11,9 +11,9 @@
  *----------------------------------------------------------------------------*/
 package businessLayer;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import businessLayer.api.OperationStrategy;
 import domainLayer.CalculationResult;
 
 /**
@@ -27,7 +27,7 @@ public class OperationContext {
 	
 	public OperationContext(OperationStrategy anOperation){
 	    this.operation = anOperation;
-	}
+	}	
 	
 	public OperationStrategy getOperation() {
 		return operation;

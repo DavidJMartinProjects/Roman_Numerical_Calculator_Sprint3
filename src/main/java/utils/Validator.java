@@ -9,22 +9,20 @@
  * program(s) have been supplied.
  *******************************************************************************
  *----------------------------------------------------------------------------*/
-package businessLayer;
+package utils;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component	
 public class Validator {
 	
 	String the_regex = new String("^(M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3}))$");
 	//ref:https://stackoverflow.com/questions/267399/how-do-you-match-only-valid-roman-numerals-with-a-regular-expression
 	
-	public boolean validateInput(final String input) {		
+	public boolean validateRomanNumeral(final String input) {		
 		final Pattern pattern = Pattern.compile(the_regex);
 		final Matcher matcher = pattern.matcher(input);
 		return matcher.matches();

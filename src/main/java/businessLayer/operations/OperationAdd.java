@@ -5,41 +5,42 @@
  * The copyright to the computer program(s) herein is the property of
  * Ericsson Inc. The programs may be used and/or copied only with written
  * permission from Ericsson Inc. or in accordance with the terms and
- * conditions stipulated in the agreement/contract under which the
+ * conditions stipulated in the agreement/contract under which the	
  * program(s) have been supplied.
  *******************************************************************************
  *----------------------------------------------------------------------------*/
-package businessLayer;
+package businessLayer.operations;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.stereotype.Component;
 
+import businessLayer.Converter;
+import businessLayer.api.OperationStrategy;
 import domainLayer.CalculationResult;
+import utils.Validator;
 
 /**
  * @author eaamrvd
  *
  */
-public class OperationSubtract implements OperationStrategy {
 
+@Component
+public class OperationAdd implements OperationStrategy {
 
 	Converter converter = new Converter();
 	Validator validator = new Validator();
-	
+
 	@Override
 	public CalculationResult calculate(String numeral1, String numeral2) {
 		if (validate(numeral1, numeral2)) {
 			final int num1 = converter.toBaseTen(numeral1);
 			final int num2 = converter.toBaseTen(numeral2);
-			return converter.toRomanNumeral(num1 - num2);
+			return converter.toRomanNumeral(num1 + num2);
 		} else {
 			throw new IllegalArgumentException("Invalid Roman Numeral Entered.");
 		}
 	}
 
 	public boolean validate(final String input1, final String input2) {
-		return (validator.validateInput(input1) && validator.validateInput(input2));
+		return (validator.validateRomanNumeral(input1) && validator.validateRomanNumeral(input2));
 	}
-
 }

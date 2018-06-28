@@ -9,17 +9,17 @@
  * program(s) have been supplied.
  *******************************************************************************
  *----------------------------------------------------------------------------*/
-package businessLayer;
+package businessLayer.operations;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
+import businessLayer.Converter;
+import businessLayer.api.OperationStrategy;
 import domainLayer.CalculationResult;
+import utils.Validator;
 
 /**
  * @author eaamrvd
  *
- */
+ */	
 
 public class OperationDivide implements OperationStrategy {
 
@@ -38,7 +38,7 @@ public class OperationDivide implements OperationStrategy {
 	}
 
 	public boolean validate(final String input1, final String input2) {
-		return (validator.validateInput(input1) && validator.validateInput(input2));
+		return (validator.validateRomanNumeral(input1) && validator.validateRomanNumeral(input2));
 	}
 
 }

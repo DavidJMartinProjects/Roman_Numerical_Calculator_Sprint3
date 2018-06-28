@@ -14,9 +14,7 @@ package businessLayer;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import domainLayer.CalculationResult;
 
@@ -31,7 +29,7 @@ public class Converter {
 		ROMAN_NUMERICS.put(1000, "M");
 		ROMAN_NUMERICS.put(900, "CM");
 		ROMAN_NUMERICS.put(500, "D");
-		ROMAN_NUMERICS.put(400, "CD");
+		ROMAN_NUMERICS.put(400, "CD");	
 		ROMAN_NUMERICS.put(100, "C");
 		ROMAN_NUMERICS.put(90, "XC");
 		ROMAN_NUMERICS.put(50, "L");
