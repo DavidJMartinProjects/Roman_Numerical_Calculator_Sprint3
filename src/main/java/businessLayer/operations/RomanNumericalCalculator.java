@@ -11,20 +11,18 @@
  *----------------------------------------------------------------------------*/
 package businessLayer.operations;
 
-import org.springframework.stereotype.Component;
-
 import businessLayer.Converter;
-import businessLayer.api.CalculatorStrategy;
+import businessLayer.api.Calculator;
 import domainLayer.CalculationResult;
 import utils.Validator;
 
-public abstract class RomanNumericalCalculator implements CalculatorStrategy {
+public abstract class RomanNumericalCalculator implements Calculator {
 	
-	Converter converter = new Converter();
-	Validator validator = new Validator();
+	final Converter converter = new Converter();
+	final Validator validator = new Validator();
 	
 	@Override
-	public CalculationResult doCalculation(String romanNumeral1, String romanNumeral2) {		
+	public CalculationResult doCalculation(final String romanNumeral1, final String romanNumeral2) {		
 		if(validateRomanNumerals(romanNumeral1, romanNumeral2) && validateOperation(converter.toBaseTen(romanNumeral1), converter.toBaseTen(romanNumeral2))) {
 			return calculate(converter.toBaseTen(romanNumeral1), converter.toBaseTen(romanNumeral2));			
 		}		
@@ -36,5 +34,6 @@ public abstract class RomanNumericalCalculator implements CalculatorStrategy {
 	}
 	
 	public abstract boolean validateOperation(final int numeral1, final int numeral2);
+	
 	public abstract CalculationResult calculate(int num1, int num2);
 }

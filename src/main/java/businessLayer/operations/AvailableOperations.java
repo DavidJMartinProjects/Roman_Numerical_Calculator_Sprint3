@@ -17,7 +17,7 @@ public enum AvailableOperations {
 	
 	private String symbol;
 	
-	AvailableOperations(String aSymbol) {
+	AvailableOperations(final String aSymbol) {
 		this.symbol = aSymbol;
 	}
 
@@ -25,14 +25,14 @@ public enum AvailableOperations {
 		return symbol;
 	}
 
-	public void setSymbol(String symbol) {
+	public void setSymbol(final String symbol) {
 		this.symbol = symbol;
 	}
 
 	public static String getAvailableOperations() {
 		String operations = "";
-		AvailableOperations arr[] = AvailableOperations.values();
-		for(AvailableOperations op : arr) {
+		final AvailableOperations arr[] = AvailableOperations.values();
+		for(final AvailableOperations op : arr) {
 			if(op != null) {
 				operations+= op.getSymbol();
 			}

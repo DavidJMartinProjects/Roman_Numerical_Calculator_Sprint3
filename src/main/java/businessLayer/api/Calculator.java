@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 import domainLayer.CalculationResult;
 
 @Component
-public interface CalculatorStrategy {
+public interface Calculator {
 	CalculationResult doCalculation(String romanNumeral1, String romanNumeral2);
 }
 	

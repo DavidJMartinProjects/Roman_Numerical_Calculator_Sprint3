@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverFactory {
-	public static WebDriver open(String browserType){
+	public static WebDriver open(final String browserType){
 		if(browserType.equalsIgnoreCase("firefox")){
 			System.setProperty("webdriver.gecko.driver","C:\\selenium\\geckodriver.exe");
 			return new FirefoxDriver();

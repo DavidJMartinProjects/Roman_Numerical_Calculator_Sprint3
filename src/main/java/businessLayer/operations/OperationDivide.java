@@ -11,7 +11,7 @@
  *----------------------------------------------------------------------------*/
 package businessLayer.operations;
 
-import businessLayer.api.CalculatorStrategy;
+import businessLayer.api.Calculator;
 import domainLayer.CalculationResult;
 
 /**
@@ -19,15 +19,15 @@ import domainLayer.CalculationResult;
  *
  */	
 
-public class OperationDivide extends RomanNumericalCalculator implements CalculatorStrategy  {
+public class OperationDivide extends RomanNumericalCalculator implements Calculator  {
 
 	@Override
-	public boolean validateOperation(int numeral1, int numeral2) {		
+	public boolean validateOperation(final int numeral1, final int numeral2) {		
 		return true;	
 	}
 
 	@Override	
-	public CalculationResult calculate(int num1, int num2) {		
+	public CalculationResult calculate(final int num1, final int num2) {		
 		return converter.toRomanNumeral(num1 / num2);		
 	}
 

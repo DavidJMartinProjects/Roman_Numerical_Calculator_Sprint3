@@ -13,7 +13,7 @@ package businessLayer;
 
 import org.springframework.stereotype.Component;
 
-import businessLayer.api.CalculatorStrategy;
+import businessLayer.api.Calculator;
 import businessLayer.operations.OperationAdd;
 import businessLayer.operations.OperationDivide;
 import businessLayer.operations.OperationMultiply;
@@ -22,15 +22,14 @@ import businessLayer.operations.OperationSubtract;
 @Component	
 public class OperationFactory { 
 
-	public CalculatorStrategy getOperation(String operationType) {
-		if(operationType.equals("add")) {
+	public Calculator getOperation(final String operationType) {
+		if("add".equals(operationType)) {
 			return new OperationAdd();
-		}		
-		else if(operationType.equals("subtract")) {
+		} else if("subtract".equals(operationType)) {
 			return new OperationSubtract();		
-		} else if(operationType.equals("divide")) {
+		} else if("divide".equals(operationType)) {
 			return new OperationDivide();
-		} else if(operationType.equals("multiply")) {
+		} else if("multiply".equals(operationType)) {
 			return new OperationMultiply();
 		} 
 		return null;
