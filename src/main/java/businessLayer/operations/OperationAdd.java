@@ -20,14 +20,12 @@ import domainLayer.CalculationResult;
 public class OperationAdd extends RomanNumericalCalculator implements CalculatorStrategy {
 
 	@Override
-	public boolean validateOperation(int numeral1, int numeral2) {
-		System.out.println("inside OperationAdd.validateOperation()");
+	public boolean validateOperation(int numeral1, int numeral2) {		
 		return true;	
 	}
 
 	@Override
-	public CalculationResult calculate(int num1, int num2) {
-		System.out.println("inside OperationAdd.calculate()");
+	public CalculationResult calculate(int num1, int num2) {		
 		return converter.toRomanNumeral(num1 + num2);		
 	}
 

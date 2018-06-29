@@ -18,15 +18,13 @@ import businessLayer.api.CalculatorStrategy;
 import domainLayer.CalculationResult;
 import utils.Validator;
 
-@Component
 public abstract class RomanNumericalCalculator implements CalculatorStrategy {
 	
 	Converter converter = new Converter();
 	Validator validator = new Validator();
 	
 	@Override
-	public CalculationResult doCalculation(String romanNumeral1, String romanNumeral2) {
-		System.out.println("inside RomanNumericalCalculator.doCalculation()");
+	public CalculationResult doCalculation(String romanNumeral1, String romanNumeral2) {		
 		if(validateRomanNumerals(romanNumeral1, romanNumeral2) && validateOperation(converter.toBaseTen(romanNumeral1), converter.toBaseTen(romanNumeral2))) {
 			return calculate(converter.toBaseTen(romanNumeral1), converter.toBaseTen(romanNumeral2));			
 		}		

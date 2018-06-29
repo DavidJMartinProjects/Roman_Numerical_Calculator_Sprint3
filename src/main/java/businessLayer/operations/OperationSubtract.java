@@ -11,27 +11,20 @@
  *----------------------------------------------------------------------------*/
 package businessLayer.operations;
 
-import businessLayer.Converter;
+import businessLayer.api.CalculatorStrategy;
 import domainLayer.CalculationResult;
-import utils.Validator;
 
-public class OperationSubtract  { 		
+public class OperationSubtract extends RomanNumericalCalculator implements CalculatorStrategy  { 		
 
-	Converter converter = new Converter();
-	Validator validator = new Validator();	
-
-	public CalculationResult calculate(String numeral1, String numeral2) {
-		if (validate(numeral1, numeral2)) {
-			final int num1 = converter.toBaseTen(numeral1);
-			final int num2 = converter.toBaseTen(numeral2);
-			return converter.toRomanNumeral(num1 - num2);
-		} else {
-			throw new IllegalArgumentException("Invalid Roman Numeral Entered.");
-		}
+	@Override
+	public boolean validateOperation(int numeral1, int numeral2) {		
+		return true;	
 	}
 
-	public boolean validate(final String input1, final String input2) {
-		return (validator.validateRomanNumeral(input1) && validator.validateRomanNumeral(input2));
+	@Override	
+	public CalculationResult calculate(int num1, int num2) {		
+		return converter.toRomanNumeral(num1 - num2);		
 	}
 
 }
+	

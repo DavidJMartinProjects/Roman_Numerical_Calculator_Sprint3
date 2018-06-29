@@ -14,6 +14,7 @@ package businessLayer.api;
 import org.springframework.stereotype.Component;
 
 import domainLayer.CalculationResult;
+
 @Component
 public interface CalculatorStrategy {
 	CalculationResult doCalculation(String romanNumeral1, String romanNumeral2);

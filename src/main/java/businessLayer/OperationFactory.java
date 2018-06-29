@@ -19,25 +19,20 @@ import businessLayer.operations.OperationDivide;
 import businessLayer.operations.OperationMultiply;
 import businessLayer.operations.OperationSubtract;
 
-/**
- * @author eaamrvd
- *
- */
 @Component	
 public class OperationFactory { 
 
 	public CalculatorStrategy getOperation(String operationType) {
 		if(operationType.equals("add")) {
 			return new OperationAdd();
+		}		
+		else if(operationType.equals("subtract")) {
+			return new OperationSubtract();		
+		} else if(operationType.equals("divide")) {
+			return new OperationDivide();
+		} else if(operationType.equals("multiply")) {
+			return new OperationMultiply();
 		} 
-		
-//		else if(operationType.equals("subtract")) {
-//			return new OperationSubtract();		
-//		} else if(operationType.equals("divide")) {
-//			return new OperationDivide();
-//		} else if(operationType.equals("multiply")) {
-//			return new OperationMultiply();
-//		} 
 		return null;
 	}
 	
