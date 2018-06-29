@@ -18,9 +18,6 @@ import domainLayer.CalculationResult;
 public class CalculatorWS {
 	
 	@Autowired
-	AvailableOperations availableOperations;
-	
-	@Autowired
 	CalculationResult result;
 	
 	@Autowired
@@ -46,9 +43,9 @@ public class CalculatorWS {
 		}
 	}
 	
-	@RequestMapping(value = "/operations", method = RequestMethod.GET, produces = {"application/json"})
-	public ResponseEntity<Object> getOperations() {
-		return new ResponseEntity<>(availableOperations.getAvailableOperations(), HttpStatus.OK);
+	@RequestMapping(value = "/operations", method = RequestMethod.GET, produces = { "application/json" })
+	public ResponseEntity<Object> getOperations() {		
+		return new ResponseEntity<>(AvailableOperations.getAvailableOperations(), HttpStatus.OK);
 	}	
 
 }

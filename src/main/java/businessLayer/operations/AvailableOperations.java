@@ -11,15 +11,12 @@
  *----------------------------------------------------------------------------*/
 package businessLayer.operations;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public enum AvailableOperations {
 
 	PLUS("+"), MINUS("-"), DIVIDE("/"), MULTIPLY("*");
-
+	
 	private String symbol;
-
+	
 	AvailableOperations(String aSymbol) {
 		this.symbol = aSymbol;
 	}
@@ -32,15 +29,15 @@ public enum AvailableOperations {
 		this.symbol = symbol;
 	}
 
-	public String[] getAvailableOperations() {
-		String[] operations = new String[values().length];
-		int index = 0;
-
-		for (AvailableOperations state : values()) {
-			operations[index++] = state.name();
+	public static String getAvailableOperations() {
+		String operations = "";
+		AvailableOperations arr[] = AvailableOperations.values();
+		for(AvailableOperations op : arr) {
+			if(op != null) {
+				operations+= op.getSymbol();
+			}
 		}
-
 		return operations;
-	}
+	}	
 
 }

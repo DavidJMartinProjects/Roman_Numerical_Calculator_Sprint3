@@ -1,15 +1,7 @@
-/**
- * 
- */
 var rootUrl = 'http://localhost:8080/calc/addition'
+var populateListURL = 'http://localhost:8080/calc/operations' 
 
-$(document).on('click', '#calcBtn', function() {
-	calculate();
-	return false;
-});
-
-function calculate() {
-	
+function calculate() {	
 	$("#result").text("");
 	$("#validationMessage").text("");
 
@@ -33,14 +25,12 @@ function calculate() {
 	if ($("#numOneTf").val() == "" || $("#numTwoTf").val() == "" || $("#numOneTf").val() == null || $("#numTwoTf").val() == null) {
 		$("#validationMessage").text("Please Input a Roman Numeral.")
 	} else {
+		
 		$.ajax({
 			type : 'GET',
 			url : rootUrl+ "?num1="+num1+"&num2="+num2+"&operationType="+opType,
 			contentType : "application/json",
 			dataType : "json",
-			data : {
-
-			},
 			success : function(response) {
 				console.log("success");
 				$("#result").text("Result : " + num1 + " + " + num2 + " = "	+ response.theResult + "");
@@ -53,6 +43,11 @@ function calculate() {
 				$("#validationMessage").text("Invalid Roman Numerical Format.")
 			}
 		});
+		
 	}
-
 }
+
+$(document).on('click', '#calcBtn', function() {
+	calculate();
+	return false;
+});
