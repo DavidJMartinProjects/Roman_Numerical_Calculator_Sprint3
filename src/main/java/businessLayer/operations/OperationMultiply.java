@@ -12,21 +12,15 @@
 package businessLayer.operations;
 
 import businessLayer.Converter;
-import businessLayer.api.OperationStrategy;
 import domainLayer.CalculationResult;
 import utils.Validator;
-
-/**
- * @author eaamrvd	
- *
- */
  
-public class OperationMultiply implements OperationStrategy {
+public class OperationMultiply {
 
-	Converter converter = new Converter();
+	Converter converter = new Converter();	
 	Validator validator = new Validator();
 	
-	@Override
+
 	public CalculationResult calculate(String numeral1, String numeral2) {
 		if (validate(numeral1, numeral2)) {
 			final int num1 = converter.toBaseTen(numeral1);

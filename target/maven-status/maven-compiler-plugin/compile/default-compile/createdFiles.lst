@@ -2,5 +2,4 @@ businessLayer\Converter.class
 domainLayer\CalculationResult.class
 webLayer\CalculatorWS.class
 businessLayer\Application.class
-businessLayer\Validator.class
 domainLayer\RomanNumerics.class

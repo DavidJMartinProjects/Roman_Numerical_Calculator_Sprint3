@@ -11,9 +11,10 @@
  *----------------------------------------------------------------------------*/
 package businessLayer;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import businessLayer.api.OperationStrategy;
+import businessLayer.api.CalculatorStrategy;
 import domainLayer.CalculationResult;
 
 /**
@@ -22,22 +23,23 @@ import domainLayer.CalculationResult;
  */
 @Component
 public class OperationContext {
-
-	OperationStrategy operation;
 	
-	public OperationContext(OperationStrategy anOperation){
+	@Autowired
+	CalculatorStrategy operation;	
+			
+	public OperationContext(CalculatorStrategy anOperation){
 	    this.operation = anOperation;
 	}	
 	
-	public OperationStrategy getOperation() {
+	public CalculatorStrategy getOperation() {
 		return operation;
 	}	
 
-	public void setOperation(OperationStrategy operation) {
+	public void setOperation(CalculatorStrategy operation) {
 		this.operation = operation;
 	}
 
 	public CalculationResult executeOperation(String num1, String num2) {
-		return operation.calculate(num1, num2);
+		return operation.doCalculation(num1, num2);
 	}
 }

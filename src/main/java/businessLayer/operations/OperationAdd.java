@@ -13,34 +13,22 @@ package businessLayer.operations;
 
 import org.springframework.stereotype.Component;
 
-import businessLayer.Converter;
-import businessLayer.api.OperationStrategy;
+import businessLayer.api.CalculatorStrategy;
 import domainLayer.CalculationResult;
-import utils.Validator;
-
-/**
- * @author eaamrvd
- *
- */
 
 @Component
-public class OperationAdd implements OperationStrategy {
-
-	Converter converter = new Converter();
-	Validator validator = new Validator();
+public class OperationAdd extends RomanNumericalCalculator implements CalculatorStrategy {
 
 	@Override
-	public CalculationResult calculate(String numeral1, String numeral2) {
-		if (validate(numeral1, numeral2)) {
-			final int num1 = converter.toBaseTen(numeral1);
-			final int num2 = converter.toBaseTen(numeral2);
-			return converter.toRomanNumeral(num1 + num2);
-		} else {
-			throw new IllegalArgumentException("Invalid Roman Numeral Entered.");
-		}
+	public boolean validateOperation(int numeral1, int numeral2) {
+		System.out.println("inside OperationAdd.validateOperation()");
+		return true;	
 	}
 
-	public boolean validate(final String input1, final String input2) {
-		return (validator.validateRomanNumeral(input1) && validator.validateRomanNumeral(input2));
+	@Override
+	public CalculationResult calculate(int num1, int num2) {
+		System.out.println("inside OperationAdd.calculate()");
+		return converter.toRomanNumeral(num1 + num2);		
 	}
+
 }
