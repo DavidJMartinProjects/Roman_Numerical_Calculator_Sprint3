@@ -3,6 +3,7 @@ package webLayer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -31,7 +32,8 @@ public class CalculatorWS {
 		return "status : webService online";
 	}
 
-	@RequestMapping(value = "/addition", method = RequestMethod.GET, produces = { "application/json" })
+//	@RequestMapping(value = "/addition", method = RequestMethod.GET, produces = { "application/json" })
+	@GetMapping
 	public ResponseEntity<Object> calculate(@RequestParam("num1") final String num1, @RequestParam("num2") final String num2, 
 			@RequestParam("operationType") final String operationType) {
 		try {			

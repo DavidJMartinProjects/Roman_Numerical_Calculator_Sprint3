@@ -1,4 +1,4 @@
-var rootUrl = 'http://localhost:8080/calc/addition'
+var rootUrl = 'http://localhost:8080/calc'
 var populateListURL = 'http://localhost:8080/calc/operations' 
 
 function calculate() {	
@@ -19,8 +19,6 @@ function calculate() {
 	} else if(operation == "*") {
 		opType = "multiply";
 	}
-		
-	console.log("operation type selected : " + operation);
 
 	if ($("#numOneTf").val() == "" || $("#numTwoTf").val() == "" || $("#numOneTf").val() == null || $("#numTwoTf").val() == null) {
 		$("#validationMessage").text("Please Input a Roman Numeral.")
@@ -42,8 +40,7 @@ function calculate() {
 				console.log("error");
 				$("#validationMessage").text("Invalid Roman Numerical Format.")
 			}
-		});
-		
+		});		
 	}
 }
 
