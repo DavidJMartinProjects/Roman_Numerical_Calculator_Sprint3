@@ -1,4 +1,10 @@
 C:\repo_internship_project_master\com.calculator\src\test\java\bdd\TestRunner.java
 C:\repo_internship_project_master\com.calculator\src\test\java\selenium\SeleniumUAT.java
 C:\repo_internship_project_master\com.calculator\src\test\java\ultilities\DriverFactory.java
+C:\repo_internship_project_master\com.calculator\target\generated-sources\groovy-stubs\test\webLayer\CalculatorWSTest.java
 C:\repo_internship_project_master\com.calculator\src\test\java\stepDefinition\CalculatonSteps.java
+C:\repo_internship_project_master\com.calculator\target\generated-sources\groovy-stubs\test\domainLayer\RomanNumericsTest.java
+C:\repo_internship_project_master\com.calculator\target\generated-sources\groovy-stubs\test\businessLayer\ConverterTest.java
+C:\repo_internship_project_master\com.calculator\target\generated-sources\groovy-stubs\test\domainLayer\CalculationResultTest.java
+C:\repo_internship_project_master\com.calculator\target\generated-sources\groovy-stubs\test\businessLayer\ConverterControllerTest.java
+C:\repo_internship_project_master\com.calculator\target\generated-sources\groovy-stubs\test\businessLayer\ValidatorTest.java

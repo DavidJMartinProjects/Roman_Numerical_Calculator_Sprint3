@@ -11,7 +11,7 @@
  *----------------------------------------------------------------------------*/
 package businessLayer
 
-import org.apache.ivy.core.module.descriptor.ExtendsDescriptor
+
 import org.hibernate.validator.internal.metadata.aggregated.ValidatableParametersMetaData
 import org.junit.Test
 import spock.lang.Specification
