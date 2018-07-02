@@ -34,7 +34,7 @@ public class CalculatorWS {
 
 	@GetMapping
 	public ResponseEntity<Object> calculate(@RequestParam("num1") final String num1, @RequestParam("num2") final String num2, 
-			@RequestParam("operationType") final String operationType) throws Exception {	
+			@RequestParam("operationType") final String operationType) {	
 			context.setOperation(operationFactory.getOperation(operationType));
 			result = context.executeOperation(num1, num2);
 			return new ResponseEntity<>(result, HttpStatus.OK);

@@ -19,29 +19,20 @@ import org.junit.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import domainLayer.CalculationResult;
 import ultilities.DriverFactory;
 
 public class CalculatonSteps {
 	
-	private final String browserType = "chrome";
+	private final static String browserType = "chrome";
 	private final WebDriver driver = DriverFactory.open(browserType);
-	private final boolean acceptNextAlert = true;
-	private final StringBuffer verificationErrors = new StringBuffer();
+	private final static StringBuffer verificationErrors = new StringBuffer();
 
-    @Autowired
-    private WebDriver webDriver;
-    
-    @Autowired
-    private CalculationResult calculationResult;
-    
-	@Before
+	@Before	
 	public void setUp() throws Exception {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
