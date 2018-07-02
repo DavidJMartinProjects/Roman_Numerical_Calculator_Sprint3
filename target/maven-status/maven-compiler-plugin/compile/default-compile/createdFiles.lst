@@ -1,0 +1,13 @@
+businessLayer\Converter.class
+businessLayer\operations\SupportedOperations.class
+businessLayer\operations\SubtractOperation.class
+businessLayer\api\Calculator.class
+businessLayer\operations\MultiplyOperation.class
+businessLayer\operations\RomanNumericalCalculator.class
+webLayer\CalculatorWS.class
+utils\Validator.class
+businessLayer\Application.class
+businessLayer\operations\AddOperation.class
+businessLayer\OperationFactory.class
+businessLayer\OperationContext.class
+businessLayer\operations\DivideOperation.class
