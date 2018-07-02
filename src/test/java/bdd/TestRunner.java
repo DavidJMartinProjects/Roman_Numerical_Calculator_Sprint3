@@ -7,7 +7,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="src/test/resources/calculator.feature",glue={"stepDefinition"})		
+@CucumberOptions(features="src/test/resources/",glue={"stepDefinition"})		
 
 
 public class TestRunner {

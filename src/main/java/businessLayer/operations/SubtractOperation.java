@@ -17,7 +17,7 @@ import domainLayer.CalculationResult;
 public class SubtractOperation extends RomanNumericalCalculator implements Calculator  { 		
 
 	@Override
-	public boolean validateOperation(final int numeral1, final int numeral2) {		
+	public boolean preCalculationValidation(final int numeral1, final int numeral2) {		
 		return true;	
 	}
 
