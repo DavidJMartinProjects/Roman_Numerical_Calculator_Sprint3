@@ -38,9 +38,11 @@ public class CalculatonSteps {
 	}
 	
 	@Given("^The browser is on the homepage$")
-	public void whenGiven() throws Throwable {		
+	public void whenGiven() throws Throwable {	
+		driver.manage().window().maximize();
 		driver.get("http://localhost:8080/");
 	}
+	
 	@When("^The input fields are populated with roman numerals LX and XIV$")
 	public void theInputFieldsArePopulated() throws Throwable {		
 		driver.findElement(By.id("numOneTf")).click();
