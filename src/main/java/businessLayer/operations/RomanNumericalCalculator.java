@@ -17,8 +17,8 @@ import utils.Validator;
 
 public abstract class RomanNumericalCalculator implements Calculator {
 	
-	final protected Converter converter = new Converter();
-	final protected Validator validator = new Validator();
+	protected final Converter converter = new Converter();
+	private final Validator validator = new Validator();
 	
 	@Override
 	public String doCalculation(final String romanNumeral1, final String romanNumeral2) {		
@@ -35,4 +35,4 @@ public abstract class RomanNumericalCalculator implements Calculator {
 	public abstract boolean preCalculationValidation(final int num1, final int	 num2);
 	
 	public abstract String calculate(int num1, int num2);
-}
+} 

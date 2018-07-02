@@ -1,6 +1,4 @@
 autoEnabled=true
 eclipse.preferences.version=1
 extraProperties=
-moduleKey=com.calculator\:com.calculator
-projectKey=com.calculator\:com.calculator
-serverId=localhost
+fileExclusions=

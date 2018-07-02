@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="webLayer.CalculatorWSTest" time="2.775" tests="14" errors="0" skipped="0" failures="0">
+<testsuite name="webLayer.CalculatorWSTest" time="2.612" tests="14" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_171\jre\bin"/>
@@ -26,7 +26,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
-    <property name="classworlds.conf" value="C:\workspace_internship_project\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf5107087969600154677.tmp"/>
+    <property name="classworlds.conf" value="C:\workspace_internship_project\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf7583605850983867493.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_171\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Software/Java8/bin/server;C:/Software/Java8/bin;C:/Software/Java8/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Users\DJ\AppData\Local\Microsoft\WindowsApps;;C:\Users\DJ\Downloads\eclipse-jee-oxygen-R-win32-x86_64\eclipse;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -60,18 +60,18 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="when a GET request is made to the /calc/status url the expected response message and a 200 OK status should be returned" classname="webLayer.CalculatorWSTest" time="2.697"/>
-  <testcase name="when D and D are passed as Strings M is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0.032"/>
-  <testcase name="when CD and D are passed as Strings CM is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0"/>
-  <testcase name="when CCL and CCL are passed as Strings D is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0"/>
-  <testcase name="when CC and CC are passed as Strings CD is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0.015"/>
-  <testcase name="when L and L are passed as Strings C is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0"/>
-  <testcase name="when L and XL are passed as Strings XC is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0"/>
-  <testcase name="when XXV and XXV are passed as Strings L is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0"/>
-  <testcase name="when XX and XX are passed as Strings XL is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0.016"/>
-  <testcase name="when V and V are passed as Strings X is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0"/>
-  <testcase name="when V and IV are passed as Strings IX is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0"/>
-  <testcase name="when IV and I are passed as Strings V is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0.015"/>
+  <testcase name="when a GET request is made to the /calc/status url the expected response message and a 200 OK status should be returned" classname="webLayer.CalculatorWSTest" time="2.545"/>
+  <testcase name="when D and D are passed as Strings M is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0.019"/>
+  <testcase name="when CD and D are passed as Strings CM is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0.004"/>
+  <testcase name="when CCL and CCL are passed as Strings D is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0.003"/>
+  <testcase name="when CC and CC are passed as Strings CD is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0.004"/>
+  <testcase name="when L and L are passed as Strings C is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0.006"/>
+  <testcase name="when L and XL are passed as Strings XC is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0.004"/>
+  <testcase name="when XXV and XXV are passed as Strings L is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0.004"/>
+  <testcase name="when XX and XX are passed as Strings XL is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0.003"/>
+  <testcase name="when V and V are passed as Strings X is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0.004"/>
+  <testcase name="when V and IV are passed as Strings IX is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0.004"/>
+  <testcase name="when IV and I are passed as Strings V is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0.008"/>
   <testcase name="when II and II are passed as Strings IV is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0"/>
-  <testcase name="when I and I are passed as Strings II is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0"/>
+  <testcase name="when I and I are passed as Strings II is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0.004"/>
 </testsuite>

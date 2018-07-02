@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import businessLayer.OperationContext;
 import businessLayer.OperationFactory;
 import businessLayer.operations.SupportedOperations;
+import businessLayer.OperationContext;
+import businessLayer.OperationFactory;
 
 @RestController
 @RequestMapping(value = "/calc")
@@ -30,7 +32,7 @@ public class CalculatorWS {
 
 	@GetMapping
 	public ResponseEntity<Object> calculate(@RequestParam("num1") final String num1, @RequestParam("num2") final String num2, 
-			@RequestParam("operationType") final String operationType) throws Exception {	
+			@RequestParam("operationType") final String operationType) {	
 			context.setOperation(operationFactory.getOperation(operationType));
 			String result = context.performOperation(num1, num2);
 			return new ResponseEntity<>(result, HttpStatus.OK);

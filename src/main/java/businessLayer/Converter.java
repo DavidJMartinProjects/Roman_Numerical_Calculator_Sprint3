@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Converter {		
 	
-	private final static Map<Integer, String> ROMAN_NUMERICS = new LinkedHashMap<Integer, String>();
+	private static final Map<Integer, String> ROMAN_NUMERICS = new LinkedHashMap<>();
 	
 	public Converter() {
 		ROMAN_NUMERICS.put(1000, "M");
@@ -47,14 +47,14 @@ public class Converter {
 	}
 
 	public String toRomanNumeral(int input) {
-		String result = "";
+		StringBuilder result = new StringBuilder();
 		for (final Map.Entry<Integer, String> entry : ROMAN_NUMERICS.entrySet()) {
 			while (input >= entry.getKey()) {
-				result += entry.getValue();
+				result.append(entry.getValue());
 				input -= entry.getKey();
 			}
 		}
-		return result;
+		return result.toString();
 	}
 
 } 

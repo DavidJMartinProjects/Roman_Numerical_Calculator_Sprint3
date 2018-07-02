@@ -14,9 +14,9 @@ package businessLayer.operations;
 public enum SupportedOperations {
 
 	PLUS("+"), MINUS("-"), DIVIDE("/"), MULTIPLY("*");
-	
+
 	private String symbol;
-	
+
 	SupportedOperations(final String aSymbol) {
 		this.symbol = aSymbol;
 	}
@@ -25,19 +25,13 @@ public enum SupportedOperations {
 		return symbol;
 	}
 
-	public void setSymbol(final String symbol) {
-		this.symbol = symbol;
-	}
-
 	public static String getSupportedOperations() {
-		String operations = "";
-		final SupportedOperations arr[] = SupportedOperations.values();
-		for(final SupportedOperations op : arr) {
-			if(op != null) {
-				operations+= op.getSymbol();
-			}
+		StringBuilder operations = new StringBuilder();
+		final SupportedOperations[] arr = SupportedOperations.values();
+		for (final SupportedOperations op : arr) {
+			operations.append(op.getSymbol());
 		}
-		return operations;
-	}	
+		return operations.toString();
+	}
 
 }

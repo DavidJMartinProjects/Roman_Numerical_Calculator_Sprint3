@@ -56,7 +56,6 @@ public class CalculatonSteps {
 		driver.findElement(By.id("operationType")).click();
 		new Select(driver.findElement(By.id("operationType"))).selectByVisibleText("+");
 		driver.findElement(By.id("operationType")).click();
-		Thread.sleep(1000);	
 	}
 	
 	@And("^The subtract operation is selected$")
@@ -64,7 +63,6 @@ public class CalculatonSteps {
 		driver.findElement(By.id("operationType")).click();
 		new Select(driver.findElement(By.id("operationType"))).selectByVisibleText("-");
 		driver.findElement(By.id("operationType")).click();
-		Thread.sleep(1000);	
 	}
 	
 	@And("^The divide operation is selected$")
@@ -72,7 +70,6 @@ public class CalculatonSteps {
 		driver.findElement(By.id("operationType")).click();
 		new Select(driver.findElement(By.id("operationType"))).selectByVisibleText("/");
 		driver.findElement(By.id("operationType")).click();
-		Thread.sleep(1000);	
 	}
 	
 	@And("^The multiply operation is selected$")
@@ -80,7 +77,6 @@ public class CalculatonSteps {
 		driver.findElement(By.id("operationType")).click();
 		new Select(driver.findElement(By.id("operationType"))).selectByVisibleText("*");
 		driver.findElement(By.id("operationType")).click();
-		Thread.sleep(1000);	
 	}
 	
 	@And("^The calculate button is clicked$")
