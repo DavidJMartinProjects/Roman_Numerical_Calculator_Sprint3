@@ -9,10 +9,9 @@
  * program(s) have been supplied.
  *******************************************************************************
  *----------------------------------------------------------------------------*/
-package businessLayer.operations;
+package businessLayer.api;
 
 import businessLayer.Converter;
-import businessLayer.api.Calculator;
 import utils.Validator;
 
 public abstract class RomanNumericalCalculator implements Calculator {
@@ -32,7 +31,6 @@ public abstract class RomanNumericalCalculator implements Calculator {
 		return (validator.validateRomanNumeral(numeral1) && validator.validateRomanNumeral(numeral2));
 	}
 	
-	public abstract boolean preCalculationValidation(final int num1, final int	 num2);
-	
+	public abstract boolean preCalculationValidation(final int num1, final int num2);	
 	public abstract String calculate(int num1, int num2);
 } 

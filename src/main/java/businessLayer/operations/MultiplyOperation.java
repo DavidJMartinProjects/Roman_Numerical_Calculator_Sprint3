@@ -11,6 +11,8 @@
  *----------------------------------------------------------------------------*/
 package businessLayer.operations;
 
+import businessLayer.api.RomanNumericalCalculator;
+
 public class MultiplyOperation extends RomanNumericalCalculator {
 
 	@Override

@@ -1,9 +1,9 @@
 businessLayer\Converter.class
 businessLayer\operations\SupportedOperations.class
+businessLayer\api\RomanNumericalCalculator.class
 businessLayer\operations\SubtractOperation.class
 businessLayer\api\Calculator.class
 businessLayer\operations\MultiplyOperation.class
-businessLayer\operations\RomanNumericalCalculator.class
 webLayer\CalculatorWS.class
 utils\Validator.class
 businessLayer\Application.class

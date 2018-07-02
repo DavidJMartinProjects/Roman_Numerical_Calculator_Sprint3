@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import businessLayer.OperationContext;
 import businessLayer.OperationFactory;
 import businessLayer.operations.SupportedOperations;
-import businessLayer.OperationContext;
-import businessLayer.OperationFactory;
 
 @RestController
 @RequestMapping(value = "/calc")
