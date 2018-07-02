@@ -11,33 +11,20 @@
  *----------------------------------------------------------------------------*/
 package businessLayer.operations;
 
-public enum AvailableOperations {
+import businessLayer.api.Calculator;
+import domainLayer.CalculationResult;
+ 
+public class MultiplyOperation extends RomanNumericalCalculator implements Calculator  {
 
-	PLUS("+"), MINUS("-"), DIVIDE("/"), MULTIPLY("*");
-	
-	private String symbol;
-	
-	AvailableOperations(final String aSymbol) {
-		this.symbol = aSymbol;
+	@Override
+	public boolean validateOperation(final int numeral1, final int numeral2) {		
+		return true;	
 	}
 
-	public String getSymbol() {
-		return symbol;
+	@Override	
+	public CalculationResult calculate(final int num1, final int num2) {		
+		return converter.toRomanNumeral(num1 * num2);		
 	}
-
-	public void setSymbol(final String symbol) {
-		this.symbol = symbol;
-	}
-
-	public static String getAvailableOperations() {
-		String operations = "";
-		final AvailableOperations arr[] = AvailableOperations.values();
-		for(final AvailableOperations op : arr) {
-			if(op != null) {
-				operations+= op.getSymbol();
-			}
-		}
-		return operations;
-	}	
 
 }
+	

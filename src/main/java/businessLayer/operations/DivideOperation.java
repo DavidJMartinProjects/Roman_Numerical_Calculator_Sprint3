@@ -19,7 +19,7 @@ import domainLayer.CalculationResult;
  *
  */	
 
-public class OperationDivide extends RomanNumericalCalculator implements Calculator  {
+public class DivideOperation extends RomanNumericalCalculator implements Calculator  {
 
 	@Override
 	public boolean validateOperation(final int numeral1, final int numeral2) {		

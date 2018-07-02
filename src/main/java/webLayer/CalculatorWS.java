@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import businessLayer.OperationContext;
 import businessLayer.OperationFactory;
-import businessLayer.operations.AvailableOperations;
+import businessLayer.operations.SupportedOperations;
 import domainLayer.CalculationResult;
 
 @RestController
@@ -32,7 +32,6 @@ public class CalculatorWS {
 		return "status : webService online";
 	}
 
-//	@RequestMapping(value = "/addition", method = RequestMethod.GET, produces = { "application/json" })
 	@GetMapping
 	public ResponseEntity<Object> calculate(@RequestParam("num1") final String num1, @RequestParam("num2") final String num2, 
 			@RequestParam("operationType") final String operationType) {
@@ -47,7 +46,7 @@ public class CalculatorWS {
 	
 	@RequestMapping(value = "/operations", method = RequestMethod.GET, produces = { "application/json" })
 	public ResponseEntity<Object> getOperations() {		
-		return new ResponseEntity<>(AvailableOperations.getAvailableOperations(), HttpStatus.OK);
+		return new ResponseEntity<>(SupportedOperations.getSupportedOperations(), HttpStatus.OK);
 	}	
 
 }
