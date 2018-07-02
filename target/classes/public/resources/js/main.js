@@ -36,9 +36,14 @@ function calculate() {
 				$("#numTwoTf").val("");
 				$("#validationMessage").text("");
 			},
-			error : function() {
+			error : function(response) {
 				console.log("error");
-				$("#validationMessage").text("Invalid Roman Numerical Format.")
+				
+				jsonValue = jQuery.parseJSON( response.responseText );
+				console.log(jsonValue.message);
+				console.log(jsonValue);
+				
+				$("#validationMessage").text(jsonValue.message);
 			}
 		});		
 	}
