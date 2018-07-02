@@ -13,20 +13,24 @@ package businessLayer.operations;
 
 import org.springframework.stereotype.Component;
 
-import businessLayer.api.Calculator;
 import domainLayer.CalculationResult;
 
 @Component
-public class AddOperation extends RomanNumericalCalculator implements Calculator {
+public class AddOperation extends RomanNumericalCalculator {
 
 	@Override
-	public boolean preCalculationValidation(final int numeral1, final int numeral2) {		
+	public boolean preCalculationValidation(final int num1, final int num2) {		
+		if((num1+num2) > 3999){
+			throw new IllegalArgumentException("addition error : result is greater than 3999.");
+		}
 		return true;	
 	}
 
 	@Override
-	public CalculationResult calculate(final int num1, final int num2) {		
+	public CalculationResult calculate(final int num1, final int num2) {
+		preCalculationValidation(num1, num2);
 		return converter.toRomanNumeral(num1 + num2);		
 	}
 
 }
+	

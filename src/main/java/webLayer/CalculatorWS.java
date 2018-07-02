@@ -34,18 +34,14 @@ public class CalculatorWS {
 
 	@GetMapping
 	public ResponseEntity<Object> calculate(@RequestParam("num1") final String num1, @RequestParam("num2") final String num2, 
-			@RequestParam("operationType") final String operationType) {
-		try {			
+			@RequestParam("operationType") final String operationType) throws Exception {	
 			context.setOperation(operationFactory.getOperation(operationType));
 			result = context.executeOperation(num1, num2);
 			return new ResponseEntity<>(result, HttpStatus.OK);
-		} catch (IllegalArgumentException ex) {
-			return new ResponseEntity<>(ex, HttpStatus.INTERNAL_SERVER_ERROR);
-		}
 	}
 	
 	@RequestMapping(value = "/operations", method = RequestMethod.GET, produces = { "application/json" })
-	public ResponseEntity<Object> getOperations() {		
+	public ResponseEntity<Object> getSupportedOperations() {		
 		return new ResponseEntity<>(SupportedOperations.getSupportedOperations(), HttpStatus.OK);
 	}	
 

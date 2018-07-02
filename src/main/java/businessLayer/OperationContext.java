@@ -17,10 +17,6 @@ import org.springframework.stereotype.Component;
 import businessLayer.api.Calculator;
 import domainLayer.CalculationResult;
 
-/**
- * @author eaamrvd
- *
- */
 @Component
 public class OperationContext {
 	

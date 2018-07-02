@@ -11,20 +11,25 @@
  *----------------------------------------------------------------------------*/
 package businessLayer.operations;
 
-import businessLayer.api.Calculator;
 import domainLayer.CalculationResult;
 
-public class SubtractOperation extends RomanNumericalCalculator implements Calculator  { 		
+public class SubtractOperation extends RomanNumericalCalculator { 		
 
 	@Override
-	public boolean preCalculationValidation(final int numeral1, final int numeral2) {		
-		return true;	
+	public boolean preCalculationValidation(final int num1, final int num2) {		
+		if(num1 > num2) {
+			throw new IllegalArgumentException("subtraction error : numeral 1 is greater than numeral 2");
+		} else if((num1-num2) == 0) {
+			throw new IllegalArgumentException("subtraction error : result was zero.");
+		}	
+		return true;
 	}
 
 	@Override	
-	public CalculationResult calculate(final int num1, final int num2) {		
+	public CalculationResult calculate(final int num1, final int num2) {	
+		preCalculationValidation(num1, num2);
 		return converter.toRomanNumeral(num1 - num2);		
 	}
 
 }
-	
+		
