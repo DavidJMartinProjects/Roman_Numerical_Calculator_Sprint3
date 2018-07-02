@@ -27,7 +27,7 @@ public class AddOperation extends RomanNumericalCalculator {
 	}
 
 	@Override
-	public CalculationResult calculate(final int num1, final int num2) {
+	public String calculate(final int num1, final int num2) {
 		preCalculationValidation(num1, num2);
 		return converter.toRomanNumeral(num1 + num2);		
 	}

@@ -35,7 +35,7 @@ public class OperationContext {
 		this.operation = operation;
 	}
 
-	public CalculationResult executeOperation(final String num1, final String num2) {
+	public String executeOperation(final String num1, final String num2) {
 		return operation.doCalculation(num1, num2);
 	}
 }

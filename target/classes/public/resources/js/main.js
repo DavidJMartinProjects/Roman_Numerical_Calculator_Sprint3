@@ -28,21 +28,17 @@ function calculate() {
 			type : 'GET',
 			url : rootUrl+ "?num1="+num1+"&num2="+num2+"&operationType="+opType,
 			contentType : "application/json",
-			dataType : "json",
+			dataType : "text",
 			success : function(response) {
 				console.log("success");
-				$("#result").text("Result : " + num1 + " + " + num2 + " = "	+ response.theResult + "");
+				$("#result").text("Result : " + num1 + " + " + num2 + " = "	+ response + "");
 				$("#numOneTf").val("");
 				$("#numTwoTf").val("");
 				$("#validationMessage").text("");
 			},
 			error : function(response) {
-				console.log("error");
-				
+				console.log("error"); 				
 				jsonValue = jQuery.parseJSON( response.responseText );
-				console.log(jsonValue.message);
-				console.log(jsonValue);
-				
 				$("#validationMessage").text(jsonValue.message);
 			}
 		});		

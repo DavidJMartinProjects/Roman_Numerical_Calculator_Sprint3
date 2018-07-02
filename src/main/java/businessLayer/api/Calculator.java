@@ -17,6 +17,6 @@ import domainLayer.CalculationResult;
 
 @Component
 public interface Calculator {
-	CalculationResult doCalculation(String romanNumeral1, String romanNumeral2);
+	String doCalculation(String romanNumeral1, String romanNumeral2);
 }
 	

@@ -50,7 +50,7 @@ public class Converter {
 		return 0;
 	}
 
-	public CalculationResult toRomanNumeral(int input) {
+	public String toRomanNumeral(int input) {
 		String result = "";
 		for (final Map.Entry<Integer, String> entry : ROMAN_NUMERICS.entrySet()) {
 			while (input >= entry.getKey()) {
@@ -58,8 +58,7 @@ public class Converter {
 				input -= entry.getKey();
 			}
 		}
-		calculationResult.setTheResult(result);
-		return calculationResult;
+		return result;
 	}
 
 } 

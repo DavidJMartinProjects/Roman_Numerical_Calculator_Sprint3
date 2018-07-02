@@ -22,7 +22,7 @@ public abstract class RomanNumericalCalculator implements Calculator {
 	final protected Validator validator = new Validator();
 	
 	@Override
-	public CalculationResult doCalculation(final String romanNumeral1, final String romanNumeral2) {		
+	public String doCalculation(final String romanNumeral1, final String romanNumeral2) {		
 		if(validateRomanNumerals(romanNumeral1, romanNumeral2) && preCalculationValidation(converter.toBaseTen(romanNumeral1), converter.toBaseTen(romanNumeral2))) {
 			return calculate(converter.toBaseTen(romanNumeral1), converter.toBaseTen(romanNumeral2));			
 		}		
@@ -35,5 +35,5 @@ public abstract class RomanNumericalCalculator implements Calculator {
 	
 	public abstract boolean preCalculationValidation(final int num1, final int num2);
 	
-	public abstract CalculationResult calculate(int num1, int num2);
+	public abstract String calculate(int num1, int num2);
 }
