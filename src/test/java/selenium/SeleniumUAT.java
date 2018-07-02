@@ -1,25 +1,9 @@
 package selenium;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
-
-import java.util.NoSuchElementException;
-import java.util.concurrent.TimeUnit;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.WebDriver;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import domainLayer.CalculationResult;
-import ultilities.DriverFactory;	
 import webLayer.CalculatorWS;
 
 @SpringBootTest(classes=CalculatorWS.class)
@@ -34,7 +18,7 @@ public class SeleniumUAT {
 //	}
 //	private final String browserType = "chrome";
 //	private final WebDriver driver = DriverFactory.open(browserType);
-//	private boolean acceptNextAlert = true;
+//	private boolean acceptNextAlert = true;	
 //	private final StringBuffer verificationErrors = new StringBuffer();
 //
 //    @Autowired

@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import businessLayer.OperationContext;
 import businessLayer.OperationFactory;
 import businessLayer.operations.SupportedOperations;
-import domainLayer.CalculationResult;
 
 @RestController
 @RequestMapping(value = "/calc")
@@ -20,7 +19,7 @@ public class CalculatorWS {
 	
 	@Autowired
 	OperationFactory operationFactory;
-	
+		
 	@Autowired
 	OperationContext context;
 

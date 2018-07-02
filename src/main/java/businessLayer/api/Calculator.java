@@ -13,10 +13,8 @@ package businessLayer.api;
 
 import org.springframework.stereotype.Component;
 
-import domainLayer.CalculationResult;
-
 @Component
 public interface Calculator {
 	String doCalculation(String romanNumeral1, String romanNumeral2);
 }
-	
+		

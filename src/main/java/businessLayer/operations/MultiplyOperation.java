@@ -11,8 +11,6 @@
  *----------------------------------------------------------------------------*/
 package businessLayer.operations;
 
-import domainLayer.CalculationResult;
- 
 public class MultiplyOperation extends RomanNumericalCalculator {
 
 	@Override
@@ -24,7 +22,7 @@ public class MultiplyOperation extends RomanNumericalCalculator {
 	}
 
 	@Override	
-	public String calculate(final int num1, final int num2) {
+	public String calculate(final int num1, final int num2	) {
 		preCalculationValidation(num1, num2);
 		return converter.toRomanNumeral(num1 * num2);		
 	}

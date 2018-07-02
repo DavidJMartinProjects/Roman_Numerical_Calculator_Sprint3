@@ -13,8 +13,6 @@ package businessLayer.operations;
 
 import org.springframework.stereotype.Component;
 
-import domainLayer.CalculationResult;
-
 @Component
 public class AddOperation extends RomanNumericalCalculator {
 
@@ -33,4 +31,4 @@ public class AddOperation extends RomanNumericalCalculator {
 	}
 
 }
-	
+		

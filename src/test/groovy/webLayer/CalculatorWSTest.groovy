@@ -52,41 +52,41 @@ class CalculatorWSTest extends Specification {
 
 		then: ' sum of both numericals is returned in roman numerical form as a String'
 		response
-				.andExpect(content().json(expectedResult))
+				.andExpect(content().string(expectedResult))
 				.andExpect(expectedStatus)
 
 		where:
-		numericOne	| numericTwo | operationType || expectedResult			|| expectedStatus
-		"D"			| "D"		 | "add"		 || "{'theResult':'M'}"		|| status().isOk()
-		"CD"		| "D"		 | "add"		 || "{'theResult':'CM'}"	|| status().isOk()
-		"CCL"		| "CCL"		 | "add"		 || "{'theResult':'D'}"		|| status().isOk()
-		"CC"		| "CC"		 | "add"		 || "{'theResult':'CD'}"	|| status().isOk()
-		"L"			| "L"		 | "add"		 || "{'theResult':'C'}"		|| status().isOk()
-		"L"			| "XL"		 | "add"		 || "{'theResult':'XC'}"	|| status().isOk()
-		"XXV"		| "XXV"		 | "add"   		 || "{'theResult':'L'}"		|| status().isOk()
-		"XX"		| "XX"		 | "add"		 || "{'theResult':'XL'}"	|| status().isOk()
-		"V"			| "V"		 | "add"		 || "{'theResult':'X'}"		|| status().isOk()
-		"V"			| "IV"		 | "add"		 || "{'theResult':'IX'}"	|| status().isOk()
-		"IV"		| "I"		 | "add"		 || "{'theResult':'V'}"		|| status().isOk()
-		"II"		| "II"		 | "add"		 || "{'theResult':'IV'}"	|| status().isOk()
-		"I"			| "I"		 | "add"		 || "{'theResult':'II'}"	|| status().isOk()
+		numericOne	| numericTwo | operationType || expectedResult		|| expectedStatus
+		"D"			| "D"		 | "add"		 || "M"					|| status().isOk()
+		"CD"		| "D"		 | "add"		 || "CM"				|| status().isOk()
+		"CCL"		| "CCL"		 | "add"		 || "D"					|| status().isOk()
+		"CC"		| "CC"		 | "add"		 || "CD"				|| status().isOk()
+		"L"			| "L"		 | "add"		 || "C"					|| status().isOk()
+		"L"			| "XL"		 | "add"		 || "XC"				|| status().isOk()
+		"XXV"		| "XXV"		 | "add"   		 || "L"					|| status().isOk()
+		"XX"		| "XX"		 | "add"		 || "XL"				|| status().isOk()
+		"V"			| "V"		 | "add"		 || "X"					|| status().isOk()
+		"V"			| "IV"		 | "add"		 || "IX"				|| status().isOk()
+		"IV"		| "I"		 | "add"		 || "V"					|| status().isOk()
+		"II"		| "II"		 | "add"		 || "IV"				|| status().isOk()
+		"I"			| "I"		 | "add"		 || "II"				|| status().isOk()
 	}
 
-//	@Test
-//	def 'when an invalid String is passed as an input verify that the correct exception is thrown'() {
-//		when: 'when two roman numericals are passed as Strings'
-//		def response = mockMvc.perform(get("/calc/addition").contentType(MediaType.APPLICATION_JSON)
-//				.param("num1", numericOne)
-//				.param("num2", numericTwo)
-//				.param("operationType", operationType))
-//
-//		then: ' sum of both numericals is returned in roman numerical form as a String'
-//		response
-//				.andExpect(expectedStatus)
-//				.andExpect(content().string(containsString(exceptionMessage)));
-//
-//		where:
-//		numericOne	| numericTwo | operationType|| expectedStatus					|| exceptionMessage
-//		"MMMMM"		| "MMMMM"	 | "add"		|| status().isInternalServerError()	|| "Invalid Roman Numeral Entered."
-//	} 
+	//	@Test
+	//	def 'when an invalid String is passed as an input verify that the correct exception is thrown'() {
+	//		when: 'when two roman numericals are passed as Strings'
+	//		def response = mockMvc.perform(get("/calc/addition").contentType(MediaType.APPLICATION_JSON)
+	//				.param("num1", numericOne)
+	//				.param("num2", numericTwo)
+	//				.param("operationType", operationType))
+	//
+	//		then: ' sum of both numericals is returned in roman numerical form as a String'
+	//		response
+	//				.andExpect(expectedStatus)
+	//				.andExpect(content().string(containsString(exceptionMessage)));
+	//
+	//		where:
+	//		numericOne	| numericTwo | operationType|| expectedStatus					|| exceptionMessage
+	//		"MMMMM"		| "MMMMM"	 | "add"		|| status().isInternalServerError()	|| "Invalid Roman Numeral Entered."
+	//	}
 }

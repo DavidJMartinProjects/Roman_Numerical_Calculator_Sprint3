@@ -11,8 +11,6 @@
  *----------------------------------------------------------------------------*/
 package businessLayer.operations;
 
-import domainLayer.CalculationResult;
-
 public class DivideOperation extends RomanNumericalCalculator {
 
 	@Override
@@ -30,4 +28,4 @@ public class DivideOperation extends RomanNumericalCalculator {
 	}
 	
 }
-	
+		

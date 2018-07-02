@@ -12,9 +12,6 @@
 package businessLayer
 
 import org.junit.Test
-
-import domainLayer.CalculationResult
-import domainLayer.RomanNumerics
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -24,12 +21,10 @@ import spock.lang.Unroll
  */
 class ConverterTest extends Specification {
 
-	def input, expected
-	def calculationResult = new CalculationResult()
-	def romanNumerics = Mock(RomanNumerics.class)
-	def theConverter= new Converter(calculationResult:calculationResult);
+	def input, expected	
+	def theConverter= new Converter();
  
-	@Test
+	@Test	
 	@Unroll
 	def 'test that when #input is passed to the toBaseTen method the expected result of #expected is returned'() {
 
@@ -106,14 +101,12 @@ class ConverterTest extends Specification {
 	@Test
 	@Unroll
 	def 'test that when #input is passed to the toRomanNumeral method the expected result of #expected is returned'() {
-		given:
-		romanNumerics.getRomanNumerics() >> new RomanNumerics().getRomanNumerics();
 
 		when: 'when the toRomanNumeral method is called'
 		def result = theConverter.toRomanNumeral(input);
 
 		then: 'the expected roman numeral representation of the integer value is returned'
-		expected == result.theResult
+		expected == result
 
 		/* Test parameters include :
 		 * the lowest number, 

@@ -15,7 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import businessLayer.api.Calculator;
-import domainLayer.CalculationResult;
 
 @Component
 public class OperationContext {
@@ -32,7 +31,7 @@ public class OperationContext {
 	}	
 
 	public void setOperation(final Calculator operation) {
-		this.operation = operation;
+		this.operation = operation;	
 	}
 
 	public String executeOperation(final String num1, final String num2) {

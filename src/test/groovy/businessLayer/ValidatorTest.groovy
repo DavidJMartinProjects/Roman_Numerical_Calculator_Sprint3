@@ -18,10 +18,6 @@ import spock.lang.Specification
 import spock.lang.Unroll
 import utils.Validator
 
-/**
- * @author eaamrvd
- *
- */
 class ValidatorTest extends Specification  {
  
 	def theValidator = new Validator();
@@ -61,22 +57,23 @@ class ValidatorTest extends Specification  {
 		def result = theValidator.validateRomanNumeral(input);
 
 		then: 'verify that the expected validation result is returned'
-		result == expected
+		IllegalArgumentException exception = thrown()
+		exception.message == expected
 
 		where:
 		input	 || expected
-		"IIII"	 || false
-		"XXXX"	 || false
-		"CCCC"	 || false
-		"VV"	 || false
-		"VVV"	 || false
-		"VVVV"	 || false
-		"LL"	 || false
-		"LLL"	 || false
-		"LLLL"	 || false
-		"DD"	 || false
-		"DDD"	 || false
-		"DDDD"	 || false
-		"MMMM"	 || false
+		"IIII"	 || "error : invalid roman rumerical entered"
+		"XXXX"	 || "error : invalid roman rumerical entered"
+		"CCCC"	 || "error : invalid roman rumerical entered"
+		"VV"	 || "error : invalid roman rumerical entered"
+		"VVV"	 || "error : invalid roman rumerical entered"
+		"VVVV"	 || "error : invalid roman rumerical entered"
+		"LL"	 || "error : invalid roman rumerical entered"
+		"LLL"	 || "error : invalid roman rumerical entered"
+		"LLLL"	 || "error : invalid roman rumerical entered"
+		"DD"	 || "error : invalid roman rumerical entered"
+		"DDD"	 || "error : invalid roman rumerical entered"
+		"DDDD"	 || "error : invalid roman rumerical entered"
+		"MMMM"	 || "error : invalid roman rumerical entered"
 	}
 }

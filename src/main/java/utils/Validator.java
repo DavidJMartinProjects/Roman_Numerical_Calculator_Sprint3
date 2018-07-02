@@ -25,7 +25,13 @@ public class Validator {
 	public boolean validateRomanNumeral(final String input) {		
 		final Pattern pattern = Pattern.compile(THE_REGEX);
 		final Matcher matcher = pattern.matcher(input);
-		return matcher.matches();
+		matcher.matches();
+		
+		if(matcher.matches()) {
+			return true;
+		} else {
+			throw new IllegalArgumentException("error : invalid roman rumerical entered");
+		}
 	}
 } 
    

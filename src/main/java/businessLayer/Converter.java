@@ -16,12 +16,8 @@ import java.util.Map;
 
 import org.springframework.stereotype.Component;
 
-import domainLayer.CalculationResult;
-
 @Component
-public class Converter {
-
-	CalculationResult calculationResult = new CalculationResult();
+public class Converter {		
 	
 	private final static Map<Integer, String> ROMAN_NUMERICS = new LinkedHashMap<Integer, String>();
 	
@@ -34,7 +30,7 @@ public class Converter {
 		ROMAN_NUMERICS.put(90, "XC");
 		ROMAN_NUMERICS.put(50, "L");
 		ROMAN_NUMERICS.put(40, "XL");
-		ROMAN_NUMERICS.put(10, "X");
+		ROMAN_NUMERICS.put(10, "X");	
 		ROMAN_NUMERICS.put(9, "IX");
 		ROMAN_NUMERICS.put(5, "V");
 		ROMAN_NUMERICS.put(4, "IV");

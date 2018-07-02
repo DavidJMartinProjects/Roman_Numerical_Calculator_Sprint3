@@ -31,14 +31,11 @@ function calculate() {
 			dataType : "text",
 			success : function(response) {
 				console.log("success");
-				$("#result").text("Result : " + num1 + " + " + num2 + " = "	+ response + "");
-				$("#numOneTf").val("");
-				$("#numTwoTf").val("");
+				$("#result").text("Result : " + response);
 				$("#validationMessage").text("");
 			},
-			error : function(response) {
-				console.log("error"); 				
-				jsonValue = jQuery.parseJSON( response.responseText );
+			error : function(response) {							
+				var jsonValue = jQuery.parseJSON( response.responseText );
 				$("#validationMessage").text(jsonValue.message);
 			}
 		});		
