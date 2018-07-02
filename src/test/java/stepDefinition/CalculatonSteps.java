@@ -121,7 +121,7 @@ public class CalculatonSteps {
 		}
 	}
 	
-	@Then("^The correct result of the division calculation shall be displayed : VI$")
+	@Then("^The correct result of the Division calculation shall be displayed : VI$")
 	public void theExpectedResultOfTheDivisionOperationIsDisplayed() throws Throwable {		
 		try {
 			assertEquals("Result : XIV + LX = VI", driver.findElement(By.id("result")).getText());
