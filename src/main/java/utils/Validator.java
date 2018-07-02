@@ -30,7 +30,7 @@ public class Validator {
 		if(matcher.matches()) {
 			return true;
 		} else {
-			throw new IllegalArgumentException("error : invalid roman rumerical entered");
+			throw new ArithmeticException("error : invalid roman rumerical entered");
 		}
 	}
 } 

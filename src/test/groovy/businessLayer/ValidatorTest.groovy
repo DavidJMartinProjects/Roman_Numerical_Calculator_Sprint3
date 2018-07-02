@@ -57,7 +57,7 @@ class ValidatorTest extends Specification  {
 		def result = theValidator.validateRomanNumeral(input);
 
 		then: 'verify that the expected validation result is returned'
-		IllegalArgumentException exception = thrown()
+		ArithmeticException exception = thrown()
 		exception.message == expected
 
 		where:

@@ -16,16 +16,15 @@ public class SubtractOperation extends RomanNumericalCalculator {
 	@Override
 	public boolean preCalculationValidation(final int num1, final int num2) {		
 		if(num2 > num1) {
-			throw new IllegalArgumentException("subtraction error : numeral 1 is greater than numeral 2");
+			throw new ArithmeticException("subtraction error : numeral 1 is greater than numeral 2");
 		} else if((num1-num2) == 0) {
-			throw new IllegalArgumentException("subtraction error : result was zero.");
+			throw new ArithmeticException("subtraction error : result was zero.");
 		}	
 		return true;
 	}
 
 	@Override		
 	public String calculate(final int num1, final int num2) {	
-		preCalculationValidation(num1, num2);
 		return converter.toRomanNumeral(num1 - num2);		
 	}
 

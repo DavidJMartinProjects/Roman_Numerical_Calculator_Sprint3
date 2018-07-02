@@ -1,8 +1,8 @@
-C:\repo_internship_project_master\com.calculator\src\test\java\bdd\TestRunner.java
-C:\repo_internship_project_master\com.calculator\src\test\java\selenium\SeleniumUAT.java
-C:\repo_internship_project_master\com.calculator\src\test\java\ultilities\DriverFactory.java
-C:\repo_internship_project_master\com.calculator\target\generated-sources\groovy-stubs\test\webLayer\CalculatorWSTest.java
-C:\repo_internship_project_master\com.calculator\src\test\java\stepDefinition\CalculatonSteps.java
-C:\repo_internship_project_master\com.calculator\target\generated-sources\groovy-stubs\test\businessLayer\ConverterTest.java
-C:\repo_internship_project_master\com.calculator\target\generated-sources\groovy-stubs\test\businessLayer\ValidatorTest.java
-C:\repo_internship_project_master\com.calculator\target\generated-sources\groovy-stubs\test\businessLayer\OperationContextTest.java
+C:\repo_intership_project\Roman_Numerical_Calculator_Sprint2_BDD\src\test\java\selenium\SeleniumUAT.java
+C:\repo_intership_project\Roman_Numerical_Calculator_Sprint2_BDD\src\test\java\bdd\TestRunner.java
+C:\repo_intership_project\Roman_Numerical_Calculator_Sprint2_BDD\target\generated-sources\groovy-stubs\test\webLayer\CalculatorWSTest.java
+C:\repo_intership_project\Roman_Numerical_Calculator_Sprint2_BDD\src\test\java\ultilities\DriverFactory.java
+C:\repo_intership_project\Roman_Numerical_Calculator_Sprint2_BDD\src\test\java\stepDefinition\CalculatonSteps.java
+C:\repo_intership_project\Roman_Numerical_Calculator_Sprint2_BDD\target\generated-sources\groovy-stubs\test\businessLayer\ConverterTest.java
+C:\repo_intership_project\Roman_Numerical_Calculator_Sprint2_BDD\target\generated-sources\groovy-stubs\test\businessLayer\OperationContextTest.java
+C:\repo_intership_project\Roman_Numerical_Calculator_Sprint2_BDD\target\generated-sources\groovy-stubs\test\businessLayer\ValidatorTest.java

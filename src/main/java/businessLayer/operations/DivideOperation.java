@@ -16,14 +16,13 @@ public class DivideOperation extends RomanNumericalCalculator {
 	@Override
 	public boolean preCalculationValidation(final int num1, final int num2) {
 		if(num2 > num1){
-			throw new IllegalArgumentException("division error : numeral 1 is greater than numeral 2.");
+			throw new ArithmeticException("division error : numeral 1 is greater than numeral 2.");
 		}
 		return true;	
 	}
 
 	@Override	
 	public String calculate(final int num1, final int num2) {
-		preCalculationValidation(num1, num2);
 		return converter.toRomanNumeral(num1 / num2);		
 	}
 	

@@ -49,7 +49,6 @@ public class CalculatonSteps {
 		driver.findElement(By.id("numTwoTf")).click();
 		driver.findElement(By.id("numTwoTf")).clear();
 		driver.findElement(By.id("numTwoTf")).sendKeys("XIV");
-		Thread.sleep(1000);	
 	}
 	
 	@And("^The addition operation is selected$")
@@ -57,6 +56,7 @@ public class CalculatonSteps {
 		driver.findElement(By.id("operationType")).click();
 		new Select(driver.findElement(By.id("operationType"))).selectByVisibleText("+");
 		driver.findElement(By.id("operationType")).click();
+		Thread.sleep(1000);	
 	}
 	
 	@And("^The subtract operation is selected$")
@@ -64,6 +64,7 @@ public class CalculatonSteps {
 		driver.findElement(By.id("operationType")).click();
 		new Select(driver.findElement(By.id("operationType"))).selectByVisibleText("-");
 		driver.findElement(By.id("operationType")).click();
+		Thread.sleep(1000);	
 	}
 	
 	@And("^The divide operation is selected$")
@@ -71,6 +72,7 @@ public class CalculatonSteps {
 		driver.findElement(By.id("operationType")).click();
 		new Select(driver.findElement(By.id("operationType"))).selectByVisibleText("/");
 		driver.findElement(By.id("operationType")).click();
+		Thread.sleep(1000);	
 	}
 	
 	@And("^The multiply operation is selected$")
@@ -78,11 +80,13 @@ public class CalculatonSteps {
 		driver.findElement(By.id("operationType")).click();
 		new Select(driver.findElement(By.id("operationType"))).selectByVisibleText("*");
 		driver.findElement(By.id("operationType")).click();
+		Thread.sleep(1000);	
 	}
 	
 	@And("^The calculate button is clicked$")
 	public void theCalculateButtonIsClicked() throws Throwable {		
 		driver.findElement(By.id("calcBtn")).click();
+		Thread.sleep(1000);	
 	}
 	
 	@Then("^The correct result of the Addition calculation shall be displayed : LXXIV$")

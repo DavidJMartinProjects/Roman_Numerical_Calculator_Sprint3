@@ -32,7 +32,7 @@ public class CalculatorWS {
 	public ResponseEntity<Object> calculate(@RequestParam("num1") final String num1, @RequestParam("num2") final String num2, 
 			@RequestParam("operationType") final String operationType) throws Exception {	
 			context.setOperation(operationFactory.getOperation(operationType));
-			String result = context.executeOperation(num1, num2);
+			String result = context.performOperation(num1, num2);
 			return new ResponseEntity<>(result, HttpStatus.OK);
 	}
 	

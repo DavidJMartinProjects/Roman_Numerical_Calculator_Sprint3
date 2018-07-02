@@ -19,14 +19,13 @@ public class AddOperation extends RomanNumericalCalculator {
 	@Override
 	public boolean preCalculationValidation(final int num1, final int num2) {		
 		if((num1+num2) > 3999){
-			throw new IllegalArgumentException("addition error : result is greater than 3999.");
+			throw new ArithmeticException("addition error : result is greater than 3999.");
 		}
 		return true;	
 	}
 
 	@Override
 	public String calculate(final int num1, final int num2) {
-		preCalculationValidation(num1, num2);
 		return converter.toRomanNumeral(num1 + num2);		
 	}
 

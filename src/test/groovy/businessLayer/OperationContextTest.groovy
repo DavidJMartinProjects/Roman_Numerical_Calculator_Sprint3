@@ -47,7 +47,7 @@ class OperationContextTest extends Specification {
 		theOperationContext.setOperation(theOperation)
 
 		when: 'when two roman numericals are passed as Strings'
-		def result = theOperationContext.executeOperation(numericOne,numericTwo)
+		def result = theOperationContext.performOperation(numericOne,numericTwo)
 
 		then: 'if the numeral is I, X or C, you cannot have more than three in succession'
 		expected == result
@@ -69,7 +69,7 @@ class OperationContextTest extends Specification {
 		theOperationContext.setOperation(theOperation)
 
 		when: 'when two roman numericals are passed as Strings'
-		def result = theOperationContext.executeOperation(numericOne,numericTwo)
+		def result = theOperationContext.performOperation(numericOne,numericTwo)
 
 		then: 'if the numeral is I, X or C, you cannot have more that one in succession'
 		expected == result
@@ -88,7 +88,7 @@ class OperationContextTest extends Specification {
 		theOperationContext.setOperation(theOperation)
 
 		when: 'when two roman numericals are passed as Strings'
-		def result = theOperationContext.executeOperation(numericOne,numericTwo)
+		def result = theOperationContext.performOperation(numericOne,numericTwo)
 
 		then: 'verify that calculations around roman numeral boundaries are behaving as expected'
 		expected == result
@@ -119,7 +119,7 @@ class OperationContextTest extends Specification {
 		theOperationContext.setOperation(theOperation)
 
 		when: 'when two roman numericals are passed as Strings'
-		def result = theOperationContext.executeOperation(numericOne,numericTwo)
+		def result = theOperationContext.performOperation(numericOne,numericTwo)
 
 		then: 'the sum of both numericals is returned in roman numerical form'
 		expected == result
