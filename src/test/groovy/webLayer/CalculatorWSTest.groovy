@@ -56,37 +56,26 @@ class CalculatorWSTest extends Specification {
 				.andExpect(expectedStatus)
 
 		where:
-		numericOne	| numericTwo | operationType || expectedResult		|| expectedStatus
-		"D"			| "D"		 | "add"		 || "M"					|| status().isOk()
-		"CD"		| "D"		 | "add"		 || "CM"				|| status().isOk()
-		"CCL"		| "CCL"		 | "add"		 || "D"					|| status().isOk()
-		"CC"		| "CC"		 | "add"		 || "CD"				|| status().isOk()
-		"L"			| "L"		 | "add"		 || "C"					|| status().isOk()
-		"L"			| "XL"		 | "add"		 || "XC"				|| status().isOk()
-		"XXV"		| "XXV"		 | "add"   		 || "L"					|| status().isOk()
-		"XX"		| "XX"		 | "add"		 || "XL"				|| status().isOk()
-		"V"			| "V"		 | "add"		 || "X"					|| status().isOk()
-		"V"			| "IV"		 | "add"		 || "IX"				|| status().isOk()
-		"IV"		| "I"		 | "add"		 || "V"					|| status().isOk()
-		"II"		| "II"		 | "add"		 || "IV"				|| status().isOk()
-		"I"			| "I"		 | "add"		 || "II"				|| status().isOk()
+		numericOne	| numericTwo | operationType || expectedResult	|| expectedStatus
+		"LX"		| "XIV"		 | "add"		 || "LXXIV"			|| status().isOk()
+		"LX"		| "XIV"		 | "subtract"	 || "XLVI"			|| status().isOk()
+		"LX"		| "XIV"		 | "divide"		 || "IV"			|| status().isOk()
+		"LX"		| "XIV"		 | "multiply"	 || "DCCCXL"		|| status().isOk()
 	}
 
-	//	@Test
-	//	def 'when an invalid String is passed as an input verify that the correct exception is thrown'() {
-	//		when: 'when two roman numericals are passed as Strings'
-	//		def response = mockMvc.perform(get("/calc/addition").contentType(MediaType.APPLICATION_JSON)
-	//				.param("num1", numericOne)
-	//				.param("num2", numericTwo)
-	//				.param("operationType", operationType))
-	//
-	//		then: ' sum of both numericals is returned in roman numerical form as a String'
-	//		response
-	//				.andExpect(expectedStatus)
-	//				.andExpect(content().string(containsString(exceptionMessage)));
-	//
-	//		where:
-	//		numericOne	| numericTwo | operationType|| expectedStatus					|| exceptionMessage
-	//		"MMMMM"		| "MMMMM"	 | "add"		|| status().isInternalServerError()	|| "Invalid Roman Numeral Entered."
-	//	}
+	@Test
+	@Unroll
+	def'when a GET request is made to calc/operations the expected operators are returned'() {
+
+		when: 'when a GET request is made to calc/operations'
+		def response = mockMvc.perform(get("/calc/operations").contentType(MediaType.APPLICATION_JSON))
+		then: 'the expected operators are returned'
+		response
+				.andExpect(content().string(expectedResult))
+				.andExpect(expectedStatus)
+
+		where:
+			expectedResult	|| expectedStatus
+			"+-/*"			|| status().isOk()
+	}
 }

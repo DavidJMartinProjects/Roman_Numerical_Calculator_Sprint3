@@ -1,6 +1,6 @@
 #Author: david.martin@ericsson.com
 
-Feature: As a User of the calculator, I want to ensure that roman numeral calculator works as intended
+Feature: As a User of the calculator, I want to ensure that the roman numeral calculator works as intended
   When As a User of the calculator, I want to ensure that roman numerals can be concatenated to form a larger numeral (XX+II=XXII)
   When As a User of the calculator, I want to ensure that if a lesser roman numeral is put before a bigger it means subtraction of the lesser from the bigger (III+I=IV)
   When As a User of the calculator, I want to ensure that if a lesser roman numeral is put before a bigger it means subtraction of the lesser from the bigger (D+ID=CM)
