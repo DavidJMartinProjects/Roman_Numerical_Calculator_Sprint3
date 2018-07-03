@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="webLayer.CalculatorWSTest" time="2.71" tests="14" errors="0" skipped="0" failures="0">
+<testsuite name="webLayer.CalculatorWSTest" time="8.797" tests="14" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_171\jre\bin"/>
     <property name="java.vm.version" value="25.171-b11"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="C:\repo_intership_project\Roman_Numerical_Calculator_Sprint2_BDD"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\repo_internship_project_master\Roman_Numerical_Calculator_Sprint2_BDD"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=";"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="file.encoding.pkg" value="sun.io"/>
     <property name="user.script" value=""/>
-    <property name="user.country" value="US"/>
+    <property name="user.country" value="IE"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="sun.os.patch.level" value=""/>
+    <property name="sun.os.patch.level" value="Service Pack 1"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\repo_intership_project\Roman_Numerical_Calculator_Sprint2_BDD"/>
+    <property name="user.dir" value="C:\repo_internship_project_master\Roman_Numerical_Calculator_Sprint2_BDD"/>
     <property name="java.runtime.version" value="1.8.0_171-b11"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_171\jre\lib\endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="java.io.tmpdir" value="C:\Users\DJ\AppData\Local\Temp\"/>
+    <property name="java.io.tmpdir" value="C:\Users\EAAMRVD\AppData\Local\Temp\"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
-    <property name="os.name" value="Windows 10"/>
-    <property name="classworlds.conf" value="C:\workspace_internship_project\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf4058565626621091885.tmp"/>
+    <property name="os.name" value="Windows 7"/>
+    <property name="classworlds.conf" value="C:\EclipseWorkspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf4697092831154904367.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_171\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Software/Java8/bin/server;C:/Software/Java8/bin;C:/Software/Java8/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Users\DJ\AppData\Local\Microsoft\WindowsApps;;C:\Users\DJ\Downloads\eclipse-jee-oxygen-R-win32-x86_64\eclipse;;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_171\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files (x86)\SQL11\DLL;C:\Program Files (x86)\SQL11\BIN;C:\Program Files (x86)\CheckPoint\Endpoint Security\Endpoint Common\bin;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Software\Maven\apache-maven-3.5.3\bin;C:\Program Files\Java\jdk1.8.0_171;C:\Users\EAAMRVD\AppData\Roaming\npm;C:\Program Files\Docker Toolbox;C:\Software\eclipse;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="10.0"/>
-    <property name="user.home" value="C:\Users\DJ"/>
+    <property name="os.version" value="6.1"/>
+    <property name="user.home" value="C:\Users\EAAMRVD"/>
     <property name="user.timezone" value="Europe/London"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
     <property name="java.specification.version" value="1.8"/>
     <property name="file.encoding" value="Cp1252"/>
-    <property name="user.name" value="DJ"/>
-    <property name="java.class.path" value="/C:/Users/DJ/Downloads/eclipse-jee-oxygen-R-win32-x86_64/eclipse/plugins/org.eclipse.m2e.maven.runtime_1.8.0.20170516-2042/jars/plexus-classworlds-2.5.2.jar"/>
+    <property name="user.name" value="eaamrvd"/>
+    <property name="java.class.path" value="C:\Software\eclipse\plugins\org.eclipse.m2e.maven.runtime_1.8.3.20180227-2135\jars\plexus-classworlds-2.5.2.jar"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_171\jre"/>
@@ -52,7 +52,7 @@
     <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_171\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_171\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_171\jre\classes"/>
     <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="maven.home" value="C:\repo_intership_project\Roman_Numerical_Calculator_Sprint2_BDD\EMBEDDED"/>
+    <property name="maven.home" value="C:\repo_internship_project_master\Roman_Numerical_Calculator_Sprint2_BDD\EMBEDDED"/>
     <property name="file.separator" value="\"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -60,18 +60,18 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="when a GET request is made to the /calc/status url the expected response message and a 200 OK status should be returned" classname="webLayer.CalculatorWSTest" time="2.617"/>
-  <testcase name="when D and D are passed as Strings M is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0.031"/>
+  <testcase name="when a GET request is made to the /calc/status url the expected response message and a 200 OK status should be returned" classname="webLayer.CalculatorWSTest" time="8.797"/>
+  <testcase name="when D and D are passed as Strings M is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0"/>
   <testcase name="when CD and D are passed as Strings CM is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0"/>
   <testcase name="when CCL and CCL are passed as Strings D is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0"/>
-  <testcase name="when CC and CC are passed as Strings CD is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0.015"/>
+  <testcase name="when CC and CC are passed as Strings CD is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0"/>
   <testcase name="when L and L are passed as Strings C is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0"/>
   <testcase name="when L and XL are passed as Strings XC is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0"/>
-  <testcase name="when XXV and XXV are passed as Strings L is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0.016"/>
+  <testcase name="when XXV and XXV are passed as Strings L is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0"/>
   <testcase name="when XX and XX are passed as Strings XL is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0"/>
   <testcase name="when V and V are passed as Strings X is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0"/>
-  <testcase name="when V and IV are passed as Strings IX is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0.016"/>
+  <testcase name="when V and IV are passed as Strings IX is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0"/>
   <testcase name="when IV and I are passed as Strings V is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0"/>
   <testcase name="when II and II are passed as Strings IV is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0"/>
-  <testcase name="when I and I are passed as Strings II is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0.015"/>
+  <testcase name="when I and I are passed as Strings II is returned as a String along the appropriate http response code" classname="webLayer.CalculatorWSTest" time="0"/>
 </testsuite>
