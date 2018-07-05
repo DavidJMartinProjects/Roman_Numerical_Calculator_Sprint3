@@ -57,10 +57,10 @@ class CalculatorWSTest extends Specification {
 
 		where:
 		numericOne	| numericTwo | operationType || expectedResult	|| expectedStatus
-		"LX"		| "XIV"		 | "add"		 || "LXXIV"			|| status().isOk()
-		"LX"		| "XIV"		 | "subtract"	 || "XLVI"			|| status().isOk()
-		"LX"		| "XIV"		 | "divide"		 || "IV"			|| status().isOk()
-		"LX"		| "XIV"		 | "multiply"	 || "DCCCXL"		|| status().isOk()
+		"LX"		| "XIV"		 | "+"			 || "LXXIV"			|| status().isOk()
+		"LX"		| "XIV"		 | "-"	 		 || "XLVI"			|| status().isOk()
+		"LX"		| "XIV"		 | "/"			 || "IV"			|| status().isOk()
+		"LX"		| "XIV"		 | "*"	 	 	 || "DCCCXL"		|| status().isOk()
 	}
 
 	@Test

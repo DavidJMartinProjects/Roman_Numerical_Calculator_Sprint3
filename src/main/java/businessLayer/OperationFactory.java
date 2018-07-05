@@ -11,28 +11,32 @@
  *----------------------------------------------------------------------------*/
 package businessLayer;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import businessLayer.api.Calculator;
-import businessLayer.operations.AddOperation;
-import businessLayer.operations.DivideOperation;
-import businessLayer.operations.MultiplyOperation;
-import businessLayer.operations.SubtractOperation;
 
 @Component	
 public class OperationFactory { 
+	
+    @Autowired
+    private final List<Calculator> serviceList;
 
-	public Calculator getOperation(final String operationType) {
-		if("add".equals(operationType)) {
-			return new AddOperation();
-		} else if("subtract".equals(operationType)) {
-			return new SubtractOperation();		
-		} else if("divide".equals(operationType)) {
-			return new DivideOperation();
-		} else if("multiply".equals(operationType)) {
-			return new MultiplyOperation();
-		} 
-		return null;
-	}
+    @Autowired
+    public OperationFactory(List<Calculator> serviceList) {
+        this.serviceList = serviceList;
+    }
+
+    public Calculator get(String s) {
+    	System.out.println("OperationFactory.get() : String = " +s);
+        return serviceList
+                .stream()
+                .filter(calculator -> calculator.supports(s))
+                .findFirst()
+                .orElseThrow(IllegalArgumentException::new);
+    }
 	
 }
+ 

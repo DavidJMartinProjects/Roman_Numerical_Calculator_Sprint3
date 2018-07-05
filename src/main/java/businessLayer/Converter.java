@@ -21,7 +21,7 @@ public class Converter {
 	
 	private static final Map<Integer, String> ROMAN_NUMERICS = new LinkedHashMap<>();
 	
-	public Converter() {
+	public Converter() { 
 		ROMAN_NUMERICS.put(1000, "M");
 		ROMAN_NUMERICS.put(900, "CM");
 		ROMAN_NUMERICS.put(500, "D");

@@ -11,8 +11,12 @@
  *----------------------------------------------------------------------------*/
 package businessLayer.operations;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
 import businessLayer.api.RomanNumericalCalculator;
 
+@Component
 public class DivideOperation extends RomanNumericalCalculator {
 
 	@Override
@@ -26,6 +30,11 @@ public class DivideOperation extends RomanNumericalCalculator {
 	@Override	
 	public String calculate(final int num1, final int num2) {
 		return converter.toRomanNumeral(num1 / num2);		
+	}
+	
+	@Override
+	public boolean supports(String s) {
+		return "/".equals(s);		
 	}
 	
 }

@@ -7,26 +7,15 @@ function calculate() {
 
 	var num1 = $("#numOneTf").val();
 	var num2 = $("#numTwoTf").val();
-	var operation = $("#operationType").find("option:selected").text();
-	var opType;
+	var operation = $("#operationType").find("option:selected").text();	
 	
-	if(operation == "+") {
-		opType = "add";
-	} else if(operation == "-") {
-		opType = "subtract";
-	} else if(operation == "/") {
-		opType = "divide";
-	} else if(operation == "*") {
-		opType = "multiply";
-	}
-
 	if ($("#numOneTf").val() == "" || $("#numTwoTf").val() == "" || $("#numOneTf").val() == null || $("#numTwoTf").val() == null) {
 		$("#validationMessage").text("Please Input a Roman Numeral.")
 	} else {
 		
 		$.ajax({
 			type : 'GET',
-			url : rootUrl+ "?num1="+num1+"&num2="+num2+"&operationType="+opType,
+			url : rootUrl+ "?num1="+num1+"&num2="+num2+"&operationType="+encodeURIComponent(operation),
 			contentType : "application/json",
 			dataType : "text",
 			success : function(response) {

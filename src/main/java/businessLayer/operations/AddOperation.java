@@ -11,10 +11,12 @@
  *----------------------------------------------------------------------------*/
 package businessLayer.operations;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
-
 import businessLayer.api.RomanNumericalCalculator;
 
+@Primary
 @Component
 public class AddOperation extends RomanNumericalCalculator {
 
@@ -31,5 +33,11 @@ public class AddOperation extends RomanNumericalCalculator {
 		return converter.toRomanNumeral(num1 + num2);		
 	}
 
+	@Override
+	public boolean supports(String s) {
+		return "+".equals(s);		
+	}
+
 }
+
 		

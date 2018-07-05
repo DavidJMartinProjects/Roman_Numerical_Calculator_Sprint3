@@ -11,8 +11,11 @@
  *----------------------------------------------------------------------------*/
 package businessLayer.operations;
 
-import businessLayer.api.RomanNumericalCalculator;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+import businessLayer.api.RomanNumericalCalculator;
+@Component
 public class MultiplyOperation extends RomanNumericalCalculator {
 
 	@Override
@@ -28,5 +31,13 @@ public class MultiplyOperation extends RomanNumericalCalculator {
 		return converter.toRomanNumeral(num1 * num2);		
 	}
 
+	/* (non-Javadoc)
+	 * @see businessLayer.api.Calculation#supports(java.lang.String)
+	 */
+	@Override
+	public boolean supports(String s) {
+		return "*".equals(s);
+	}
+	
 }
 	

@@ -16,10 +16,10 @@ import businessLayer.operations.SupportedOperations;
 @RestController
 @RequestMapping(value = "/calc")
 public class CalculatorWS {
-	
+
 	@Autowired
 	OperationFactory operationFactory;
-		
+
 	@Autowired
 	OperationContext context;
 
@@ -29,16 +29,17 @@ public class CalculatorWS {
 	}
 
 	@GetMapping
-	public ResponseEntity<Object> calculate(@RequestParam("num1") final String num1, @RequestParam("num2") final String num2, 
-			@RequestParam("operationType") final String operationType) {	
-			context.setOperation(operationFactory.getOperation(operationType));
-			String result = context.performOperation(num1, num2);
-			return new ResponseEntity<>(result, HttpStatus.OK);
+	public ResponseEntity<Object> calculate(@RequestParam("num1") final String num1,
+			@RequestParam("num2") final String num2, @RequestParam("operationType") final String operationType) {
+		System.out.println("operationType : " +operationType);
+		context.setOperation(operationFactory.get(operationType));
+		String result = context.performOperation(num1, num2);
+		return new ResponseEntity<>(result, HttpStatus.OK);
 	}
-	
+
 	@RequestMapping(value = "/operations", method = RequestMethod.GET, produces = { "application/json" })
-	public ResponseEntity<Object> getSupportedOperations() {		
+	public ResponseEntity<Object> getSupportedOperations() {
 		return new ResponseEntity<>(SupportedOperations.getSupportedOperations(), HttpStatus.OK);
-	}	
+	}
 
 }
