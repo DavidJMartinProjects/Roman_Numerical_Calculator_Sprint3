@@ -11,7 +11,6 @@
  *----------------------------------------------------------------------------*/
 package businessLayer.operations;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import businessLayer.api.RomanNumericalCalculator;
@@ -34,7 +33,7 @@ public class SubtractOperation extends RomanNumericalCalculator {
 	}
 	
 	@Override
-	public boolean supports(String s) {
+	public boolean supports(String s) {	
 		return "-".equals(s);
 	}
 

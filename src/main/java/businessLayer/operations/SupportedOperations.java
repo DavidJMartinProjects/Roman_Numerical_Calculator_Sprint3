@@ -13,7 +13,7 @@ package businessLayer.operations;
 
 public enum SupportedOperations {
 
-	PLUS("+"), MINUS("-"), DIVIDE("/"), MULTIPLY("*");
+	PLUS("+"), MINUS("-"), DIVIDE("/"), MULTIPLY("*"), MODULUS("%");
 
 	private String symbol;
 
