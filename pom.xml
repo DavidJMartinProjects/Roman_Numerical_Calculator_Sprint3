@@ -187,52 +187,79 @@
 				<version>${surefire.version}</version>
 			</plugin>
 
-
-			<!-- <plugin> -->
-			<!-- <groupId>org.jacoco</groupId> -->
-			<!-- <artifactId>jacoco-maven-plugin</artifactId> -->
-			<!-- <version>0.8.0</version> -->
-			<!-- <configuration> -->
-			<!-- <goal> -->
-			<!-- <goalPrefix>jacoco</goalPrefix> -->
-			<!-- </goal> -->
-			<!-- </configuration> -->
-			<!-- <executions> -->
-			<!-- <execution> -->
-			<!-- <goals> -->
-			<!-- <goal>prepare-agent</goal> -->
-			<!-- </goals> -->
-			<!-- </execution> -->
-			<!-- <execution> -->
-			<!-- <id>report</id> -->
-			<!-- <phase>prepare-package</phase> -->
-			<!-- <goals> -->
-			<!-- <goal>report</goal> -->
-			<!-- </goals> -->
-			<!-- </execution> -->
-			<!-- </executions> -->
-			<!-- </plugin> -->
-
 			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.0</version>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			
+			
+			<plugin>
+				<groupId>io.fabric8</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.20.0</version>
+				<configuration>
+					<!--<dockerHost>tcp://REMOTE_IP:2375</dockerHost> -->
+					<images>
+						<image>
+							<name>springboot-calculator-dockerimage:${project.version}</name>
+							<alias>springboot-calculator-dockerimage</alias>
+							<build>
+								<dockerFileDir>${project.basedir}</dockerFileDir>
+
+							</build>
+							<run>
+								<namingStrategy>alias</namingStrategy>
+								<dependsOn>
+
+								</dependsOn>
+
+								<ports>
+									<port>9876:8080</port>
+								</ports>
+								<log>
+									<prefix>TC</prefix>
+									<date>default</date>
+									<color>cyan</color>
+								</log>
+							</run>
+
+						</image>
+					</images>
+				</configuration>
+
 				<executions>
 					<execution>
-						<id>default-prepare-agent</id>
+						<id>start</id>
+						<phase>pre-integration-test</phase>
 						<goals>
-							<goal>prepare-agent</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>default-report</id>
-						<phase>prepare-package</phase>
-						<goals>
-							<goal>report</goal>
+							<goal>stop</goal>
+							<goal>build</goal>
+							<goal>start</goal>
 						</goals>
 					</execution>
 				</executions>
 			</plugin>
+
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.jacoco</groupId> -->
+<!-- 				<artifactId>jacoco-maven-plugin</artifactId> -->
+<!-- 				<version>0.8.0</version> -->
+<!-- 				<executions> -->
+<!-- 					<execution> -->
+<!-- 						<id>default-prepare-agent</id> -->
+<!-- 						<goals> -->
+<!-- 							<goal>prepare-agent</goal> -->
+<!-- 						</goals> -->
+<!-- 					</execution> -->
+<!-- 					<execution> -->
+<!-- 						<id>default-report</id> -->
+<!-- 						<phase>prepare-package</phase> -->
+<!-- 						<goals> -->
+<!-- 							<goal>report</goal> -->
+<!-- 						</goals> -->
+<!-- 					</execution> -->
+<!-- 				</executions> -->
+<!-- 			</plugin> -->
 
 
 		</plugins>

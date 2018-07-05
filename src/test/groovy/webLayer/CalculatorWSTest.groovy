@@ -61,6 +61,7 @@ class CalculatorWSTest extends Specification {
 		"LX"		| "XIV"		 | "-"	 		 || "XLVI"			|| status().isOk()
 		"LX"		| "XIV"		 | "/"			 || "IV"			|| status().isOk()
 		"LX"		| "XIV"		 | "*"	 	 	 || "DCCCXL"		|| status().isOk()
+		"LX"		| "XIV"		 | "%"	 	 	 || "IV"			|| status().isOk()
 	}
 
 	@Test
@@ -76,6 +77,6 @@ class CalculatorWSTest extends Specification {
 
 		where:
 			expectedResult	|| expectedStatus
-			"+-/*"			|| status().isOk()
+			"+-/*%"			|| status().isOk()
 	}
 }

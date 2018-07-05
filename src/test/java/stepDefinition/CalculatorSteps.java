@@ -195,7 +195,7 @@ public class CalculatorSteps {
 	@Then("^The correct result of the Addition calculation shall be displayed : LXXIV$")
 	public void theExpectedResultOfTheAdditionOperationIsDisplayed() throws Throwable {		
 		try {
-			assertEquals("Result : LXXIV", driver.findElement(By.id("result")).getText());
+			assertEquals("Result : LXXIV", driver.findElement(By.id("response")).getText());
 		} finally {
 			driver.quit();
 		}
@@ -204,7 +204,7 @@ public class CalculatorSteps {
 	@Then("^The correct result of the Subtraction calculation shall be displayed : XLVI$")
 	public void theExpectedResultOfTheSubtractionOperationIsDisplayed() throws Throwable {		
 		try {
-			assertEquals("Result : XLVI", driver.findElement(By.id("result")).getText());
+			assertEquals("Result : XLVI", driver.findElement(By.id("response")).getText());
 		} finally {
 			driver.quit();
 		}
@@ -213,7 +213,7 @@ public class CalculatorSteps {
 	@Then("^The correct result of the Division calculation shall be displayed : IV$")
 	public void theExpectedResultOfTheDivisionOperationIsDisplayed() throws Throwable {		
 		try {
-			assertEquals("Result : IV", driver.findElement(By.id("result")).getText());
+			assertEquals("Result : IV", driver.findElement(By.id("response")).getText());
 		} finally {
 			driver.quit();
 		}
@@ -222,7 +222,7 @@ public class CalculatorSteps {
 	@Then("^The correct result of the Multiplication calculation shall be displayed : DCCCXL$")
 	public void theExpectedResultOfTheMultiplicationOperationIsDisplayed() throws Throwable {		
 		try {
-			assertEquals("Result : DCCCXL", driver.findElement(By.id("result")).getText());
+			assertEquals("Result : DCCCXL", driver.findElement(By.id("response")).getText());
 		} finally {
 			driver.quit();
 		}
@@ -231,7 +231,7 @@ public class CalculatorSteps {
 	@Then("^The correct result of the calculation shall be displayed : XXII$")
 	public void theExpectedResultOfXXIIIsDisplayed() throws Throwable {		
 		try {
-			assertEquals("Result : XXII", driver.findElement(By.id("result")).getText());
+			assertEquals("Result : XXII", driver.findElement(By.id("response")).getText());
 		} finally {
 			driver.quit();
 		}
@@ -240,7 +240,7 @@ public class CalculatorSteps {
 	@Then("^The correct result of the calculation shall be displayed : IV$")
 	public void theExpectedResultOfIVIsDisplayed() throws Throwable {		
 		try {
-			assertEquals("Result : IV", driver.findElement(By.id("result")).getText());
+			assertEquals("Result : IV", driver.findElement(By.id("response")).getText());
 		} finally {
 			driver.quit();
 		}
@@ -249,7 +249,7 @@ public class CalculatorSteps {
 	@Then("^The correct result of the calculation shall be displayed : CM$")
 	public void theExpectedResultOfCMIsDisplayed() throws Throwable {		
 		try {
-			assertEquals("Result : CM", driver.findElement(By.id("result")).getText());
+			assertEquals("Result : CM", driver.findElement(By.id("response")).getText());
 		} finally {
 			driver.quit();
 		}
@@ -258,7 +258,7 @@ public class CalculatorSteps {
 	@Then("^The correct result of the calculation shall be displayed : XL$")
 	public void theExpectedResultOfXLIsDisplayed() throws Throwable {		
 		try {
-			assertEquals("Result : XL", driver.findElement(By.id("result")).getText());
+			assertEquals("Result : XL", driver.findElement(By.id("response")).getText());
 		} finally {
 			driver.quit();
 		}
@@ -267,7 +267,7 @@ public class CalculatorSteps {
 	@Then("^The correct result of the calculation shall be displayed : CD$")
 	public void theExpectedResultOfCDIsDisplayed() throws Throwable {		
 		try {
-			assertEquals("Result : CD", driver.findElement(By.id("result")).getText());
+			assertEquals("Result : CD", driver.findElement(By.id("response")).getText());
 		} finally {
 			driver.quit();
 		}
@@ -276,7 +276,7 @@ public class CalculatorSteps {
 	@Then("^The correct result of the calculation shall be displayed : X$")
 	public void theExpectedResultOfXIsDisplayed() throws Throwable {		
 		try {
-			assertEquals("Result : X", driver.findElement(By.id("result")).getText());
+			assertEquals("Result : X", driver.findElement(By.id("response")).getText());
 		} finally {
 			driver.quit();
 		}
@@ -285,7 +285,7 @@ public class CalculatorSteps {
 	@Then("^The correct result of the calculation shall be displayed : C$")
 	public void theExpectedResultOfCIsDisplayed() throws Throwable {		
 		try {
-			assertEquals("Result : C", driver.findElement(By.id("result")).getText());
+			assertEquals("Result : C", driver.findElement(By.id("response")).getText());
 		} finally {
 			driver.quit();
 		}
@@ -294,7 +294,7 @@ public class CalculatorSteps {
 	@Then("^The correct result of the calculation shall be displayed : M$")
 	public void theExpectedResultOfMIsDisplayed() throws Throwable {		
 		try {
-			assertEquals("Result : M", driver.findElement(By.id("result")).getText());
+			assertEquals("Result : M", driver.findElement(By.id("response")).getText());
 		} finally {
 			driver.quit();
 		}

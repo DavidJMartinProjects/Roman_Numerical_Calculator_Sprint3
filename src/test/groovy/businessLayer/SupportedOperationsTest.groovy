@@ -15,7 +15,7 @@ class SupportedOperationsTest extends Specification {
 		when : 'when two inputs are passed to the preCalculationValidation method'
 		def result = SupportedOperations.getSupportedOperations();
 		then : 'the expected result is returned'
-		assertEquals("+-/*", result)
+		assertEquals("+-/*%", result)
 	}
 	
 }
