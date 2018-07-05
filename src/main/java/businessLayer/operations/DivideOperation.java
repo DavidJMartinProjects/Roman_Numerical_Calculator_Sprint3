@@ -19,11 +19,10 @@ import businessLayer.api.RomanNumericalCalculator;
 public class DivideOperation extends RomanNumericalCalculator {
 
 	@Override
-	public boolean preCalculationValidation(final int num1, final int num2) {
+	public void preCalculationValidation(final int num1, final int num2) {
 		if(num2 > num1){
 			throw new ArithmeticException("<b>division error :</b> numeral 1 is greater than numeral 2.");
 		}
-		return true;	
 	}
 
 	@Override	

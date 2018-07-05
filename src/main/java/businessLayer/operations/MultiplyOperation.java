@@ -18,11 +18,10 @@ import businessLayer.api.RomanNumericalCalculator;
 public class MultiplyOperation extends RomanNumericalCalculator {
 
 	@Override
-	public boolean preCalculationValidation(final int num1, final int num2) {	
+	public void preCalculationValidation(final int num1, final int num2) {	
 		if((num1*num2) > 3999){
 			throw new ArithmeticException("<b>multiplication error :</b> result is greater than 3999.");
-		}	
-		return true;	
+		}		
 	}
 
 	@Override	
@@ -30,9 +29,6 @@ public class MultiplyOperation extends RomanNumericalCalculator {
 		return converter.toRomanNumeral(num1 * num2);		
 	}
 
-	/* (non-Javadoc)
-	 * @see businessLayer.api.Calculation#supports(java.lang.String)
-	 */
 	@Override
 	public boolean supports(String s) {
 		return "*".equals(s);

@@ -20,18 +20,18 @@ public abstract class RomanNumericalCalculator implements Calculator {
 	private final Validator validator = new Validator();
 	
 	@Override
-	public String doCalculation(final String romanNumeral1, final String romanNumeral2) {		
-		if(validateRomanNumerals(romanNumeral1, romanNumeral2) && preCalculationValidation(converter.toBaseTen(romanNumeral1), converter.toBaseTen(romanNumeral2))) {
-			return calculate(converter.toBaseTen(romanNumeral1), converter.toBaseTen(romanNumeral2));			
-		}		
-		return null;		
+	public String doCalculation(final String romanNumeral1, final String romanNumeral2) {	
+		validateRomanNumerals(romanNumeral1, romanNumeral2);
+		preCalculationValidation(converter.toBaseTen(romanNumeral1), converter.toBaseTen(romanNumeral2));
+		return calculate(converter.toBaseTen(romanNumeral1), converter.toBaseTen(romanNumeral2));			
 	}
 	
-	public boolean validateRomanNumerals(final String numeral1, final String numeral2) {
-		return (validator.validateRomanNumeral(numeral1) && validator.validateRomanNumeral(numeral2));
+	public void validateRomanNumerals(final String numeral1, final String numeral2) {
+		validator.validateRomanNumeral(numeral1);
+		validator.validateRomanNumeral(numeral2);
 	}
 	
-	public abstract boolean preCalculationValidation(final int num1, final int num2);	
+	public abstract void preCalculationValidation(final int num1, final int num2);	
 	public abstract String calculate(int num1, int num2);
 } 
  
