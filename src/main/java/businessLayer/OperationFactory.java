@@ -29,8 +29,7 @@ public class OperationFactory {
         this.serviceList = serviceList;
     }
 
-    public Calculator get(String s) {
-    	System.out.println("OperationFactory.get() : String = " +s);
+    public Calculator get(String s) {    	
         return serviceList
                 .stream()
                 .filter(calculator -> calculator.supports(s))
