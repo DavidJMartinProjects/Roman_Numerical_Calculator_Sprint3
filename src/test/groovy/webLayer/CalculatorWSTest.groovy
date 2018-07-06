@@ -29,17 +29,6 @@ class CalculatorWSTest extends Specification {
 
 	def numericOne, numericTwo, expectedStatus, exceptionMessage, expectedResult, operationType
 
-	def 'when a GET request is made to the /calc/status url the expected response message and a 200 OK status should be returned'() {
-
-		when: 'a GET request is made to /calc/status'
-		def response = mockMvc.perform(get("/calc/status").contentType(MediaType.APPLICATION_JSON))
-
-		then: 'expected response code is OK'
-		response
-				.andExpect(status().isOk())
-				.andExpect(content().string("status : webService online"));
-	}
-
 	@Test
 	@Unroll
 	def'when #numericOne and #numericTwo are passed as Strings #expectedResult is returned as a String along the appropriate http response code'() {
@@ -53,7 +42,7 @@ class CalculatorWSTest extends Specification {
 		then: ' sum of both numericals is returned in roman numerical form as a String'
 		response
 				.andExpect(content().string(expectedResult))
-				.andExpect(expectedStatus)
+				.andExpect(expectedStatus)	
 
 		where:
 		numericOne	| numericTwo | operationType || expectedResult	|| expectedStatus
@@ -62,6 +51,17 @@ class CalculatorWSTest extends Specification {
 		"LX"		| "XIV"		 | "/"			 || "IV"			|| status().isOk()
 		"LX"		| "XIV"		 | "*"	 	 	 || "DCCCXL"		|| status().isOk()
 		"LX"		| "XIV"		 | "%"	 	 	 || "IV"			|| status().isOk()
+	}
+
+	def 'when a GET request is made to the /calc/status url the expected response message and a 200 OK status should be returned'() {
+
+		when: 'a GET request is made to /calc/status'
+		def response = mockMvc.perform(get("/calc/status").contentType(MediaType.APPLICATION_JSON))
+
+		then: 'expected response code is OK'
+		response
+				.andExpect(status().isOk())
+				.andExpect(content().string("status : webService online"));
 	}
 
 	@Test
@@ -76,7 +76,7 @@ class CalculatorWSTest extends Specification {
 				.andExpect(expectedStatus)
 
 		where:
-			expectedResult	|| expectedStatus
-			"+-/*%"			|| status().isOk()
+		expectedResult	|| expectedStatus
+		"+-/*%"			|| status().isOk()
 	}
 }

@@ -16,13 +16,15 @@ import org.springframework.stereotype.Component;
 import businessLayer.api.RomanNumericalCalculator;  
 
 @Component	
-public class ModOperation extends RomanNumericalCalculator {
+public class ModulusOperation extends RomanNumericalCalculator {
 
 	@Override
 	public void preCalculationValidation(final int num1, final int num2) {		
-		if((num1+num2) > 3999){
-			throw new ArithmeticException("<b>modulus error :</b> result is greater than 3999.");
-		}
+		if(num2>num1){
+			throw new ArithmeticException("<b>modulus error :</b> numeral 1 is greater than numeral 2");
+		} else if((num1-num2) == 0) {
+			throw new ArithmeticException("<b>modulus error :</b> result was zero.");
+		} 
 	}
 
 	@Override

@@ -29,8 +29,7 @@ import ultilities.DriverFactory;
 public class CalculatorSteps {
 	
 	private final static String browserType = "chrome";
-	private final WebDriver driver = DriverFactory.open(browserType);
-	private final static StringBuffer verificationErrors = new StringBuffer();
+	private final WebDriver driver = DriverFactory.open(browserType);	
 
 	@Before	
 	public void setUp() throws Exception {
@@ -299,7 +298,5 @@ public class CalculatorSteps {
 			driver.quit();
 		}
 	}
-
-
 
 }

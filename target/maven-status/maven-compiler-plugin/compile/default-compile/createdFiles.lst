@@ -10,5 +10,4 @@ businessLayer\Application.class
 businessLayer\operations\AddOperation.class
 businessLayer\OperationFactory.class
 businessLayer\OperationContext.class
-businessLayer\operations\ModOperation.class
 businessLayer\operations\DivideOperation.class

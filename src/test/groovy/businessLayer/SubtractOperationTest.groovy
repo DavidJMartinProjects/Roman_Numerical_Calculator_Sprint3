@@ -22,8 +22,8 @@ class SubtractOperationTest extends Specification {
 		noExceptionThrown()
 		where :
 		
-		input1	| input2 | _
-		 60		| 14	 | _
+		input1	| input2 
+		 60		| 14	 
 	}
 	
 	@Test
