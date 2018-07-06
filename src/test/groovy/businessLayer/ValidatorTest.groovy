@@ -20,6 +20,7 @@ import utils.Validator
 
 class ValidatorTest extends Specification  {
  
+	def input
 	def theValidator = new Validator();
 
 	@Test
@@ -29,24 +30,24 @@ class ValidatorTest extends Specification  {
 		when: 'the validateInput method is called with a valid argument'
 		def result = theValidator.validateRomanNumeral(input);
 
-		then: 'verify that the expected validation result is returned'
-		result == expected
+		then: 'verify that the validation passes and that no exception is thrown'
+		noExceptionThrown()
 
 		where:
-		input	 || expected
-		"M"		 || true
-		"CM"	 || true
-		"D"		 || true
-		"CD"	 || true
-		"C"		 || true
-		"XC"	 || true
-		"L"		 || true
-		"XL"	 || true
-		"X"		 || true
-		"IX"	 || true
-		"V"		 || true
-		"IV"	 || true
-		"I"		 || true
+		input	| _
+		"M"		| _
+		"CM"	| _
+		"D"		| _
+		"CD"	| _
+		"C"		| _
+		"XC"	| _
+		"L"		| _
+		"XL"	| _
+		"X"		| _
+		"IX"	| _
+		"V"		| _
+		"IV"	| _
+		"I"		| _
 	}
 
 	@Test

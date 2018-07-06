@@ -20,10 +20,11 @@ class DivideOperationTest extends Specification {
 		def result = theDivideOperation.preCalculationValidation(input1, input2)
 		then : 'the expected result is returned'
 		assertEquals(expected, result)
+		noExceptionThrown()
 		where :
 		
-		input1	| input2 | expected
-		 40		| 14	 |	true
+		input1	| input2 | _
+		 40		| 14	 | _
 	}
 	
 	@Test
@@ -38,7 +39,7 @@ class DivideOperationTest extends Specification {
 
 		where:
 		input1	| input2 || expected
-		14		| 40 	 || "division error : numeral 1 is greater than numeral 2."
+		14		| 40 	 || "<b>division error :</b> numeral 1 is greater than numeral 2."
 	}
 	
 	@Test

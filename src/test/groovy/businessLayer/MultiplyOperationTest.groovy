@@ -21,10 +21,11 @@ class MultiplyOperationTest extends Specification {
 		def result = theMultiplyOperation.preCalculationValidation(input1, input2)
 		then : 'the expected result is returned'
 		assertEquals(expected, result)
+		noExceptionThrown()
 		where :
 		
-		input1	| input2 | expected
-		 60		| 14	 |	true
+		input1	| input2 | _
+		 60		| 14	 | _
 	}
 	
 	@Test
@@ -39,7 +40,7 @@ class MultiplyOperationTest extends Specification {
 
 		where:
 		input1	| input2 || expected
-		2000	| 3 	 || "multiplication error : result is greater than 3999."
+		2000	| 3 	 || "<b>multiplication error :</b> result is greater than 3999."
 	}
 	
 	@Test

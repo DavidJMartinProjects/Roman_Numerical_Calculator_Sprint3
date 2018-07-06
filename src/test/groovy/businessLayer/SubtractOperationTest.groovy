@@ -19,10 +19,11 @@ class SubtractOperationTest extends Specification {
 		def result = theSubtractOperation.preCalculationValidation(input1, input2)
 		then : 'the expected result is returned'
 		assertEquals(expected, result)
+		noExceptionThrown()
 		where :
 		
-		input1	| input2 | expected
-		 60		| 14	 |	true
+		input1	| input2 | _
+		 60		| 14	 | _
 	}
 	
 	@Test
@@ -37,8 +38,8 @@ class SubtractOperationTest extends Specification {
 
 		where:
 		input1	| input2 || expected
-		14		| 60 	 || "subtraction error : numeral 1 is greater than numeral 2"
-		5		| 5 	 || "subtraction error : result was zero."
+		14		| 60 	 || "<b>subtraction error :</b> numeral 1 is greater than numeral 2"
+		5		| 5 	 || "<b>subtraction error :</b> result was zero."
 	}
 	
 	@Test

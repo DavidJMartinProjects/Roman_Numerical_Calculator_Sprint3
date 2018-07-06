@@ -22,10 +22,11 @@ class AddOperationTest extends Specification {
 		def result = theAddOperation.preCalculationValidation(input1, input2)
 		then : 'the expected result is returned'
 		assertEquals(expected, result)
+		noExceptionThrown()
 		where :
 		
-		input1	| input2 | expected
-		 60		| 14	 |	true
+		input1	| input2 | _
+		 60		| 14	 | _
 	}
 	
 	@Test
@@ -40,7 +41,7 @@ class AddOperationTest extends Specification {
 
 		where:
 		input1	| input2 || expected
-		3999	| 1 	 || "addition error : result is greater than 3999."
+		3999	| 1 	 || "<b>addition error :</b> result is greater than 3999."
 	}
 	
 	@Test
