@@ -94,8 +94,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <enumeration id="11" language="java" name="businessLayer.calculations.SupportedCalculation" project="com.calculator" 
-    file="/com.calculator/src/main/java/businessLayer/calculations/SupportedCalculation.java" binary="false" 
+  <enumeration id="11" language="java" name="businessLayer.calculations.SupportedCalculations" project="com.calculator" 
+    file="/com.calculator/src/main/java/businessLayer/calculations/SupportedCalculations.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1400" y="313"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

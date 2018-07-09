@@ -1,13 +1,13 @@
 businessLayer\Converter.class
 businessLayer\calculations\Multiplication.class
 businessLayer\CalculationContext.class
-businessLayer\calculations\SupportedCalculation.class
 businessLayer\api\RomanNumericalCalculator.class
 businessLayer\api\Calculator.class
 businessLayer\calculations\Division.class
 businessLayer\calculations\Modulus.class
 businessLayer\CalculationFactory.class
 webLayer\CalculatorWS.class
+businessLayer\calculations\SupportedCalculations.class
 utils\Validator.class
 businessLayer\Application.class
 businessLayer\calculations\Subtraction.class

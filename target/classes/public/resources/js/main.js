@@ -31,8 +31,6 @@ function calculate() {
 }
 
 $(document).on('click', '#calcBtn', function() {
-    $(".alert").alert('close')
-
     calculate();
     return false;
 });

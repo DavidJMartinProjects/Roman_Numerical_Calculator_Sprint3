@@ -1,10 +1,14 @@
-package businessLayer;
+package businessLayer.calculations;
 
 
 import org.springframework.beans.factory.annotation.Autowired
 
-import businessLayer.api.Calculator
+import businessLayer.CalculationContext
+import businessLayer.Converter
 import businessLayer.calculations.Addition
+import businessLayer.calculations.Division
+import businessLayer.calculations.Multiplication
+import businessLayer.calculations.Subtraction
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;

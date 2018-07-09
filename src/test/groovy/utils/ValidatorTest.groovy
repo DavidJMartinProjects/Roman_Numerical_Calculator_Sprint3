@@ -9,7 +9,7 @@
  * program(s) have been supplied.
  *******************************************************************************
  *----------------------------------------------------------------------------*/
-package businessLayer
+package utils
 
 
 import org.hibernate.validator.internal.metadata.aggregated.ValidatableParametersMetaData

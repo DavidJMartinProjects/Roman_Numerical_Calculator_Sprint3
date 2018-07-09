@@ -11,13 +11,13 @@
  *----------------------------------------------------------------------------*/
 package businessLayer.calculations;
 
-public enum SupportedCalculation {
+public enum SupportedCalculations {
 
 	PLUS("+"), MINUS("-"), DIVIDE("/"), MULTIPLY("*"), MODULUS("%");
 
 	private String symbol;
 
-	SupportedCalculation(final String aSymbol) {
+	SupportedCalculations(final String aSymbol) {
 		this.symbol = aSymbol;
 	}
 
@@ -27,8 +27,8 @@ public enum SupportedCalculation {
 
 	public static String getSupportedOperations() {
 		StringBuilder operations = new StringBuilder();
-		final SupportedCalculation[] arr = SupportedCalculation.values();
-		for (final SupportedCalculation op : arr) {
+		final SupportedCalculations[] arr = SupportedCalculations.values();
+		for (final SupportedCalculations op : arr) {
 			operations.append(op.getSymbol());
 		}
 		return operations.toString();

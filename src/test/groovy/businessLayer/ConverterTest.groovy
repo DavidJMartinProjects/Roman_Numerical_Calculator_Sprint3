@@ -12,6 +12,8 @@
 package businessLayer
 
 import org.junit.Test
+
+import businessLayer.Converter
 import spock.lang.Specification
 import spock.lang.Unroll
 
