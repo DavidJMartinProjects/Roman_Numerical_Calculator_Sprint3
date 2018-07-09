@@ -63,18 +63,18 @@ class ValidatorTest extends Specification  {
 
 		where:
 		input	 || expected
-		"IIII"	 || "error : invalid roman rumerical entered"
-		"XXXX"	 || "error : invalid roman rumerical entered"
-		"CCCC"	 || "error : invalid roman rumerical entered"
-		"VV"	 || "error : invalid roman rumerical entered"
-		"VVV"	 || "error : invalid roman rumerical entered"
-		"VVVV"	 || "error : invalid roman rumerical entered"
-		"LL"	 || "error : invalid roman rumerical entered"
-		"LLL"	 || "error : invalid roman rumerical entered"
-		"LLLL"	 || "error : invalid roman rumerical entered"
-		"DD"	 || "error : invalid roman rumerical entered"
-		"DDD"	 || "error : invalid roman rumerical entered"
-		"DDDD"	 || "error : invalid roman rumerical entered"
-		"MMMM"	 || "error : invalid roman rumerical entered"
+		"IIII"	 || "<b>error :</b> invalid roman numerical entered"
+		"XXXX"	 || "<b>error :</b> invalid roman numerical entered"
+		"CCCC"	 || "<b>error :</b> invalid roman numerical entered"
+		"VV"	 || "<b>error :</b> invalid roman numerical entered"
+		"VVV"	 || "<b>error :</b> invalid roman numerical entered"
+		"VVVV"	 || "<b>error :</b> invalid roman numerical entered"
+		"LL"	 || "<b>error :</b> invalid roman numerical entered"
+		"LLL"	 || "<b>error :</b> invalid roman numerical entered"
+		"LLLL"	 || "<b>error :</b> invalid roman numerical entered"
+		"DD"	 || "<b>error :</b> invalid roman numerical entered"
+		"DDD"	 || "<b>error :</b> invalid roman numerical entered"
+		"DDDD"	 || "<b>error :</b> invalid roman numerical entered"
+		"MMMM"	 || "<b>error :</b> invalid roman numerical entered"
 	}
 }

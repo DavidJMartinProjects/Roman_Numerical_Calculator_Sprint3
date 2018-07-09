@@ -4,20 +4,7 @@ package businessLayer;
 import org.springframework.beans.factory.annotation.Autowired
 
 import businessLayer.api.Calculator
-import businessLayer.operations.AddOperation
-
-/*------------------------------------------------------------------------------
- *******************************************************************************
- * COPYRIGHT Ericsson 2014
- *
- * The copyright to the computer program(s) herein is the property of
- * Ericsson Inc. The programs may be used and/or copied only with written
- * permission from Ericsson Inc. or in accordance with the terms and
- * conditions stipulated in the agreement/contract under which the
- * program(s) have been supplied.
- *******************************************************************************
- *----------------------------------------------------------------------------*/
-
+import businessLayer.calculations.Addition
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
@@ -36,8 +23,8 @@ class OperationContextTest extends Specification {
 	def expected, numericOne, numericTwo
 	def theConverter = new Converter()
 	def theValidator = new Validator()
-	def theOperation = new AddOperation()
-	def theOperationContext = new OperationContext();
+	def theOperation = new Addition()
+	def theOperationContext = new CalculationContext();
 	
 	
 	@Test

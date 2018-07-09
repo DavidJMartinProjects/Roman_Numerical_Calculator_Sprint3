@@ -9,7 +9,7 @@
  * program(s) have been supplied.
  *******************************************************************************
  *----------------------------------------------------------------------------*/
-package businessLayer.operations;
+package businessLayer.calculations;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
@@ -18,7 +18,7 @@ import businessLayer.api.RomanNumericalCalculator;
 
 @Primary
 @Component
-public class AddOperation extends RomanNumericalCalculator {
+public class Addition extends RomanNumericalCalculator {
 
 	@Override
 	public void preCalculationValidation(final int num1, final int num2) {		

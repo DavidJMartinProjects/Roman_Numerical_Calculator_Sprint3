@@ -9,33 +9,32 @@
  * program(s) have been supplied.
  *******************************************************************************
  *----------------------------------------------------------------------------*/
-package businessLayer;
+package businessLayer.calculations;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import businessLayer.api.Calculator;
+import businessLayer.api.RomanNumericalCalculator;
+@Component
+public class Subtraction extends RomanNumericalCalculator { 		
 
-@Component	
-public class OperationFactory { 
+	@Override
+	public void preCalculationValidation(final int num1, final int num2) {		
+		if(num2 > num1) {
+			throw new ArithmeticException("<b>subtraction error :</b> numeral 1 is greater than numeral 2");
+		} else if((num1-num2) == 0) {
+			throw new ArithmeticException("<b>subtraction error :</b> result was zero.");
+		}		
+	}
+
+	@Override		
+	public String calculate(final int num1, final int num2) {	
+		return converter.toRomanNumeral(num1 - num2);		
+	}
 	
-    @Autowired
-    private final List<Calculator> serviceList;
+	@Override
+	public boolean supports(String s) {	
+		return "-".equals(s);
+	}
 
-    @Autowired
-    public OperationFactory(List<Calculator> serviceList) {
-        this.serviceList = serviceList;
-    }
-
-    public Calculator get(String s) {    	
-        return serviceList
-                .stream()
-                .filter(calculator -> calculator.supports(s))
-                .findFirst()
-                .orElseThrow(IllegalArgumentException::new);
-    }
-	
 }
- 
+		

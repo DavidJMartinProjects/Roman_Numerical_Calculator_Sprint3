@@ -1,20 +1,20 @@
 package businessLayer;
 
-import businessLayer.operations.SubtractOperation
-
 import static org.junit.Assert.assertEquals
 
 import org.junit.Test
+
+import businessLayer.calculations.Subtraction
 import spock.lang.Specification
 
 class SubtractOperationTest extends Specification {
 	def input1, input2, expected
-	def SubtractOperation theSubtractOperation
+	def Subtraction theSubtractOperation
 	
 	@Test
 	def 'the preCalculationValidation method returns the expected result when called with two valid inputs'() {
 		given : 'the calculation is a SubtractOperation'
-		theSubtractOperation = new SubtractOperation();
+		theSubtractOperation = new Subtraction();
 		when : 'when two inputs are passed to the preCalculationValidation method'
 		def result = theSubtractOperation.preCalculationValidation(input1, input2)
 		then : 'the expected result is returned'
@@ -29,7 +29,7 @@ class SubtractOperationTest extends Specification {
 	@Test
 	def 'the preCalculationValidation method returns the expected exception message when called with invalid inputs'() {
 		given : 'the calculation is a SubtractOperation'
-		theSubtractOperation = new SubtractOperation();
+		theSubtractOperation = new Subtraction();
 		when : 'when two inputs are passed to the preCalculationValidation method'
 		def result = theSubtractOperation.preCalculationValidation(input1, input2)
 		then : 'the expected exception message is returned'
@@ -45,7 +45,7 @@ class SubtractOperationTest extends Specification {
 	@Test
 	def 'the calculate method returns the expected result when called with valid inputs'() {
 		given : 'the calculation is a SubtractOperation'
-		theSubtractOperation = new SubtractOperation();
+		theSubtractOperation = new Subtraction();
 		when : 'when two inputs are passed to the preCalculationValidation method'
 		def result = theSubtractOperation.calculate(input1, input2)
 		then : 'the expected result is returned'

@@ -9,30 +9,33 @@
  * program(s) have been supplied.
  *******************************************************************************
  *----------------------------------------------------------------------------*/
-package businessLayer.operations;
+package businessLayer;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import businessLayer.api.RomanNumericalCalculator;
+import businessLayer.api.Calculator;
+
 @Component
-public class MultiplyOperation extends RomanNumericalCalculator {
-
-	@Override
-	public void preCalculationValidation(final int num1, final int num2) {	
-		if((num1*num2) > 3999){
-			throw new ArithmeticException("<b>multiplication error :</b> result is greater than 3999.");
-		}		
-	}
-
-	@Override	
-	public String calculate(final int num1, final int num2	) {
-		return converter.toRomanNumeral(num1 * num2);		
-	}
-
-	@Override
-	public boolean supports(String s) {
-		return "*".equals(s);
-	}
+public class CalculationContext {
 	
+	@Autowired
+	Calculator operation;	
+			
+	public CalculationContext(final Calculator anOperation){
+	    this.operation = anOperation;
+	}	
+	
+	public Calculator getOperation() {
+		return operation;
+	}	
+
+	public void setOperation(final Calculator operation) {
+		this.operation = operation;	
+	}
+
+	public String performOperation(final String num1, final String num2) {
+		return operation.doCalculation(num1, num2);
+	}
+	 
 }
-	

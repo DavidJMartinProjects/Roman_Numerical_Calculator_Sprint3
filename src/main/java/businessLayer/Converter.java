@@ -14,12 +14,14 @@ package businessLayer;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Converter {		
 	
-	private static final Map<Integer, String> ROMAN_NUMERICS = new LinkedHashMap<>();
+	@Autowired
+	static final Map<Integer, String> ROMAN_NUMERICS = new LinkedHashMap<>();
 	
 	public Converter() { 
 		ROMAN_NUMERICS.put(1000, "M");

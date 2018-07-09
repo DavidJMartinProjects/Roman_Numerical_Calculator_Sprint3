@@ -1,21 +1,21 @@
 package businessLayer;
 
-import businessLayer.operations.DivideOperation
-import businessLayer.operations.SubtractOperation
-
 import static org.junit.Assert.assertEquals
 
 import org.junit.Test
+
+import businessLayer.calculations.Division
+import businessLayer.calculations.Subtraction
 import spock.lang.Specification
 
 class DivideOperationTest extends Specification {
 	def input1, input2, expected
-	def DivideOperation theDivideOperation
+	def Division theDivideOperation
 	
 	@Test
 	def 'the preCalculationValidation method returns the expected result when called with two valid inputs'() {
 		given : 'the calculation is a DivideOperation'
-		theDivideOperation = new DivideOperation();
+		theDivideOperation = new Division();
 		when : 'when two inputs are passed to the preCalculationValidation method'
 		def result = theDivideOperation.preCalculationValidation(input1, input2)
 		then : 'the expected result is returned'
@@ -30,7 +30,7 @@ class DivideOperationTest extends Specification {
 	@Test
 	def 'the preCalculationValidation method returns the expected exception message when called with invalid inputs'() {
 		given : 'the calculation is a DivideOperation'
-		theDivideOperation = new DivideOperation();
+		theDivideOperation = new Division();
 		when : 'when two inputs are passed to the preCalculationValidation method'
 		def result = theDivideOperation.preCalculationValidation(input1, input2)
 		then : 'the expected exception message is returned'
@@ -45,7 +45,7 @@ class DivideOperationTest extends Specification {
 	@Test
 	def 'the calculate method returns the expected result when called with valid inputs'() {
 		given : 'the calculation is a DivideOperation'
-		theDivideOperation = new DivideOperation();
+		theDivideOperation = new Division();
 		when : 'when two inputs are passed to the preCalculationValidation method'
 		def result = theDivideOperation.calculate(input1, input2)
 		then : 'the expected result is returned'

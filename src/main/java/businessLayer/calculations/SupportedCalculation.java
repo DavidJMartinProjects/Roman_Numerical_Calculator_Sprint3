@@ -9,33 +9,29 @@
  * program(s) have been supplied.
  *******************************************************************************
  *----------------------------------------------------------------------------*/
-package businessLayer;
+package businessLayer.calculations;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+public enum SupportedCalculation {
 
-import businessLayer.api.Calculator;
+	PLUS("+"), MINUS("-"), DIVIDE("/"), MULTIPLY("*"), MODULUS("%");
 
-@Component
-public class OperationContext {
-	
-	@Autowired
-	Calculator operation;	
-			
-	public OperationContext(final Calculator anOperation){
-	    this.operation = anOperation;
-	}	
-	
-	public Calculator getOperation() {
-		return operation;
-	}	
+	private String symbol;
 
-	public void setOperation(final Calculator operation) {
-		this.operation = operation;	
+	SupportedCalculation(final String aSymbol) {
+		this.symbol = aSymbol;
 	}
 
-	public String performOperation(final String num1, final String num2) {
-		return operation.doCalculation(num1, num2);
+	public String getSymbol() {
+		return symbol;
 	}
-	 
+
+	public static String getSupportedOperations() {
+		StringBuilder operations = new StringBuilder();
+		final SupportedCalculation[] arr = SupportedCalculation.values();
+		for (final SupportedCalculation op : arr) {
+			operations.append(op.getSymbol());
+		}
+		return operations.toString();
+	}
+
 }

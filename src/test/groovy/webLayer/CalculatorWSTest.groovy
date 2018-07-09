@@ -6,6 +6,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.web.util.NestedServletException
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -42,7 +43,7 @@ class CalculatorWSTest extends Specification {
 		then: ' sum of both numericals is returned in roman numerical form as a String'
 		response
 				.andExpect(content().string(expectedResult))
-				.andExpect(expectedStatus)	
+				.andExpect(expectedStatus)
 
 		where:
 		numericOne	| numericTwo | operationType || expectedResult	|| expectedStatus
@@ -53,15 +54,23 @@ class CalculatorWSTest extends Specification {
 		"LX"		| "XIV"		 | "%"	 	 	 || "IV"			|| status().isOk()
 	}
 
-	def 'when a GET request is made to the /calc/status url the expected response message and a 200 OK status should be returned'() {
+	@Test
+	@Unroll
+	def'when an unsupported operation is selected, an operator type not supported message is returned'() {
 
-		when: 'a GET request is made to /calc/status'
-		def response = mockMvc.perform(get("/calc/status").contentType(MediaType.APPLICATION_JSON))
+		when: 'when two roman numericals are passed as Strings'
+		def response = mockMvc.perform(get("/calc").contentType(MediaType.APPLICATION_JSON)
+				.param("num1", numericOne)
+				.param("num2", numericTwo)
+				.param("operationType", operationType))
 
-		then: 'expected response code is OK'
-		response
-				.andExpect(status().isOk())
-				.andExpect(content().string("status : webService online"));
+		then: ' sum of both numericals is returned in roman numerical form as a String'
+		NestedServletException exception = thrown()
+		exception.getMessage() == "Request processing failed; nested exception is java.lang.ArithmeticException: calculator error : operator type not supported."
+
+		where:
+		numericOne	| numericTwo | operationType || expectedResult	|| expectedStatus
+		"X"			| "X"		 | "^"			 || "X"				|| status().isOk()
 	}
 
 	@Test
@@ -78,5 +87,16 @@ class CalculatorWSTest extends Specification {
 		where:
 		expectedResult	|| expectedStatus
 		"+-/*%"			|| status().isOk()
+	}
+
+	def 'when a GET request is made to the /calc/status url the expected response message and a 200 OK status should be returned'() {
+
+		when: 'a GET request is made to /calc/status'
+		def response = mockMvc.perform(get("/calc/status").contentType(MediaType.APPLICATION_JSON))
+
+		then: 'expected response code is OK'
+		response
+				.andExpect(status().isOk())
+				.andExpect(content().string("status : webService online"));
 	}
 }

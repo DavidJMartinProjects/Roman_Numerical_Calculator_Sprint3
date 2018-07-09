@@ -9,31 +9,36 @@
  * program(s) have been supplied.
  *******************************************************************************
  *----------------------------------------------------------------------------*/
-package businessLayer.operations;
+package businessLayer;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import businessLayer.api.RomanNumericalCalculator;
+import businessLayer.api.Calculator;
 
 @Component
-public class DivideOperation extends RomanNumericalCalculator {
+public class CalculationFactory {
 
-	@Override
-	public void preCalculationValidation(final int num1, final int num2) {
-		if(num2 > num1){
-			throw new ArithmeticException("<b>division error :</b> numeral 1 is greater than numeral 2.");
-		}
+	@Autowired
+	final List<Calculator> serviceList;
+
+	@Autowired
+	public CalculationFactory(List<Calculator> serviceList) {
+		this.serviceList = serviceList;
 	}
 
-	@Override	
-	public String calculate(final int num1, final int num2) {
-		return converter.toRomanNumeral(num1 / num2);			
-	}
-	
-	@Override
-	public boolean supports(String s) {
-		return "/".equals(s);		
-	}
-	
+	public Calculator get(String s) {   
+		try {
+        return serviceList
+                .stream()
+                .filter(calculator -> calculator.supports(s))
+                .findFirst()
+                .orElseThrow(IllegalArgumentException::new);
+		} catch(IllegalArgumentException ex) {
+			throw new ArithmeticException("calculator error : operator type not supported.");
+		} 
+    }
+
 }
-		

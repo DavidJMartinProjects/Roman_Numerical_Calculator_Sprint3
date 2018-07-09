@@ -9,29 +9,30 @@
  * program(s) have been supplied.
  *******************************************************************************
  *----------------------------------------------------------------------------*/
-package businessLayer.operations;
+package businessLayer.calculations;
 
-public enum SupportedOperations {
+import org.springframework.stereotype.Component;
 
-	PLUS("+"), MINUS("-"), DIVIDE("/"), MULTIPLY("*"), MODULUS("%");
+import businessLayer.api.RomanNumericalCalculator;
+@Component
+public class Multiplication extends RomanNumericalCalculator {
 
-	private String symbol;
-
-	SupportedOperations(final String aSymbol) {
-		this.symbol = aSymbol;
+	@Override
+	public void preCalculationValidation(final int num1, final int num2) {	
+		if((num1*num2) > 3999){
+			throw new ArithmeticException("<b>multiplication error :</b> result is greater than 3999.");
+		}		
 	}
 
-	public String getSymbol() {
-		return symbol;
+	@Override	
+	public String calculate(final int num1, final int num2	) {
+		return converter.toRomanNumeral(num1 * num2);		
 	}
 
-	public static String getSupportedOperations() {
-		StringBuilder operations = new StringBuilder();
-		final SupportedOperations[] arr = SupportedOperations.values();
-		for (final SupportedOperations op : arr) {
-			operations.append(op.getSymbol());
-		}
-		return operations.toString();
+	@Override
+	public boolean supports(String s) {
+		return "*".equals(s);
 	}
-
+	
 }
+	

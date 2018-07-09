@@ -9,26 +9,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import businessLayer.OperationContext;
-import businessLayer.OperationFactory;
-import businessLayer.operations.SupportedOperations;
+import businessLayer.CalculationContext;
+import businessLayer.CalculationFactory;
+import businessLayer.calculations.SupportedCalculation;
 
 @RestController
 @RequestMapping(value = "/calc")
 public class CalculatorWS {
 
 	@Autowired
-	OperationFactory operationFactory;
+	public CalculationFactory operationFactory;
 
 	@Autowired
-	OperationContext context;
-
-	@RequestMapping(value = "/status", method = RequestMethod.GET, produces = { "application/json" })
-	public String greeting() {
-		return "status : webService online";
-	}
-
-	@GetMapping
+	public CalculationContext context;
+	
+	@RequestMapping(method = RequestMethod.GET, produces = { "application/json" })
 	public ResponseEntity<Object> calculate(@RequestParam("num1") final String num1,
 			@RequestParam("num2") final String num2, @RequestParam("operationType") final String operationType) {
 		context.setOperation(operationFactory.get(operationType));
@@ -36,9 +31,14 @@ public class CalculatorWS {
 		return new ResponseEntity<>(result, HttpStatus.OK);
 	}
 
+	@RequestMapping(value = "/status", method = RequestMethod.GET, produces = { "application/json" })
+	public String greeting() {
+		return "status : webService online";
+	}
+
 	@RequestMapping(value = "/operations", method = RequestMethod.GET, produces = { "application/json" })
 	public ResponseEntity<Object> getSupportedOperations() {
-		return new ResponseEntity<>(SupportedOperations.getSupportedOperations(), HttpStatus.OK);
+		return new ResponseEntity<>(SupportedCalculation.getSupportedOperations(), HttpStatus.OK);
 	}
 
 }
