@@ -32,6 +32,6 @@ public abstract class RomanNumericalCalculator implements Calculator {
 	}
 	
 	public abstract void preCalculationValidation(final int num1, final int num2);	
-	public abstract String calculate(int num1, int num2);
+	public abstract String calculate(final int num1, final int num2);
 } 
  
