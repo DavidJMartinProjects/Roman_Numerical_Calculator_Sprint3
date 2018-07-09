@@ -8,55 +8,61 @@ import businessLayer.calculations.Addition
 import businessLayer.calculations.Division
 import businessLayer.calculations.Multiplication
 import businessLayer.calculations.Subtraction
+
 import spock.lang.Specification
 
-class SubtractOperationTest extends Specification {
+class MultiplyTest extends Specification {
 	def input1, input2, expected
-	def Subtraction theSubtractOperation
+	def Multiplication theMultiplyOperation
 	
 	@Test
 	def 'the preCalculationValidation method returns the expected result when called with two valid inputs'() {
-		given : 'the calculation is a SubtractOperation'
-		theSubtractOperation = new Subtraction();
+		given : 'the calculation is a MultiplyOperation'
+		theMultiplyOperation = new Multiplication();
+		
 		when : 'when two inputs are passed to the preCalculationValidation method'
-		def result = theSubtractOperation.preCalculationValidation(input1, input2)
+		def result = theMultiplyOperation.preCalculationValidation(input1, input2)
+		
 		then : 'the expected result is returned'
 		assertEquals(expected, result)
 		noExceptionThrown()
-		where :
 		
-		input1	| input2 
-		 60		| 14	 
+		where :
+		input1	| input2 | _
+		 60		| 14	 | _
 	}
 	
 	@Test
 	def 'the preCalculationValidation method returns the expected exception message when called with invalid inputs'() {
-		given : 'the calculation is a SubtractOperation'
-		theSubtractOperation = new Subtraction();
+		given : 'the calculation is a MultiplyOperation'
+		theMultiplyOperation = new Multiplication();
+		
 		when : 'when two inputs are passed to the preCalculationValidation method'
-		def result = theSubtractOperation.preCalculationValidation(input1, input2)
+		def result = theMultiplyOperation.preCalculationValidation(input1, input2)
+		
 		then : 'the expected exception message is returned'
 		ArithmeticException exception = thrown()
 		exception.message == expected
 
 		where:
 		input1	| input2 || expected
-		14		| 60 	 || "<b>subtraction error :</b> numeral 1 is greater than numeral 2"
-		5		| 5 	 || "<b>subtraction error :</b> result was zero."
+		2000	| 3 	 || "<b>multiplication error :</b> result is greater than 3999."
 	}
 	
 	@Test
 	def 'the calculate method returns the expected result when called with valid inputs'() {
-		given : 'the calculation is a SubtractOperation'
-		theSubtractOperation = new Subtraction();
+		given : 'the calculation is a MultiplyOperation'
+		theMultiplyOperation = new Multiplication();
+		
 		when : 'when two inputs are passed to the preCalculationValidation method'
-		def result = theSubtractOperation.calculate(input1, input2)
+		def result = theMultiplyOperation.calculate(input1, input2)
+		
 		then : 'the expected result is returned'
 		assertEquals(expected, result)
 
 		where:
 		input1	| input2 || expected
-		60		| 14 	 || "XLVI"
+		60		| 14 	 || "DCCCXL"
 	}
 	
 }

@@ -31,7 +31,7 @@ public class Division extends RomanNumericalCalculator {
 	}
 	
 	@Override
-	public boolean supports(String s) {
+	public boolean supportsCalculation(String s) {
 		return "/".equals(s);		
 	}
 	

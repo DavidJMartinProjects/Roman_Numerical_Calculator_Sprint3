@@ -29,11 +29,11 @@ public class CalculationFactory {
 		this.serviceList = serviceList;
 	}
 
-	public Calculator get(String s) {   
+	public Calculator getCalculation(String s) {   
 		try {
         return serviceList
                 .stream()
-                .filter(calculator -> calculator.supports(s))
+                .filter(calculator -> calculator.supportsCalculation(s))
                 .findFirst()
                 .orElseThrow(IllegalArgumentException::new);
 		} catch(IllegalArgumentException ex) {

@@ -30,7 +30,7 @@
 		<version.mockito.core>2.9.0</version.mockito.core>
 		<version.commons.logging>1.2</version.commons.logging>
 		<version.cglib.nodep>3.1</version.cglib.nodep>
-		<docker.image.name>subsystems-manager-service</docker.image.name>
+		<docker.image.name>com.calculator</docker.image.name>
 		<nexusUrl>https://arm101-eiffel004.lmera.ericsson.se:8443/nexus</nexusUrl>
 		<ericsson.scm.url>scm:git:[fetch=]ssh://gerritmirror.lmera.ericsson.se:29418/OSS/com.ericsson.oss.so.service.subsystemsmanager/subsystemsmanager[push=]ssh://gerrit.ericsson.se:29418/OSS/com.ericsson.oss.so.service.subsystemsmanager/subsystemsmanager</ericsson.scm.url>
 		<java.version>1.8</java.version>
@@ -209,12 +209,8 @@
 							</build>
 							<run>
 								<namingStrategy>alias</namingStrategy>
-								<dependsOn>
-
-								</dependsOn>
-
 								<ports>
-									<port>9876:8080</port>
+									<port>8080:8080</port>
 								</ports>
 								<log>
 									<prefix>TC</prefix>
@@ -226,18 +222,26 @@
 						</image>
 					</images>
 				</configuration>
-
+				
 				<executions>
 					<execution>
 						<id>start</id>
 						<phase>pre-integration-test</phase>
 						<goals>
-							<goal>stop</goal>
+							<!-- "build" should be used to create the images with the artifact -->
 							<goal>build</goal>
 							<goal>start</goal>
 						</goals>
 					</execution>
+					<execution>
+						<id>stop</id>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>stop</goal>
+						</goals>
+					</execution>
 				</executions>
+
 			</plugin>
 
 			<plugin>

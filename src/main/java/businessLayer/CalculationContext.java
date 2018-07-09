@@ -20,22 +20,22 @@ import businessLayer.api.Calculator;
 public class CalculationContext {
 	
 	@Autowired
-	Calculator operation;	
+	Calculator calculation;	
 			
 	public CalculationContext(final Calculator anOperation){
-	    this.operation = anOperation;
+	    this.calculation = anOperation;
 	}	
 	
-	public Calculator getOperation() {
-		return operation;
+	public Calculator getCalculation() {
+		return calculation;
 	}	
 
-	public void setOperation(final Calculator operation) {
-		this.operation = operation;	
+	public void setCalculation(final Calculator operation) {
+		this.calculation = operation;	
 	}
 
-	public String performOperation(final String num1, final String num2) {
-		return operation.doCalculation(num1, num2);
+	public String getCalculationResult(final String num1, final String num2) {
+		return calculation.doCalculation(num1, num2);
 	}
 	 
 }

@@ -11,10 +11,10 @@ import businessLayer.calculations.Subtraction
 import businessLayer.calculations.SupportedCalculations
 import spock.lang.Specification
 
-class SupportedOperationsTest extends Specification {
+class SupportedCalculationsTest extends Specification {
 		
 	@Test
-	def 'the getSupportedOperations method returns the expected results'() {		
+	def 'verify that the getSupportedOperations method returns the expected results'() {		
 		when : 'when two inputs are passed to the preCalculationValidation method'
 		def result = SupportedCalculations.getSupportedOperations();
 		then : 'the expected result is returned'

@@ -22,7 +22,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 import utils.Validator
 
-class OperationContextTest extends Specification {
+class CalculationContextTest extends Specification {
 
 	def expected, numericOne, numericTwo
 	def theConverter = new Converter()
@@ -35,10 +35,10 @@ class OperationContextTest extends Specification {
 	@Unroll
 	def 'verify that if the numeral is I X or C you cannot have more than three in succession'() {
 		given:
-		theOperationContext.setOperation(theOperation)
+		theOperationContext.setCalculation(theOperation)
 
 		when: 'when two roman numericals are passed as Strings'
-		def result = theOperationContext.performOperation(numericOne,numericTwo)
+		def result = theOperationContext.getCalculationResult(numericOne,numericTwo)
 
 		then: 'if the numeral is I, X or C, you cannot have more than three in succession'
 		expected == result
@@ -57,10 +57,10 @@ class OperationContextTest extends Specification {
 	@Unroll
 	def 'verify that if the numeral is V L or D you cannot have more that one in succession'() {
 		given:
-		theOperationContext.setOperation(theOperation)
+		theOperationContext.setCalculation(theOperation)
 
 		when: 'when two roman numericals are passed as Strings'
-		def result = theOperationContext.performOperation(numericOne,numericTwo)
+		def result = theOperationContext.getCalculationResult(numericOne,numericTwo)
 
 		then: 'if the numeral is I, X or C, you cannot have more that one in succession'
 		expected == result
@@ -76,10 +76,10 @@ class OperationContextTest extends Specification {
 	@Unroll
 	def 'verify that calculations around roman single numeral boundaries are behaving as expected'() {
 		given:
-		theOperationContext.setOperation(theOperation)
+		theOperationContext.setCalculation(theOperation)
 
 		when: 'when two roman numericals are passed as Strings'
-		def result = theOperationContext.performOperation(numericOne,numericTwo)
+		def result = theOperationContext.getCalculationResult(numericOne,numericTwo)
 
 		then: 'verify that calculations around roman numeral boundaries are behaving as expected'
 		expected == result
@@ -107,10 +107,10 @@ class OperationContextTest extends Specification {
 	def'when valid inputs #numericOne and #numericTwo are passed as Strings #expected is returned'() {
 
 		given:
-		theOperationContext.setOperation(theOperation)
+		theOperationContext.setCalculation(theOperation)
 
 		when: 'when two roman numericals are passed as Strings'
-		def result = theOperationContext.performOperation(numericOne,numericTwo)
+		def result = theOperationContext.getCalculationResult(numericOne,numericTwo)
 
 		then: 'the sum of both numericals is returned in roman numerical form'
 		expected == result

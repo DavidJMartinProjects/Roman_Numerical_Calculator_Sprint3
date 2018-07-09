@@ -16,6 +16,6 @@ import org.springframework.stereotype.Component;
 @Component
 public interface Calculator {
 	String doCalculation(String romanNumeral1, String romanNumeral2);
-	boolean supports(String operatorType);
+	boolean supportsCalculation(String operatorType);
 }
 		

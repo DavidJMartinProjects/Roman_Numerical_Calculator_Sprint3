@@ -26,8 +26,8 @@ public class CalculatorWS {
 	@RequestMapping(method = RequestMethod.GET, produces = { "application/json" })
 	public ResponseEntity<Object> calculate(@RequestParam("num1") final String num1,
 			@RequestParam("num2") final String num2, @RequestParam("operationType") final String operationType) {
-		context.setOperation(operationFactory.get(operationType));
-		String result = context.performOperation(num1, num2);
+		context.setCalculation(operationFactory.getCalculation(operationType));
+		String result = context.getCalculationResult(num1, num2);
 		return new ResponseEntity<>(result, HttpStatus.OK);
 	}
 

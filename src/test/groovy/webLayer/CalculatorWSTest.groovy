@@ -69,8 +69,8 @@ class CalculatorWSTest extends Specification {
 		exception.getMessage() == "Request processing failed; nested exception is java.lang.ArithmeticException: calculator error : operator type not supported."
 
 		where:
-		numericOne	| numericTwo | operationType || expectedResult	|| expectedStatus
-		"X"			| "X"		 | "^"			 || "X"				|| status().isOk()
+		numericOne	| numericTwo | operationType 
+		"X"			| "X"		 | "^"			 
 	}
 
 	@Test
