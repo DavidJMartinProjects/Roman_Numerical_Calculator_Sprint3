@@ -26,7 +26,7 @@ public enum SupportedCalculations {
 	}
 
 	public static String getSupportedOperations() {
-		StringBuilder operations = new StringBuilder();
+		final StringBuilder operations = new StringBuilder();
 		final SupportedCalculations[] arr = SupportedCalculations.values();
 		for (final SupportedCalculations op : arr) {
 			operations.append(op.getSymbol());

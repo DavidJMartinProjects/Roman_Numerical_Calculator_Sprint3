@@ -49,7 +49,7 @@ public class Converter {
 	}
 
 	public String toRomanNumeral(int input) {
-		StringBuilder result = new StringBuilder();
+		final  StringBuilder result = new StringBuilder();
 		for (final Map.Entry<Integer, String> entry : ROMAN_NUMERICS.entrySet()) {
 			while (input >= entry.getKey()) {
 				result.append(entry.getValue());

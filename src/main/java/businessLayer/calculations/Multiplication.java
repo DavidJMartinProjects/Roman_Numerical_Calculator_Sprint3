@@ -30,8 +30,8 @@ public class Multiplication extends RomanNumericalCalculator {
 	}
 
 	@Override
-	public boolean supportsCalculation(String s) {
-		return "*".equals(s);
+	public boolean supportsCalculation(final String operator) {
+		return "*".equals(operator);
 	}
 	
 }

@@ -25,15 +25,15 @@ public class CalculationFactory {
 	final List<Calculator> serviceList;
 
 	@Autowired
-	public CalculationFactory(List<Calculator> serviceList) {
+	public CalculationFactory(final List<Calculator> serviceList) {
 		this.serviceList = serviceList;
 	}
 
-	public Calculator getCalculation(String s) {   
+	public Calculator getCalculation(final String operation) {   
 		try {
         return serviceList
                 .stream()
-                .filter(calculator -> calculator.supportsCalculation(s))
+                .filter(calculator -> calculator.supportsCalculation(operation))
                 .findFirst()
                 .orElseThrow(IllegalArgumentException::new);
 		} catch(IllegalArgumentException ex) {

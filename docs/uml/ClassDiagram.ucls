@@ -69,7 +69,7 @@
   </class>  
   <class id="8" language="java" name="webLayer.CalculatorWS" project="com.calculator" 
     file="/com.calculator/src/main/java/webLayer/CalculatorWS.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1275" y="77"/>    
+    <position height="-1" width="-1" x="1288" y="72"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -135,7 +135,7 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="17">    
-    <bendpoint x="1275" y="645"/>    
+    <bendpoint x="1289" y="644"/>    
     <end type="SOURCE" refId="8" navigable="false">      
       <attribute id="18" name="operationFactory">        
         <position height="0" width="0" x="0" y="0"/>      

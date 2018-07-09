@@ -3,7 +3,6 @@ package webLayer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,7 +17,7 @@ import businessLayer.calculations.SupportedCalculations;
 public class CalculatorWS {
 
 	@Autowired
-	public CalculationFactory operationFactory;
+	public CalculationFactory operationFactory;	
 
 	@Autowired
 	public CalculationContext context;
@@ -27,7 +26,7 @@ public class CalculatorWS {
 	public ResponseEntity<Object> calculate(@RequestParam("num1") final String num1,
 			@RequestParam("num2") final String num2, @RequestParam("operationType") final String operationType) {
 		context.setCalculation(operationFactory.getCalculation(operationType));
-		String result = context.getCalculationResult(num1, num2);
+		final String result = context.getCalculationResult(num1, num2);
 		return new ResponseEntity<>(result, HttpStatus.OK);
 	}
 

@@ -27,7 +27,7 @@ public class Validator {
 		final Matcher matcher = pattern.matcher(input);
 		matcher.matches();
 		
-		if(matcher.matches() == false) {		
+		if(!matcher.matches()) {		
 			throw new ArithmeticException("<b>error :</b> invalid roman numerical entered");
 		}
 	}
