@@ -3,6 +3,9 @@ var populateListURL = 'http://localhost:8080/calc/operations'
 
 function calculate() {
 
+	$("#response").html("");
+    $(".alert").alert('close')
+	
     var num1 = $("#numOneTf").val();
     var num2 = $("#numTwoTf").val();
     var operation = $("#operationType").find("option:selected").text();

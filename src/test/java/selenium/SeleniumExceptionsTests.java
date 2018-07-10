@@ -16,7 +16,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import ultilities.DriverFactory;
-import webLayer.CalculatorWS;
+import web.CalculatorWS;
 
 @SpringBootTest(classes = CalculatorWS.class)
 @ComponentScan(basePackages = { "domainLayer", "businessLayer", "businessLayer.api", "businessLayer.operations",
@@ -50,9 +50,9 @@ public class SeleniumExceptionsTests {
 		driver.findElement(By.id("numTwoTf")).clear();
 		driver.findElement(By.id("numTwoTf")).sendKeys("MMM");
 		driver.findElement(By.id("calcBtn")).click();
-
-		assertEquals("addition error : result is greater than 3999.", driver.findElement(By.id("response")).getText());
 		Thread.sleep(1000);
+		assertEquals("addition error : result is greater than 3999.", driver.findElement(By.id("response")).getText());
+
 	}
 
 	// subtraction exception messages
@@ -69,10 +69,10 @@ public class SeleniumExceptionsTests {
 		driver.findElement(By.id("numTwoTf")).clear();
 		driver.findElement(By.id("numTwoTf")).sendKeys("XI");
 		driver.findElement(By.id("calcBtn")).click();
-
+		Thread.sleep(1000);
 		assertEquals("subtraction error : numeral 1 is greater than numeral 2",
 				driver.findElement(By.id("response")).getText());
-		Thread.sleep(1000);
+
 	}
 
 	@Test
@@ -88,9 +88,9 @@ public class SeleniumExceptionsTests {
 		driver.findElement(By.id("numTwoTf")).clear();
 		driver.findElement(By.id("numTwoTf")).sendKeys("X");
 		driver.findElement(By.id("calcBtn")).click();
-
-		assertEquals("subtraction error : result was zero.", driver.findElement(By.id("response")).getText());
 		Thread.sleep(1000);
+		assertEquals("subtraction error : result was zero.", driver.findElement(By.id("response")).getText());
+
 	}
 
 	// division exception messages
@@ -107,10 +107,9 @@ public class SeleniumExceptionsTests {
 		driver.findElement(By.id("numTwoTf")).clear();
 		driver.findElement(By.id("numTwoTf")).sendKeys("XI");
 		driver.findElement(By.id("calcBtn")).click();
-
+		Thread.sleep(1000);
 		assertEquals("division error : numeral 1 is greater than numeral 2.",
 				driver.findElement(By.id("response")).getText());
-		Thread.sleep(1000);
 	}
 
 	// modulus exception messages
@@ -127,10 +126,10 @@ public class SeleniumExceptionsTests {
 		driver.findElement(By.id("numTwoTf")).clear();
 		driver.findElement(By.id("numTwoTf")).sendKeys("XI");
 		driver.findElement(By.id("calcBtn")).click();
-
+		Thread.sleep(1000);
 		assertEquals("modulus error : numeral 1 is greater than numeral 2",
 				driver.findElement(By.id("response")).getText());
-		Thread.sleep(1000);
+
 	}
 
 	@Test
@@ -146,9 +145,9 @@ public class SeleniumExceptionsTests {
 		driver.findElement(By.id("numTwoTf")).clear();
 		driver.findElement(By.id("numTwoTf")).sendKeys("X");
 		driver.findElement(By.id("calcBtn")).click();
-
-		assertEquals("modulus error : result was zero.", driver.findElement(By.id("response")).getText());
 		Thread.sleep(1000);
+		assertEquals("modulus error : result was zero.", driver.findElement(By.id("response")).getText());
+
 	}
 
 	// multiplication exception messages
@@ -165,19 +164,19 @@ public class SeleniumExceptionsTests {
 		driver.findElement(By.id("numTwoTf")).clear();
 		driver.findElement(By.id("numTwoTf")).sendKeys("MMM");
 		driver.findElement(By.id("calcBtn")).click();
-
+		Thread.sleep(1000);
 		assertEquals("multiplication error : result is greater than 3999.",
 				driver.findElement(By.id("response")).getText());
-		Thread.sleep(1000);
+
 	}
 
 	@Test
 	public void userLeavesBothInputFieldsEmptyMsgTest() throws Exception {
 		driver.get("http://localhost:8080/");
 		driver.findElement(By.id("calcBtn")).click();
-
-		assertEquals("error : please input a roman numeral.", driver.findElement(By.id("response")).getText());
 		Thread.sleep(1000);
+		assertEquals("error : please input a roman numeral.", driver.findElement(By.id("response")).getText());
+	
 	}
 
 	@Test
@@ -190,9 +189,9 @@ public class SeleniumExceptionsTests {
 		driver.findElement(By.id("numTwoTf")).clear();
 		driver.findElement(By.id("numTwoTf")).sendKeys("X");
 		driver.findElement(By.id("calcBtn")).click();
-
-		assertEquals("error : please input a roman numeral.", driver.findElement(By.id("response")).getText());
 		Thread.sleep(1000);
+		assertEquals("error : please input a roman numeral.", driver.findElement(By.id("response")).getText());
+
 	}
 
 	@Test
@@ -205,9 +204,9 @@ public class SeleniumExceptionsTests {
 		driver.findElement(By.id("numOneTf")).clear();
 		driver.findElement(By.id("numOneTf")).sendKeys("X");
 		driver.findElement(By.id("calcBtn")).click();
-
-		assertEquals("error : please input a roman numeral.", driver.findElement(By.id("response")).getText());
 		Thread.sleep(1000);
+		assertEquals("error : please input a roman numeral.", driver.findElement(By.id("response")).getText());
+
 	}
 
 	@After
