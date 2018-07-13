@@ -54,7 +54,7 @@ class CalculatorWSExceptionsTest extends Specification {
 		
 		where:
 		numericOne	| numericTwo | operationType	 || exceptionMessage
-		"MM"		| "MM"		 | "+"				 || "<b>addition error :</b> result is greater than 3999."		
+		"MM"		| "MM"		 | "+"				 || "addition error : result is greater than 3999."		
 	}
 	
 	@Test
@@ -74,8 +74,8 @@ class CalculatorWSExceptionsTest extends Specification {
 		
 		where:
 		numericOne	| numericTwo | operationType	 || exceptionMessage
-		"X"		| "XI"		 | "-"				 || "<b>subtraction error :</b> numeral 1 is greater than numeral 2"
-		"X"		| "X"		 | "-"				 || "<b>subtraction error :</b> result was zero."
+		"X"		| "XI"		 | "-"				 || "subtraction error : numeral 1 is greater than numeral 2"
+		"X"		| "X"		 | "-"				 || "subtraction error : result was zero."
 	}
 	
 	@Test
@@ -95,7 +95,7 @@ class CalculatorWSExceptionsTest extends Specification {
 		
 		where:
 		numericOne	| numericTwo | operationType	 || exceptionMessage
-			"X"		| "XI"		 | "/"				 || "<b>division error :</b> numeral 1 is greater than numeral 2."		
+			"X"		| "XI"		 | "/"				 || "division error : numeral 1 is greater than numeral 2."		
 	}
 	
 	@Test
@@ -115,7 +115,7 @@ class CalculatorWSExceptionsTest extends Specification {
 		
 		where:
 		numericOne	| numericTwo | operationType	 || exceptionMessage
-			"MM"	| "MM"		 | "*"				 || "<b>multiplication error :</b> result is greater than 3999."
+			"MM"	| "MM"		 | "*"				 || "multiplication error : result is greater than 3999."
 	}
 	
 	@Test
@@ -135,7 +135,7 @@ class CalculatorWSExceptionsTest extends Specification {
 		
 		where:
 		numericOne	| numericTwo | operationType	 || exceptionMessage
-				"X"	| "XI"		 | "%"				 || "<b>modulus error :</b> numeral 1 is greater than numeral 2"
-				"X"	| "X"		 | "%"				 || "<b>modulus error :</b> result was zero."
+				"X"	| "XI"		 | "%"				 || "modulus error : numeral 1 is greater than numeral 2"
+				"X"	| "X"		 | "%"				 || "modulus error : result was zero."
 	}
 }

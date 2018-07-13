@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config>
+    <source_groups>
+        <source_group_f1604641-c9f3-44ac-886f-84850fa5cc3d>
+            <java_standard>8</java_standard>
+            <maven>
+                <dependencies_directory>./sourcetrail_dependencies/test2/f1604641-c9f3-44ac-886f-84850fa5cc3d/maven</dependencies_directory>
+                <project_file_path>pom.xml</project_file_path>
+                <should_index_tests>0</should_index_tests>
+            </maven>
+            <name>Java Source Group from Maven</name>
+            <source_extensions>
+                <source_extension>.java</source_extension>
+            </source_extensions>
+            <status>enabled</status>
+            <type>Java Source Group from Maven</type>
+        </source_group_f1604641-c9f3-44ac-886f-84850fa5cc3d>
+    </source_groups>
+    <version>7</version>
+</config>

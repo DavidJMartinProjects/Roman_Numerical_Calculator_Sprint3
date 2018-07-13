@@ -20,9 +20,9 @@ public class Subtraction extends RomanNumericalCalculator {
 	@Override
 	public void preCalculationValidation(final int num1, final int num2) {		
 		if(num2 > num1) {
-			throw new ArithmeticException("<b>subtraction error :</b> numeral 1 is greater than numeral 2");
+			throw new ArithmeticException("subtraction error : numeral 1 is greater than numeral 2");
 		} else if((num1-num2) == 0) {
-			throw new ArithmeticException("<b>subtraction error :</b> result was zero.");
+			throw new ArithmeticException("subtraction error : result was zero.");
 		}		
 	}
 

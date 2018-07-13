@@ -46,8 +46,8 @@ class ModulusTest extends Specification {
 
 		where:
 		input1	| input2 || expected
-		14		| 60 	 || "<b>modulus error :</b> numeral 1 is greater than numeral 2"
-		5		| 5 	 || "<b>modulus error :</b> result was zero."
+		14		| 60 	 || "modulus error : numeral 1 is greater than numeral 2"
+		5		| 5 	 || "modulus error : result was zero."
 	}
 	
 	@Test

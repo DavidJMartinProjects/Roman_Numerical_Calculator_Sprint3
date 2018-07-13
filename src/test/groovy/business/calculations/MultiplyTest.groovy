@@ -45,7 +45,7 @@ class MultiplyTest extends Specification {
 
 		where:
 		input1	| input2 || expected
-		2000	| 3 	 || "<b>multiplication error :</b> result is greater than 3999."
+		2000	| 3 	 || "multiplication error : result is greater than 3999."
 	}
 	
 	@Test

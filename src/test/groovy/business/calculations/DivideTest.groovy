@@ -45,7 +45,7 @@ class DivideTest extends Specification {
 
 		where:
 		input1	| input2 || expected
-		14		| 40 	 || "<b>division error :</b> numeral 1 is greater than numeral 2."
+		14		| 40 	 || "division error : numeral 1 is greater than numeral 2."
 	}
 	
 	@Test

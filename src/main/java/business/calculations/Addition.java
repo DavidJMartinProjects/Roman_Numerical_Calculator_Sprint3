@@ -23,7 +23,7 @@ public class Addition extends RomanNumericalCalculator {
 	@Override
 	public void preCalculationValidation(final int num1, final int num2) {		
 		if((num1+num2) > 3999){
-			throw new ArithmeticException("<b>addition error :</b> result is greater than 3999.");
+			throw new ArithmeticException("addition error : result is greater than 3999.");
 		}
 	}
 

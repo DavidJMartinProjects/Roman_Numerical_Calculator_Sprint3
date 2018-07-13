@@ -21,7 +21,7 @@ public class Division extends RomanNumericalCalculator {
 	@Override
 	public void preCalculationValidation(final int num1, final int num2) {
 		if(num2 > num1){
-			throw new ArithmeticException("<b>division error :</b> numeral 1 is greater than numeral 2.");
+			throw new ArithmeticException("division error : numeral 1 is greater than numeral 2.");
 		}
 	}
 

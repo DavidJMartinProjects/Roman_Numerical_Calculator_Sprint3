@@ -12,15 +12,15 @@
 package business.calculations;
 
 public enum SupportedCalculations {
-
+	
 	PLUS("+"), MINUS("-"), DIVIDE("/"), MULTIPLY("*"), MODULUS("%");
-
+	
 	private String symbol;
 
 	SupportedCalculations(final String aSymbol) {
 		this.symbol = aSymbol;
 	}
-
+	
 	public String getSymbol() {
 		return symbol;
 	}
